@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
-        Site Name
+        Logo
       </Link>
       <ul>
         <CustomLink to="/">Home</CustomLink>
