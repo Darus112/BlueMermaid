@@ -12,8 +12,9 @@ import "./App.css"
 function App() {
   return (
     <>
-      <Navbar />
       <div className="container">
+        <div className="content-wrap">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
@@ -23,6 +24,7 @@ function App() {
         </Routes>
         </div>
         <Footer />
+        </div>
     </>
   )
 }
