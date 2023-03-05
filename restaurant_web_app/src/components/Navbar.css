@@ -91,10 +91,15 @@ a.btn-primary {
   top: 0px;
 }
 
+.nav__bgOverlay {
+	display: none;
+}
+
 
 @media screen and (max-width: 768px) {
   #nav_list {
     display: flex;
+    position: absolute;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -124,5 +129,4 @@ a.btn-primary {
     font-size: 25px;
     cursor: pointer;
   }
-  
 }

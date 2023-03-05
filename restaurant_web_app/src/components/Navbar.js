@@ -11,6 +11,7 @@ class Navbar extends Component {
   render(){
   return (
     <nav className="nav">
+
       <Link to="/" className="site-logo">
         <img src={LogoImg} height={50} />
       </Link>
