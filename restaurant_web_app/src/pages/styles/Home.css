@@ -152,7 +152,7 @@
 }
 /* end hero styles */
 
-/* Store info section styles*/
+/* store info section styles*/
 .storeInfo_wrapper {
 	display: flex;
 	justify-content: center;
@@ -220,5 +220,122 @@
 	}
 	.storeInfo_text {
 		font-size: 1rem;
+	}
+}
+/* end store info section styles*/
+
+/* specials styles */
+
+.ourSpecials__wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	align-items: center;
+}
+.ourSpecials__left {
+	display: flex;
+	gap: 1rem;
+}
+.ourSpecials__right {
+	text-align: left;
+}
+.ourSpecials__item {
+	font-family: 'Raleway', sans-serif;
+	background-color: #e0ebf1;
+	padding: 1.2rem;
+	padding-top: 5rem;
+	border-radius: 12px;
+	width: 45%;
+	margin: 0 auto;
+	text-align: left;
+	box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
+}
+.ourSpecials__item__img {
+	margin-top: -6rem;
+	margin-bottom: 2rem;
+	border-radius: 12px;
+	height: 150px;
+	overflow: hidden;
+	box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
+}
+.ourSpecials__item__img img {
+	object-fit: cover;
+}
+.ourSpecials__item__title {
+	font-size: 1.2rem;
+	color: #000000;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+.ourSpecials__item__price {
+	color:#4e6d83;
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+.ourSpecials__item__text {
+	font-size: 0.8rem;
+	color: black;
+}
+.ourSpecials__title {
+	text-align: left;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.8rem;
+	margin-bottom: 1.5rem;
+	color: black;
+}
+.ourSpecials__text {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.4rem;
+	color: black;
+	margin-bottom: 1rem;
+	font-weight: 200;
+}
+@media only screen and (min-width: 768px) {
+	#ourSpecials {
+		padding-top: 15rem;
+	}
+
+	.ourSpecials__wrapper {
+		flex-direction: row;
+	}
+	.ourSpecials__right {
+		flex: 2;
+	}
+	.ourSpecials__left {
+		flex: 4;
+		gap: 2rem;
+	}
+	.ourSpecials__item {
+		padding: 2rem;
+	}
+	.ourSpecials__item__title {
+		font-size: 1.5rem;
+		line-height: 1.4em;
+		margin-bottom: 1.5rem;
+	}
+	.ourSpecials__item__price {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+	.ourSpecials__item__text {
+		font-size: 1rem;
+	}
+	.ourSpecials__title {
+		font-size: 3.6rem;
+		margin-bottom: 1.5rem;
+	}
+	.ourSpecials__text {
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+	}
+}
+@media only screen and (max-width: 300px) {
+	.ourSpecials__left {
+		flex-wrap: wrap;
+		gap: 10rem;
+	}
+	.ourSpecials__item {
+		width: 100%;
 	}
 }
