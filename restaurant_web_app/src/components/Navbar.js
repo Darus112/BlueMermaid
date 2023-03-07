@@ -19,8 +19,8 @@ class Navbar extends Component {
         <CustomLink to="/">Home</CustomLink>
         <CustomLink to="/menu">Meniu</CustomLink>
         <CustomLink className="order-img" to="/comenzi"><i class="fa fa-bag-shopping"></i></CustomLink>
-        <CustomLink to="/contact">Contact</CustomLink>
         <CustomLink to="/about">Despre</CustomLink>
+        <CustomLink to="/contact">Contact</CustomLink>
         <CustomLink className="btn btn-primary" to="/booktable">Rezervare</CustomLink>
       </ul>
       <div id="nav_icon" onClick={this.handleClick}>

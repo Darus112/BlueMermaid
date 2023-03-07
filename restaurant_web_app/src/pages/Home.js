@@ -4,6 +4,8 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import foodImg from "../assets/Food/food-4.png"
 import foodSpecial1 from "../assets/Food/food-1.png"
 import foodSpecial2 from "../assets/Food/food-3.png"
+import Fade from 'react-reveal/Fade';
+import Bounce from 'react-reveal/Bounce';
 
 
 export default function Home() {
@@ -12,6 +14,7 @@ export default function Home() {
       <section id="hero">
         <div class="container2">
           <div class="hero_wrapper">
+          <Fade left>
             <div class="hero_left">
               <div class="hero_left_wrapper">
                 <h1 class="hero_heading">The flavor of tradition</h1>
@@ -26,16 +29,21 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </Fade>
+            <Fade right>
             <div class="hero_right">
               <div class="hero_imgWrapper">
               <div className="card"><img src={foodImg}/> </div>
               <div className="card"> <img src={foodImg}/></div>           
               </div>
             </div>
+            </Fade>
           </div>
         </div>
       </section>
+
       <section id="storeInfo">
+      <Bounce>
         <div class="container2">
           <div class="storeInfo_wrapper">
             <div class="storeInfo_item">
@@ -73,8 +81,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </Bounce>
       </section>
+
       <section id="ourSpecials">
+      <Fade bottom>
         <div class="container2">
           <div class="ourSpecials__wrapper">
             <div class="ourSpecials__left">
@@ -122,49 +133,55 @@ export default function Home() {
               <Link to="./booktable" className="btn-bg">Book Table</Link>
             </div>
           </div>
-        </div>
+        </div>     
+         </Fade>
       </section>
+
       <section id="whyUs">
         <div class="container2">
-          <div class="whyUs__wrapper">
-            <div class="whyUs__left">
-              <h2 class="whyUs__title">
+          <div class="whyUs_wrapper">
+          <Fade left>
+            <div class="whyUs_left">
+              <h2 class="whyUs_title">
                 Why Choose Our Food
               </h2>
-              <p class="whyUs__text">
+              <p class="whyUs_text">
                 Quality of Service, Food, Ambiance, and Value of Money are the primary elements for choosing a restaurant.
                 Shaif's Cuisine is one of the most exquisite fine-dinning restaurant in Chittagong cities with a captivating
                 view of GEC Hills, perfect ambiance, and scrumptious food.
               </p>
             </div>
-            <div class="whyUs__right">
-              <div class="whyUs__items__wrapper">
-                <div class="whyUs__item">
-                  <div class="whyUs__item__icon">
+            </Fade>
+            <Fade right>
+            <div class="whyUs_right">
+              <div class="whyUs_items_wrapper">
+                <div class="whyUs_item">
+                  <div class="whyUs_item_icon">
                   <i class="fa-solid fa-utensils"></i>
                   </div>
-                  <p class="whyUs__item__text">Quality Food</p>
+                  <p class="whyUs_item_text">Quality Food</p>
                 </div>
-                <div class="whyUs__item">
-                  <div class="whyUs__item__icon">
+                <div class="whyUs_item">
+                  <div class="whyUs_item_icon">
                   <i class="fa-solid fa-bowl-food"></i>
                   </div>
-                  <p class="whyUs__item__text">Classical taste</p>
+                  <p class="whyUs_item_text">Classical taste</p>
                 </div>
-                <div class="whyUs__item">
-                  <div class="whyUs__item__icon">
+                <div class="whyUs_item">
+                  <div class="whyUs_item_icon">
                   <i class="fa-solid fa-kitchen-set"></i>
                   </div>
-                  <p class="whyUs__item__text">Skilled chef</p>
+                  <p class="whyUs_item_text">Skilled chef</p>
                 </div>
-                <div class="whyUs__item">
-                  <div class="whyUs__item__icon">
+                <div class="whyUs_item">
+                  <div class="whyUs_item_icon">
                   <i class="fa-solid fa-person-walking"></i>
                   </div>
-                  <p class="whyUs__item__text">Best service</p>
+                  <p class="whyUs_item_text">Best service</p>
                 </div>
               </div>
             </div>
+            </Fade>
           </div>
         </div>
       </section>
