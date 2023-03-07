@@ -1,9 +1,10 @@
 import React from "react";
 import "./styles/Home.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import foodImg from "../assets/food-4.png"
-import foodSpecial1 from "../assets/food-1.png"
-import foodSpecial2 from "../assets/food-3.png"
+import foodImg from "../assets/Food/food-4.png"
+import foodSpecial1 from "../assets/Food/food-1.png"
+import foodSpecial2 from "../assets/Food/food-3.png"
+
 
 export default function Home() {
     return (
@@ -79,7 +80,7 @@ export default function Home() {
             <div class="ourSpecials__left">
               <div class="ourSpecials__item">
                 <div class="ourSpecials__item__img">
-                <img src={foodSpecial2} height={150} width={270}/>
+                <img src={foodSpecial2} height={200} width={250}/>
                 </div>
                 <h2 class="ourSpecials__item__title">
                   Sweet Potato Fries Bowl
@@ -95,7 +96,7 @@ export default function Home() {
               </div>
               <div class="ourSpecials__item">
                 <div class="ourSpecials__item__img">
-                  <img src={foodSpecial1} height={150} width={270}/>
+                  <img src={foodSpecial1} height={200} width={250}/>
                 </div>
                 <h2 class="ourSpecials__item__title">
                   Vegan Salad bowl
@@ -119,6 +120,50 @@ export default function Home() {
                 delivered to our customers
               </p>
               <Link to="./booktable" className="btn-bg">Book Table</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="whyUs">
+        <div class="container2">
+          <div class="whyUs__wrapper">
+            <div class="whyUs__left">
+              <h2 class="whyUs__title">
+                Why Choose Our Food
+              </h2>
+              <p class="whyUs__text">
+                Quality of Service, Food, Ambiance, and Value of Money are the primary elements for choosing a restaurant.
+                Shaif's Cuisine is one of the most exquisite fine-dinning restaurant in Chittagong cities with a captivating
+                view of GEC Hills, perfect ambiance, and scrumptious food.
+              </p>
+            </div>
+            <div class="whyUs__right">
+              <div class="whyUs__items__wrapper">
+                <div class="whyUs__item">
+                  <div class="whyUs__item__icon">
+                  <i class="fa-solid fa-utensils"></i>
+                  </div>
+                  <p class="whyUs__item__text">Quality Food</p>
+                </div>
+                <div class="whyUs__item">
+                  <div class="whyUs__item__icon">
+                  <i class="fa-solid fa-bowl-food"></i>
+                  </div>
+                  <p class="whyUs__item__text">Classical taste</p>
+                </div>
+                <div class="whyUs__item">
+                  <div class="whyUs__item__icon">
+                  <i class="fa-solid fa-kitchen-set"></i>
+                  </div>
+                  <p class="whyUs__item__text">Skilled chef</p>
+                </div>
+                <div class="whyUs__item">
+                  <div class="whyUs__item__icon">
+                  <i class="fa-solid fa-person-walking"></i>
+                  </div>
+                  <p class="whyUs__item__text">Best service</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

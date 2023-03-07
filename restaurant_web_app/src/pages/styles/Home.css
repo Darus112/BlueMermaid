@@ -245,7 +245,7 @@
 	padding: 1.2rem;
 	padding-top: 5rem;
 	border-radius: 12px;
-	width: 45%;
+	width: 30%;
 	margin: 0 auto;
 	text-align: left;
 	box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
@@ -254,9 +254,11 @@
 	margin-top: -6rem;
 	margin-bottom: 2rem;
 	border-radius: 12px;
-	height: 150px;
+	height: 200px;
 	overflow: hidden;
 	box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
+	display: flex;
+	justify-content: center;
 }
 .ourSpecials__item__img img {
 	object-fit: cover;
@@ -307,6 +309,7 @@
 		gap: 2rem;
 	}
 	.ourSpecials__item {
+		width: 40%;
 		padding: 2rem;
 	}
 	.ourSpecials__item__title {
@@ -337,5 +340,96 @@
 	}
 	.ourSpecials__item {
 		width: 100%;
+	}
+}
+
+/* end special section */
+
+/* why us section */
+.whyUs__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 4rem;
+	padding-top: 10rem;
+}
+.whyUs__left {
+	text-align: center;
+}
+.whyUs__title {
+    font-family: 'Dosis', sans-serif;
+	font-weight: 600;
+	font-size: 1.8rem;
+	color: var(--black-1);
+	margin-bottom: 1rem;
+}
+.whyUs__text {
+	font-family: 'Dosis', sans-serif;
+	font-size: 1.4rem;
+}
+.whyUs__right {
+	text-align: center;
+}
+.whyUs__items__wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+.whyUs__item {
+	background: #e0ebf1;
+	padding: 2rem;
+	border-radius: 12px;
+	box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
+	width: 200px;
+}
+.whyUs__item__icon {
+	max-width: 56px;
+	margin: 0 auto;
+	margin-bottom: 1rem;
+	font-size: 3rem;
+	color:transparent;
+    background-clip: text;
+    background-image: linear-gradient(33deg, #7fbde7 0%, #8DEBFF 100%);
+}
+.whyUs__item__text {
+    font-family: 'Poppins', sans-serif;
+	font-size: 1.4rem;
+	font-weight: 500;
+	color: black;
+}
+@media only screen and (min-width: 768px) {
+	.whyUs__wrapper {
+		flex-direction: row;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+	.whyUs__left {
+		flex: 4;
+		text-align: left;
+	}
+	.whyUs__right {
+		flex: 3;
+	}
+	.whyUs__title {
+		font-size: 3rem;
+		margin-bottom: 2rem;
+	}
+	.whyUs__text {
+		font-size: 1.5rem;
+		line-height: 1.4em;
+	}
+	.whyUs__items__wrapper {
+		gap: 1.5rem;
+	}
+	.whyUs__item {
+		padding: 2rem;
+	}
+	.whyUs__item__icon {
+		max-width: 65px;
+		margin-bottom: 1.5rem;
+	}
+	.whyUs__item__text {
+		font-size: 1rem;
 	}
 }
