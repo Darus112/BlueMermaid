@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
 
 .container2 {
 	max-width: 1200px;
@@ -52,7 +50,7 @@
 	border-radius: 15px;
 	font-size: 1.05rem;
 	padding: 1rem 1rem;
-    background: #7fbde7;
+    background-color: #7fbde7;
     display: inline-block;
     transition: all 300ms;
 	
