@@ -55,6 +55,7 @@
     background: #7fbde7;
     display: inline-block;
     transition: all 300ms;
+	
 }
 
 .btn-bg:hover{
@@ -153,6 +154,10 @@
 /* end hero styles */
 
 /* store info section styles*/
+#storeInfo {
+    padding-top: 10rem;
+}
+
 .storeInfo_wrapper {
 	display: flex;
 	justify-content: center;

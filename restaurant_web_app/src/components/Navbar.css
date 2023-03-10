@@ -95,7 +95,6 @@ a.btn-primary {
 	display: none;
 }
 
-
 @media screen and (max-width: 768px) {
   #nav_list {
     display: flex;
@@ -110,6 +109,7 @@ a.btn-primary {
     height: 100vh;
     background-color: #ffffff;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3);
+    z-index:1;
   }
 
   #nav_list.active{
