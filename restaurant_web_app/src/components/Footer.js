@@ -65,8 +65,8 @@ export default function Footer() {
             </div>
         </div>
         <div id="copyright">
-          <div class="container-footer">
-            <p class="copyright__text">
+          <div className="container-footer">
+            <p className="copyright__text">
             &copy; {new Date().getFullYear()} All rights reserved
             </p>
           </div>

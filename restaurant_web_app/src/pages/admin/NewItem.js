@@ -1,8 +1,6 @@
-import "./styles/Menu.css";
-
-export default function Menu() {
+export default function NewItem() {
     return    ( <h1 className="text-3xl font-bold underline">
-    Menu
+    Add
   </h1>
     )
   }
