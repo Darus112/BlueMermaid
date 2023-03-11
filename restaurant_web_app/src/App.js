@@ -19,7 +19,7 @@ import "./App.css"
 function App() {
   return (
     <>
-    <AnimatePresence >
+    <AnimatePresence>
       <div className="container">
         <Navbar />
         <Routes>

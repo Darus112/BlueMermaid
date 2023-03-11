@@ -45,7 +45,13 @@
 	color: #7fbde7;
 }
 
-
+.footer__logo {
+    width: 150px;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
 .footer__text {
   list-style: none;
   padding-left: 0;

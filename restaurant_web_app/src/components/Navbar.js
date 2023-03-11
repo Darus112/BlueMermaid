@@ -39,7 +39,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="nav">
+    <nav className="nav mx-px">
       <Link to="/" className="site-logo">
         <img src={LogoImg} className="w-10 object-cover" alt="logo" />
       </Link>
