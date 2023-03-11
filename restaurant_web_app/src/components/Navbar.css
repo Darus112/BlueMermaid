@@ -79,16 +79,6 @@ a.btn-primary {
 	background: #7fbde7;
 }
 
-#nav_icon {
-  display: none;
-}
-
-#nav_icon i{
-  color: #7fbde7;
-  align-items: center;
-  top: 0px;
-}
-
 .nav__bgOverlay {
 	display: none;
 }
@@ -110,21 +100,10 @@ a.btn-primary {
     z-index:1;
   }
 
-  #nav_list.active{
-    right: 0px;
-  }
+ 
 
   #nav_list li {
     padding-left: 20px;
   }
 
-  #nav_icon {
-    display: block;
-    top: 0px;
-  }
-
-  #nav_icon i{
-    font-size: 25px;
-    cursor: pointer;
-  }
 }

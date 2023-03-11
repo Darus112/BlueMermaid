@@ -15,7 +15,7 @@ export default function About() {
           <div class="ourStory_wrapper">
             <div class="ourStory_img">
             <Fade left>
-            <img src={aboutImg1}/>
+            <img src={aboutImg1} />
             </Fade>
             </div>
             <Fade right>

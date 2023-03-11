@@ -1,9 +1,9 @@
 
 
 .container2 {
-	max-width: 1200px;
 	width: 100%;
     margin-bottom: 8rem;
+	margin-top: 5rem;
 }
 
 /* hero styles */
@@ -165,7 +165,7 @@
 
 .storeInfo_item {
 	background-color:#e0ebf1;
-	padding: 20px 30px;
+	padding: 20px;
 	text-align: center;
 	text-align: center;
 	border-radius: 15px;
@@ -189,7 +189,7 @@
 }
 
 .storeInfo_title {
-	font-size: 0.9rem;
+	font-size: 0.8rem;
     font-family: 'Poppins', sans-serif;
 	font-weight: 500;
 	margin-bottom: 0.5rem;
@@ -197,7 +197,7 @@
 }
 
 .storeInfo_text {
-	font-size: 0.8rem;
+	font-size: 0.7rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
 	color:black; 
@@ -208,9 +208,9 @@
 		gap: 2rem;
 	}
 	.storeInfo_item {
-		min-width: 200px;
-        min-height: 200px;
-		padding: 40px 0;
+	width: 220px;
+ 	height: 220px;
+
 	}
 	.storeInfo_icon {
 		width: 47px;
@@ -286,7 +286,8 @@
 }
 .ourSpecials__title {
 	text-align: left;
-	font-family: 'Dosis', sans-serif;
+    font-family: 'Dosis', sans-serif;
+	font-weight: 600;
 	font-size: 1.8rem;
 	margin-bottom: 1.5rem;
 	color: black;
@@ -314,7 +315,7 @@
 		gap: 2rem;
 	}
 	.ourSpecials__item {
-		width: 40%;
+		width: 300px;
 		padding: 2rem;
 	}
 	.ourSpecials__item__title {

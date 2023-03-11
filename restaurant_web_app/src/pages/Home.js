@@ -141,6 +141,7 @@ export default function Home() {
         <div class="container2">
           <div class="whyUs_wrapper">
           <Fade left>
+            <div>
             <div class="whyUs_left">
               <h2 class="whyUs_title">
                 Why Choose Our Food
@@ -150,6 +151,7 @@ export default function Home() {
                 Shaif's Cuisine is one of the most exquisite fine-dinning restaurant in Chittagong cities with a captivating
                 view of GEC Hills, perfect ambiance, and scrumptious food.
               </p>
+            </div>
             </div>
             </Fade>
             <Fade right>

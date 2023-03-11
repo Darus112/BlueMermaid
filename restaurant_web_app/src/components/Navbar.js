@@ -1,34 +1,57 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import { Component } from "react"
-import LogoImg from "../assets/logo.png"
 
-class Navbar extends Component {
-  state={clicked: false};
-  handleClick = () => {
-    this.setState({clicked: !this.state.clicked})
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from "../firebase.config";
+
+import LogoImg from "../assets/logo.png"
+import UserImg from "../assets/userImg.png"
+import { useStateValue } from "../context/StateProvider";
+import { actionType } from "../context/reducer";
+
+
+export default function Navbar() {
+
+  const firebaseAuth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const [{user}, dispatch] = useStateValue();
+
+  const login = async () => {
+    const {
+      user : {refreshToken, providerData},
+    } = await signInWithPopup(firebaseAuth, provider);
+    dispatch ({
+      type : actionType.SET_USER,
+      user : providerData[0],
+    })
   }
 
-  render(){
   return (
     <nav className="nav">
-
       <Link to="/" className="site-logo">
-        <img src={LogoImg} height={50} />
+        <img src={LogoImg} className="w-10 object-cover" alt="logo" />
       </Link>
-      <ul id="nav_list" className={this.state.clicked ? "#nav_list active" : "nav_list"}>
+      <ul id="nav_list">
         <CustomLink to="/">Home</CustomLink>
         <CustomLink to="/menu">Meniu</CustomLink>
-        <CustomLink className="order-img" to="/comenzi"><i class="fa fa-bag-shopping"></i></CustomLink>
+        <CustomLink className="order-img" to="/comenzi">
+          <i class="fa fa-bag-shopping"/>
+          <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-blue-400 to-blue-200 
+            ml-1 mb-5 flex items-center justify-center">
+            <p className="text-xs">2</p>
+          </div>
+        </CustomLink>
         <CustomLink to="/about">Despre</CustomLink>
         <CustomLink to="/contact">Contact</CustomLink>
         <CustomLink className="btn btn-primary" to="/booktable">Rezervare</CustomLink>
       </ul>
-      <div id="nav_icon" onClick={this.handleClick}>
-        <i id="bar" className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+      <div className="relative">
+        <img src={UserImg} className="w-10 h-10 min-w-[40px] min-h-[40px] site-logo cursor-pointer" 
+        alt="userprofile"
+        onClick={login}/>
       </div>
     </nav>
-  )
-}
+  );
 }
 
 function CustomLink({ to, children, ...props }) {
@@ -43,5 +66,3 @@ function CustomLink({ to, children, ...props }) {
     </li>
   )
 }
-
-export default Navbar

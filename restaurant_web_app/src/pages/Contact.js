@@ -6,7 +6,7 @@ import Bounce from 'react-reveal/Bounce';
 export default function Contact() {
     return (
     <>
-    <section id="storeInfo">
+    <section id="storeInfo" >
       <Bounce>
         <div class="container2">
           <div class="storeInfo_wrapper">
@@ -48,7 +48,7 @@ export default function Contact() {
         </Bounce>
     </section>
 
-    <section id="form">
+    <section id="form" className="pb-20">
       <Fade bottom>
         <div class="container2">
           <h3 class="form_title">Contact</h3>
@@ -74,7 +74,7 @@ export default function Contact() {
                 <label for="message">Message</label>
                 <textarea name="Message" id="message" cols="30" rows="10" required></textarea>
               </div>
-              <button type="submit" class="btn-bg">Send</button>
+              <button type="submit" className="btn-bg">Send</button>
             </form>
           </div>
         </div>
