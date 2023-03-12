@@ -92,7 +92,7 @@ export default function Navbar() {
               animate={{opacity: 1, scale: 1}}
               exit={{opacity: 0, scale: 0.6}}
               className="w-44 bg-gradient-to-tr from-seagull-300 to-[#67e8f9]  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
-            absolute top-12 px-4 py2 z-50 items-center font-body">
+            absolute top-12 -right-16 px-4 py2 z-50 items-center font-body">
               {user && user.email === "edarius123@gmail.com" && (
               <>
                 <Link to="/newitem"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105">New Item <MdAdd /></p></Link>
