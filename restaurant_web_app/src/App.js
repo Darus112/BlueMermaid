@@ -20,8 +20,8 @@ function App() {
   return (
     <>
     <AnimatePresence>
+    <Navbar />
       <div className="container">
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />

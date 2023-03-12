@@ -250,7 +250,7 @@
 	padding: 1.2rem;
 	padding-top: 5rem;
 	border-radius: 12px;
-	width: 30%;
+	width: 200px;
 	margin: 0 auto;
 	text-align: left;
 	box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
@@ -339,15 +339,7 @@
 		margin-bottom: 1.5rem;
 	}
 }
-@media only screen and (max-width: 300px) {
-	.ourSpecials__left {
-		flex-wrap: wrap;
-		gap: 10rem;
-	}
-	.ourSpecials__item {
-		width: 100%;
-	}
-}
+
 /* end special section */
 
 /* why us section */

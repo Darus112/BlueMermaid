@@ -44,7 +44,7 @@ export default function Home() {
 
       <section id="storeInfo">
       <Bounce>
-        <div className="container2">
+        <div className="">
           <div className="storeInfo_wrapper">
             <div className="storeInfo_item">
               <div className="storeInfo_icon">
@@ -86,7 +86,7 @@ export default function Home() {
 
       <section id="ourSpecials">
       <Fade bottom>
-        <div className="container2">
+        <div className="flex justify-center items-center mx-64">
           <div className="ourSpecials__wrapper">
             <div className="ourSpecials__left">
               <div className="ourSpecials__item">

@@ -8,7 +8,6 @@ export default function Contact() {
     <>
     <section id="storeInfo" >
       <Bounce>
-        <div className="container2">
           <div className="storeInfo_wrapper">
             <div className="storeInfo_item">
               <div className="storeInfo_icon">
@@ -44,7 +43,6 @@ export default function Contact() {
               </p>
             </div>
           </div>
-        </div>
         </Bounce>
     </section>
 
@@ -52,7 +50,7 @@ export default function Contact() {
       <Fade bottom>
         <div className="container2">
           <h3 className="form_title">Contact</h3>
-          <div className="form_wrapper">
+          <div className="form_wrapper mr-14">
             <form name="contact" method="POST" netlify="true">
               <div className="form_group">
                 <label htmlFor="firstName">First Name</label>

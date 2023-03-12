@@ -14,14 +14,6 @@
     margin: 0 auto;
   }
   
-  .nav {
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 2rem;
-    padding: 1rem 0;
-  }
   
   .site-logo {
     transition: all 300ms;
@@ -32,22 +24,10 @@
   }
   
   .nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+
     font-family: 'Poppins', sans-serif;
   }
   
-  .nav a {
-    color: inherit;
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: .25rem;
-  }
   
   .nav li.active {
     color: #7fbde7;
@@ -81,29 +61,4 @@ a.btn-primary {
 
 .nav__bgOverlay {
 	display: none;
-}
-
-@media screen and (max-width: 768px) {
-  #nav_list {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: fixed;
-    right: -400px;
-    top: 90px;
-    width: 300px;
-    height: 100vh;
-    background-color: #ffffff;
-    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3);
-    z-index:1;
-  }
-
- 
-
-  #nav_list li {
-    padding-left: 20px;
-  }
-
 }

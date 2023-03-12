@@ -8,7 +8,7 @@ export default function BookTable() {
       <Bounce>
         <div className="container2">
           <h3 className="form_title">Rezervare</h3>
-          <div className="form_wrapper">
+          <div className="form_wrapper mr-14">
             <form name="booking" method="POST" netlify="true">
               <div className="form_group">
                 <label htmlFor="firstName">First Name</label>
