@@ -431,3 +431,12 @@
 	}
 }
 /* end why us section */
+
+.topdishes_title {
+	text-align: left;
+    font-family: 'Dosis', sans-serif;
+	font-weight: 600;
+	font-size: 1.8rem;
+	margin-bottom: 1.5rem;
+	color: black;
+}

@@ -53,9 +53,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="nav z-50 w-screen bg-transparent p-3 px-1 md:p-6 md:px-16">
+    <nav className="nav z-50 w-screen p-3 px-1 md:p-6 md:px-16
+    bg-gradient-to-t from-[#ffffff] to-[#d2f2f7]">
       {/* desktop */}
-      <div className="hidden md:flex w-full h-full items-center justify-between">
+      <div className="hidden md:flex w-full h-full items-center justify-between ">
         <Link to="/" className="site-logo flex items-center gap-2 ml-14">
           <img src={LogoImg} className="w-10 object-cover" alt="logo" />
         </Link>
@@ -68,7 +69,7 @@ export default function Navbar() {
           <CustomLink to="/menu">Meniu</CustomLink>
           <CustomLink className="order-img relative flex items-center justify-center" to="/comenzi">
             <i className="fa fa-bag-shopping"/>
-            <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-seagull-300 to-[#67e8f9]
+            <div className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
               ml-1 mb-5 flex items-center justify-center">
               <p className="text-xs">2</p>
             </div>
@@ -95,10 +96,10 @@ export default function Navbar() {
             absolute top-12 -right-16 px-4 py2 z-50 items-center font-body">
               {user && user.email === "edarius123@gmail.com" && (
               <>
-                <Link to="/newitem"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105">New Item <MdAdd /></p></Link>
-                <Link to="/seeorders"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105">Comenzi <MdOutlineBorderColor /></p></Link>
-                <Link to="/seebooktable"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105">Rezervari <AiOutlineBook/></p></Link>
-                <Link to="/seecontact"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105">Contact <RiContactsLine/></p></Link>
+                <Link to="/newitem"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105" onClick={() => setIsMenu(false)}>New Item <MdAdd /></p></Link>
+                <Link to="/seeorders"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105" onClick={() => setIsMenu(false)}>Comenzi <MdOutlineBorderColor /></p></Link>
+                <Link to="/seebooktable"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105" onClick={() => setIsMenu(false)}>Rezervari <AiOutlineBook/></p></Link>
+                <Link to="/seecontact"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105" onClick={() => setIsMenu(false)}>Contact <RiContactsLine/></p></Link>
               </>
               )}
               <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105
@@ -110,7 +111,7 @@ export default function Navbar() {
       </div>
       {/* mobile */}
       <div className="flex items-center justify-between md:hidden w-full h-full">
-        <Link to="/" className="site-logo flex items-center gap-2 ml-14">
+        <Link to="/" className="site-logo flex items-center gap-2 ml-14" onClick={() => setShowNav(false)}>
           <img src={LogoImg} className="w-10 object-cover" alt="logo" />
         </Link>
         <div className="relative items-center justify-center flex mr-14">
@@ -131,10 +132,10 @@ export default function Navbar() {
             absolute top-12 px-4 py2 z-50 items-center font-body">
               {user && user.email === "edarius123@gmail.com" && (
               <>
-                <Link to="/newitem"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105">New Item <MdAdd /></p></Link>
-                <Link to="/seeorders"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105">Comenzi <MdOutlineBorderColor /></p></Link>
-                <Link to="/seebooktable"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105">Rezervari <AiOutlineBook/></p></Link>
-                <Link to="/seecontact"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105">Contact <RiContactsLine/></p></Link>
+                <Link to="/newitem"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105" onClick={() => setIsMenu(false)}>New Item <MdAdd /></p></Link>
+                <Link to="/seeorders"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105" onClick={() => setIsMenu(false)}>Comenzi <MdOutlineBorderColor /></p></Link>
+                <Link to="/seebooktable"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105" onClick={() => setIsMenu(false)}>Rezervari <AiOutlineBook/></p></Link>
+                <Link to="/seecontact"><p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105" onClick={() => setIsMenu(false)}>Contact <RiContactsLine/></p></Link>
               </>
               )}
               <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105
@@ -154,18 +155,18 @@ export default function Navbar() {
             className="w-44  bg-gradient-to-tr from-[#bbe0eb] to-[#ffffff] shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
             absolute top-12 right-0 px-4 py-8 z-50 items-center font-body">
               <ul className="flex flex-col items-center gap-8">
-                <CustomLink to="/">Home</CustomLink>
-                <CustomLink to="/menu">Meniu</CustomLink>
-                <CustomLink className="order-img relative flex items-center justify-center" to="/comenzi">
+                <CustomLink to="/" onClick={() => setShowNav(false)}>Home</CustomLink>
+                <CustomLink to="/menu" onClick={() => setShowNav(false)}>Meniu</CustomLink>
+                <CustomLink className="order-img relative flex items-center justify-center" to="/comenzi" onClick={() => setShowNav(false)}>
                   <i className="fa fa-bag-shopping"/>
                   <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-seagull-300 to-[#67e8f9]
                     ml-1 mb-5 flex items-center justify-center">
                     <p className="text-xs">2</p>
                   </div>
                 </CustomLink>
-                <CustomLink to="/about">Despre</CustomLink>
-                <CustomLink to="/contact">Contact</CustomLink>
-                <CustomLink to="/booktable">Rezervare</CustomLink>
+                <CustomLink to="/about" onClick={() => setShowNav(false)}>Despre</CustomLink>
+                <CustomLink to="/contact" onClick={() => setShowNav(false)}>Contact</CustomLink>
+                <CustomLink to="/booktable" onClick={() => setShowNav(false)}>Rezervare</CustomLink>
               </ul>
             </motion.div>
           )}

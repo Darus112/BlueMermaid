@@ -7,6 +7,8 @@ import foodSpecial2 from "../assets/Food/food-3.png"
 import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce';
 
+import FoodContainer from "../components/FoodContainer";
+
 
 export default function Home() {
     return (
@@ -88,7 +90,7 @@ export default function Home() {
       <Fade bottom>
         <div className="flex justify-center items-center mx-64">
           <div className="ourSpecials__wrapper">
-            <div className="ourSpecials__left">
+            <div className="ourSpecials__left ml-20">
               <div className="ourSpecials__item">
                 <div className="ourSpecials__item__img">
                 <img src={foodSpecial2} height={200} width={250}/>
@@ -122,7 +124,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="ourSpecials__right">
+            <div className="ourSpecials__right mr-20">
               <h2 className="ourSpecials__title">
                 Our Specials
               </h2>
@@ -135,6 +137,17 @@ export default function Home() {
           </div>
         </div>     
          </Fade>
+      </section>
+
+      <section className="my-32 text-left">
+        <Fade bottom>
+          <div className="">
+            <h2 className="topdishes_title text-4xl">Top dishes</h2>
+            <div className="gap-8 grid lg:grid-cols-2 md:grid-cols-1">
+            <FoodContainer />
+            </div>
+          </div>
+        </Fade>
       </section>
 
       <section id="whyUs">
