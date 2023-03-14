@@ -26,7 +26,8 @@ module.exports = {
     },
     fontFamily: {
       body: ['Poppins'],
-      food: ['Raleway']
+      food: ['Raleway'],
+      content: ['Dosis']
     }
   },
   plugins: [],
