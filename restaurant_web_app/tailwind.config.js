@@ -30,5 +30,7 @@ module.exports = {
       content: ['Dosis']
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }

@@ -1,24 +1,63 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
-export default function RowContainer({flag}) {
+import { BsBasket3Fill } from "react-icons/bs"
+
+import { motion } from "framer-motion";
+
+export default function RowContainer({flag, data, scrollValue}) {
+
+  const rowContainer = useRef();
+  useEffect(() => {
+    rowContainer.current.scrollLeft += scrollValue;
+  }, [scrollValue])
+
   return (
     <>
-    <div className={`w-full my-12 flex ${
-        flag ? 'overflow-x-scroll' : 'overflow-hidden'
+    <div 
+      ref={rowContainer}
+      className={`w-full my-12 flex items-center gap-8 px-4 scroll-smooth
+      bg-gradient-to-l from-transparent via-seagull-300 to-transparent ${
+        flag ? 'overflow-x-scroll scrollbar-none' : 'overflow-hidden flex-wrap'
     }`}>
-        <div 
-            className="w-72 md:w-80 h-auto bg-seagull-100 shadow-[0_3px_10px_rgb(0,0,0,0.2)] 
-            backdrop-blur-lg">
-                <div className='w-full flex items-center justify-between'>
-                    <img 
-                    src="https://firebasestorage.googleapis.com/v0/b/restaurant-website-60f84.appspot.com/o/Images%2F1678805218151-event-weedings.png?alt=media&token=9d03e576-e9dc-43a1-bc22-a9bd24590512" 
-                    alt='sa' 
-                    className='w-40'/>
-                    <div className='w-8 h-8 rounded-full bg-gradient-to-tr from-seagull-300 to-[#67e8f9]'>
-
+      {data && data.map(item => (
+                <div 
+                key={item?.id}
+                className="h-[250px]  w-72 min-w-[288px] md:w-96 md:min-w-[384px] my-12 bg-seagull-100 
+                shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-lg rounded-lg p-3
+                hover:bg-seagull-200 flex flex-col items-center justify-between">
+                    <div className='w-full flex items-center justify-between'>
+                        <motion.img 
+                          whileHover={{scale : 1.1}}
+                          src={item?.imageURL}
+                          alt='food' 
+                          className='w-44 -mt-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg'/>
+                        <motion.div 
+                          whileTap={{scale : 0.75}}
+                          className='w-8 h-8 rounded-full bg-gradient-to-tr from-seagull-300 to-[#67e8f9]
+                          hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] flex items-center justify-center 
+                          cursor-pointer '>
+                            <BsBasket3Fill className='text-white'/>
+                        </motion.div>
+                    </div>
+    
+                    <div className='w-full flex flex-col gap-1 items-end justify-end'>
+                      <p className='text-bold font-food text-base md:text-xl'>
+                        {item?.title}
+                      </p>
+                      <motion.p
+                        whileHover={{scale : 1.1}} 
+                        className='font-food mt-1 text-[#a9b1b3] font-bold text-sm
+                        cursor-pointer'>
+                          Ingredients
+                      </motion.p>
+                      <div className='flex items-center gap-8'>
+                        <p className='text-lg font-food text-price font-bold'>
+                          <span className='text-seagull-400'>$</span>{item?.price}
+                        </p>
+                      </div>
                     </div>
                 </div>
-            </div>
+      ))}
     </div>
     </>
   );

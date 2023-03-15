@@ -1,16 +1,30 @@
 import "./styles/Menu.css";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 import RowContainer from "../components/RowContainer";
+import { useStateValue } from "../context/StateProvider";
+
+import Fade from 'react-reveal/Fade';
+import Bounce from 'react-reveal/Bounce';
 
 
 export default function Menu() {
+
+    const [{foodItems}, dispatch] = useStateValue();
+
+    const [scrollValue, setScrollValue] = useState(0)
+
+    useEffect(() => {}, [scrollValue]);
+
     return(
       <>
       <div className="mt-20 ">
+        <Bounce>
         <h2 className="font-content text-4xl font-black text-left">Explore our menu</h2>
+        </Bounce>
+        <Fade left>
         <section className="w-full mt-12">
           <div className="w-full flex items-center justify-between ">
             <p 
@@ -26,21 +40,30 @@ export default function Menu() {
                 whileTap={{scale : 0.75}}
                 className="w-8 h-8 rounded-lg bg-[#8DEBFF] hover:bg-seagull-300 
                 cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg
-                flex items-center justify-center">
+                flex items-center justify-center"
+                onClick={() => setScrollValue(-200)}
+              >
                 <MdChevronLeft className="text-xl text-white"/>
               </motion.div>
               <motion.div 
                 whileTap={{scale : 0.75}}
                 className="w-8 h-8 rounded-lg bg-[#8DEBFF] hover:bg-seagull-300 
                 cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg
-                flex items-center justify-center">
+                flex items-center justify-center"
+                onClick={() => setScrollValue(200)}
+                >
                 <MdChevronRight className="text-xl text-white"/>
               </motion.div>
             </div>
           </div>
 
-          <RowContainer flag={true} />
+          <RowContainer 
+            scrollValue={scrollValue}
+            flag={true} 
+            data ={foodItems?.filter(n => n.category === "specials")}
+          />
         </section>
+        </Fade>
       </div>
       </>
     )
