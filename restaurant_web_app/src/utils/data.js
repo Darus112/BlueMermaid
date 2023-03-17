@@ -30,12 +30,15 @@ export const foodData = [
     },
 ]
 
-export const categories = [
+export const specials = [
     {
         id : 1,
         name : "Our specials",
         urlParamName : "specials",
-    },
+    }
+]
+
+export const categories = [
     {
         id : 2,
         name : "Breakfast",
@@ -51,4 +54,5 @@ export const categories = [
         name : "Dinner",
         urlParamName : "dinner",
     },
+    
 ]

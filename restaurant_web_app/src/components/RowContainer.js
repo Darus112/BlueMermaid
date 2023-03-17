@@ -1,20 +1,46 @@
 import React, { useEffect, useRef } from 'react'
 
 import { BsBasket3Fill } from "react-icons/bs"
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 import { motion } from "framer-motion";
 
-export default function RowContainer({flag, data, scrollValue}) {
+export default function RowContainer({flag, data}) {
 
-  const rowContainer = useRef();
-  useEffect(() => {
-    rowContainer.current.scrollLeft += scrollValue;
-  }, [scrollValue])
+  const slideLeft = () => {
+    var slider = document.getElementById('slider')
+    slider.scrollLeft = slider.scrollLeft - 500
+  }
+
+  const slideRight = () => {
+    var slider = document.getElementById('slider')
+    slider.scrollLeft = slider.scrollLeft + 500
+  }
 
   return (
     <>
+      <div className=" hidden md:flex gap-3 items-center mr-12 justify-end">
+        <motion.div 
+          whileTap={{scale : 0.75}}
+          className="w-8 h-8 rounded-lg bg-[#8DEBFF] hover:bg-seagull-300 
+          cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg
+          flex items-center justify-center"
+          onClick={slideLeft}
+        >
+          <MdChevronLeft className="text-xl text-white"/>
+        </motion.div>
+        <motion.div 
+          whileTap={{scale : 0.75}}
+          className="w-8 h-8 rounded-lg bg-[#8DEBFF] hover:bg-seagull-300 
+          cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg
+          flex items-center justify-center"
+          onClick={slideRight}
+        >
+          <MdChevronRight className="text-xl text-white"/>
+        </motion.div>
+      </div>
     <div 
-      ref={rowContainer}
+      id='slider'
       className={`w-full my-12 flex items-center gap-8 px-4 scroll-smooth
       bg-gradient-to-l from-transparent via-seagull-300 to-transparent ${
         flag ? 'overflow-x-scroll scrollbar-none' : 'overflow-hidden flex-wrap'

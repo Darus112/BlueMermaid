@@ -7,7 +7,7 @@ import { BsFillCloudUploadFill } from "react-icons/bs"
 import { AiFillDelete } from "react-icons/ai"
 import { MdPriceChange } from "react-icons/md"
 
-import { categories } from "../../utils/data";
+import { categories, specials } from "../../utils/data";
 import Loader from "../../components/Loader";
 import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../firebase.config";
@@ -125,7 +125,7 @@ export default function NewItem() {
       setTitle("");
       setImageAsset(null);
       setPrice("");
-      setCategory("Select category");
+      setCategory("");
     };
 
     const fetchData = async () => {
@@ -176,7 +176,17 @@ export default function NewItem() {
                 cursor-pointer font-body">
                   <option 
                     value="" 
-                    className="bg-white ">Select category</option>
+                    className="bg-white ">
+                    Select category
+                  </option>
+                  {specials && specials.map(item => (
+                    <option 
+                      key={item.id} 
+                      className="text-base border-0 outline-none capitalize bg-white text-seagull-900"
+                      value={item.urlParamName}>
+                      {item.name}
+                    </option>
+                  ))}
                   {categories && categories.map(item => (
                     <option 
                       key={item.id} 

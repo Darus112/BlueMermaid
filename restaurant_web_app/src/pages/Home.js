@@ -7,7 +7,7 @@ import foodSpecial2 from "../assets/Food/food-3.png"
 import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce';
 
-import FoodContainer from "../components/FoodContainer";
+import FoodContainer from "../components/TopContainer";
 
 
 export default function Home() {

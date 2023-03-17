@@ -1,9 +1,10 @@
 import "./styles/Menu.css";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+
 
 import RowContainer from "../components/RowContainer";
+import MenuContainer from "../components/MenuContainer";
 import { useStateValue } from "../context/StateProvider";
 
 import Fade from 'react-reveal/Fade';
@@ -29,32 +30,13 @@ export default function Menu() {
           <div className="w-full flex items-center justify-between ">
             <p 
               className="font-content text-2xl font-extrabold text-left relative
-              before:absolute before:content before:w-32 before:h-1
+              before:absolute before:content before:w-16 before:h-1
               before:-bottom-2 before:left-0 before:bg-gradient-to-tr from-seagull-300 
               to-[#8DEBFF] transition-all ease-in-out duration-100">
               Our Specials
             </p>
 
-            <div className=" hidden md:flex gap-3 items-center mr-12">
-              <motion.div 
-                whileTap={{scale : 0.75}}
-                className="w-8 h-8 rounded-lg bg-[#8DEBFF] hover:bg-seagull-300 
-                cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg
-                flex items-center justify-center"
-                onClick={() => setScrollValue(-200)}
-              >
-                <MdChevronLeft className="text-xl text-white"/>
-              </motion.div>
-              <motion.div 
-                whileTap={{scale : 0.75}}
-                className="w-8 h-8 rounded-lg bg-[#8DEBFF] hover:bg-seagull-300 
-                cursor-pointer transition-all duration-100 ease-in-out hover:shadow-lg
-                flex items-center justify-center"
-                onClick={() => setScrollValue(200)}
-                >
-                <MdChevronRight className="text-xl text-white"/>
-              </motion.div>
-            </div>
+
           </div>
 
           <RowContainer 
@@ -64,6 +46,8 @@ export default function Menu() {
           />
         </section>
         </Fade>
+
+        <MenuContainer />
       </div>
       </>
     )
