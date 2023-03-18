@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-
 
 import RowContainer from "../components/RowContainer";
 import MenuContainer from "../components/MenuContainer";
@@ -14,9 +12,6 @@ export default function Menu() {
 
     const [{foodItems}, dispatch] = useStateValue();
 
-    const [scrollValue, setScrollValue] = useState(0)
-
-    useEffect(() => {}, [scrollValue]);
 
     return(
       <>
@@ -39,7 +34,6 @@ export default function Menu() {
           </div>
 
           <RowContainer 
-            scrollValue={scrollValue}
             flag={true} 
             data ={foodItems?.filter(n => n.category === "specials")}
           />

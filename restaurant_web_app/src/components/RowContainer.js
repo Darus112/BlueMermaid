@@ -1,21 +1,39 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { BsBasket3Fill } from "react-icons/bs"
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 import { motion } from "framer-motion";
+import { useStateValue } from '../context/StateProvider';
+import { actionType } from '../context/reducer';
 
 export default function RowContainer({flag, data}) {
+
+  const [{ cartItems }, dispatch] = useStateValue();
+
+  const [items, setItems] = useState([]);
+
+  const addToCart = () => {
+    dispatch({
+      type: actionType.SET_CARTITEMS,
+      cartItems: items,
+    });
+    localStorage.setItem("cartItems", JSON.stringify(items));
+  };
+
+  useEffect(() => {
+    addToCart();
+  }, [items]);
 
   const slideLeft = () => {
     var slider = document.getElementById('slider')
     slider.scrollLeft = slider.scrollLeft - 500
-  }
+  };
 
   const slideRight = () => {
     var slider = document.getElementById('slider')
     slider.scrollLeft = slider.scrollLeft + 500
-  }
+  };
 
   return (
     <>
@@ -42,15 +60,18 @@ export default function RowContainer({flag, data}) {
     <div 
       id='slider'
       className={`w-full my-12 flex items-center gap-8 px-4 scroll-smooth
-      bg-gradient-to-l from-transparent via-seagull-300 to-transparent ${
+      bg-gradient-to-l from-transparent via-seagull-300 to-transparent 
+      shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-[2rem] ${
         flag ? 'overflow-x-scroll scrollbar-none' : 'overflow-hidden flex-wrap'
     }`}>
-      {data && data.map(item => (
+      {data && 
+      data.length > 0 &&
+      data.map((item) => (
                 <div 
                 key={item?.id}
                 className="h-[250px]  w-72 min-w-[288px] md:w-96 md:min-w-[384px] my-12 bg-seagull-100 
                 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-lg rounded-lg p-3
-                hover:bg-seagull-200 flex flex-col items-center justify-between">
+                hover:bg-seagull-200 flex flex-col items-center justify-between ">
                     <div className='w-full flex items-center justify-between'>
                         <motion.img 
                           whileHover={{scale : 1.1}}
@@ -61,7 +82,8 @@ export default function RowContainer({flag, data}) {
                           whileTap={{scale : 0.75}}
                           className='w-8 h-8 rounded-full bg-gradient-to-tr from-seagull-300 to-[#67e8f9]
                           hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] flex items-center justify-center 
-                          cursor-pointer '>
+                          cursor-pointer'
+                          onClick={() => setItems([...cartItems, item])}>
                             <BsBasket3Fill className='text-white'/>
                         </motion.div>
                     </div>
@@ -72,7 +94,6 @@ export default function RowContainer({flag, data}) {
                       </p>
                       <motion.p
                         whileTap={{scale : 0.75}}
-                        whileHover={{scale : 1.1}} 
                         className='font-food mt-1 text-[#a9b1b3] font-bold text-sm
                         cursor-pointer'>
                           Ingredients

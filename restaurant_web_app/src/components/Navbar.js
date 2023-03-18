@@ -21,7 +21,7 @@ export default function Navbar() {
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  const [{user}, dispatch] = useStateValue();
+  const [{user, cartItems}, dispatch] = useStateValue();
 
   const [isMenu, setIsMenu] = useState(false);
 
@@ -70,10 +70,12 @@ export default function Navbar() {
           <CustomLink to="/menu">Meniu</CustomLink>
           <CustomLink className="order-img relative flex items-center justify-center" to="/comenzi">
             <i className="fa fa-bag-shopping"/>
-            <div className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
-              ml-1 mb-5 flex items-center justify-center">
-              <p className="text-xs">2</p>
-            </div>
+            {cartItems && cartItems.length > 0 && (
+              <div className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+               ml-1 mb-5 flex items-center justify-center">
+                <p className="text-xs">{cartItems.length}</p>
+              </div>
+            )}
           </CustomLink>
           <CustomLink to="/about">Despre</CustomLink>
           <CustomLink to="/contact">Contact</CustomLink>
@@ -160,10 +162,12 @@ export default function Navbar() {
                 <CustomLink to="/menu" onClick={() => setShowNav(false)}>Meniu</CustomLink>
                 <CustomLink className="order-img relative flex items-center justify-center" to="/comenzi" onClick={() => setShowNav(false)}>
                   <i className="fa fa-bag-shopping"/>
-                  <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-seagull-300 to-[#67e8f9]
-                    ml-1 mb-5 flex items-center justify-center">
-                    <p className="text-xs">2</p>
-                  </div>
+                  {cartItems && cartItems.length > 0 && (
+                    <div className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+                     ml-1 mb-5 flex items-center justify-center">
+                      <p className="text-xs">{cartItems.length}</p>
+                    </div>
+                  )}
                 </CustomLink>
                 <CustomLink to="/about" onClick={() => setShowNav(false)}>Despre</CustomLink>
                 <CustomLink to="/contact" onClick={() => setShowNav(false)}>Contact</CustomLink>
