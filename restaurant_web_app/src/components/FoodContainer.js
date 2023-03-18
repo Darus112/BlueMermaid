@@ -15,7 +15,7 @@ export default function FoodContainer({flag, data}) {
           flag ? 'overflow-x-scroll scrollbar-none' : 'overflow-hidden flex-wrap'
       }`}>
         {data && data.map(item => (
-                  <div 
+                <div 
                   key={item?.id}
                   className="h-[250px]  w-72 min-w-[288px] md:w-96 md:min-w-[384px] my-14 bg-seagull-100 
                   shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-lg rounded-lg p-3
@@ -51,7 +51,7 @@ export default function FoodContainer({flag, data}) {
                           </p>
                         </div>
                       </div>
-                  </div>
+                </div>
         ))}
       </div>
       </>

@@ -71,6 +71,7 @@ export default function RowContainer({flag, data}) {
                         {item?.title}
                       </p>
                       <motion.p
+                        whileTap={{scale : 0.75}}
                         whileHover={{scale : 1.1}} 
                         className='font-food mt-1 text-[#a9b1b3] font-bold text-sm
                         cursor-pointer'>

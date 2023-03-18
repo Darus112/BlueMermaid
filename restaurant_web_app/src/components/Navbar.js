@@ -15,6 +15,7 @@ import { RiContactsLine } from "react-icons/ri"
 import { FaBars } from "react-icons/fa"
 import { useState } from "react";
 
+
 export default function Navbar() {
 
   const firebaseAuth = getAuth(app);
@@ -54,7 +55,7 @@ export default function Navbar() {
 
   return (
     <nav className="nav z-50 w-screen p-3 px-1 md:p-6 md:px-16
-    bg-gradient-to-t from-[#ffffff] to-[#d2f2f7]">
+    bg-gradient-to-t from-[#ffffff] to-[#d2f2f7] font-semibold">
       {/* desktop */}
       <div className="hidden md:flex w-full h-full items-center justify-between ">
         <Link to="/" className="site-logo flex items-center gap-2 ml-14">
