@@ -8,8 +8,8 @@ let items = [];
 
 export default function CartItem({item, setFlag, flag}) {
 
-    const [qty, setQty] = useState(item.qty)
     const [{ cartItems }, dispatch] = useStateValue();
+    const [qty, setQty] = useState(item.qty)
 
     const cartDispatch = () => {
         localStorage.setItem("cartItems", JSON.stringify(items));
@@ -49,7 +49,7 @@ export default function CartItem({item, setFlag, flag}) {
 
     useEffect(() => {
         items = cartItems;
-    }, [qty, items])
+    }, [qty, items]);
     
     
     return (

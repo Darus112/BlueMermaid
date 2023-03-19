@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useStateValue } from '../context/StateProvider';
 import { actionType } from '../context/reducer';
 
+
 export default function RowContainer({flag, data}) {
 
   const [{ cartItems }, dispatch] = useStateValue();
@@ -18,7 +19,7 @@ export default function RowContainer({flag, data}) {
       type: actionType.SET_CARTITEMS,
       cartItems: items,
     });
-    localStorage.setItem("cartItems", JSON.stringify(items));
+    window.localStorage.setItem("cartItems", JSON.stringify(items));
   };
 
   useEffect(() => {
