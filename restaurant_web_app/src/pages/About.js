@@ -27,7 +27,7 @@ export default function About() {
                 It's all started since 1998
               </p>
               <p className="ourStory_text">
-                Welcome to Shaif's Cuisine. We take pride in delivering warm, friendly service and creating mouth-watering
+                Welcome Darius to Shaif's Cuisine. We take pride in delivering warm, friendly service and creating mouth-watering
                 culinary delights for all. Using only the freshest locally sourced ingredients, we’ll ensure you have a
                 dining
                 experience to remember.<br></br>
