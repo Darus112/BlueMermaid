@@ -82,13 +82,21 @@ export default function Navbar() {
           <CustomLink className="btn btn-primary" to="/booktable">Rezervare</CustomLink>
         </motion.ul>
         <div className="relative items-center flex mr-14">
-          <motion.img 
+          <motion.div
           whileTap={{ scale: 0.6 }}
-          src={user ? user.photoURL : UserImg} 
-          className="w-10 h-10 min-w-[40px] min-h-[40px] site-logo cursor-pointer rounded-full
-          shadow-[0_3px_10px_rgb(0,0,0,0.2)]" 
-          alt="userprofile"
-          onClick={login}/>
+          whileHover={{ scale: 1.1 }}
+          className=" cursor-pointer"
+          onClick={login}>
+            <img 
+              src={user ? user.photoURL : UserImg} 
+              className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full
+              shadow-[0_3px_10px_rgb(0,0,0,0.2)]" 
+              alt="userprofile"/>
+              {!user && (
+            <p className="font-body">Login</p>
+              )}
+
+          </motion.div>
           {
             isMenu && (
             <motion.div 

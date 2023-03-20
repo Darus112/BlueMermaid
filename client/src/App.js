@@ -10,14 +10,17 @@ import NewItem from "./pages/admin/NewItem"
 import SeeOrders from "./pages/admin/SeeOrders"
 import SeeBookTable from "./pages/admin/SeeBookTable"
 import SeeContact from "./pages/admin/SeeContact"
+import Login from "./pages/Login";
+import Footer from "./components/Footer"
+
+import "./App.css"
 
 import { AnimatePresence } from "framer-motion";
-import { Route, Routes } from "react-router-dom"
-import Footer from "./components/Footer"
-import "./App.css"
+import { Route, Routes, useLocation } from "react-router-dom"
 import { useStateValue } from "./context/StateProvider";
 import { getAllFoodItems } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
+
 
 function App() {
   const [{ foodItems }, dispatch] = useStateValue();
@@ -35,12 +38,15 @@ function App() {
     fetchData();
   }, []);
 
+  const location = useLocation();
+
   return (
     <>
     <AnimatePresence>
-    <Navbar />
+      {location.pathname === '/login' ? null : <Navbar />}
       <div className="container">
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/comenzi" element={<Orders />} />
@@ -54,7 +60,7 @@ function App() {
         </Routes>
         </div>
         </AnimatePresence>
-        <Footer />
+        {location.pathname === '/login' ? null : <Footer />}
     </>
   )
 }
