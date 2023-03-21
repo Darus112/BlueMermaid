@@ -2,7 +2,6 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { app } from "../config/firebase.config";
 
 import LogoImg from "../assets/Img/logo.png";
 import UserImg from "../assets/Img/userImg.png";
@@ -16,30 +15,11 @@ import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Navbar() {
-  const firebaseAuth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-
   const [{ user, cartItems }, dispatch] = useStateValue();
-
   const [isMenu, setIsMenu] = useState(false);
-
   const [showNav, setShowNav] = useState(false);
-  const menu = () => setShowNav(!showNav);
 
-  const login = async () => {
-    if (!user) {
-      const {
-        user: { refreshToken, providerData },
-      } = await signInWithPopup(firebaseAuth, provider);
-      dispatch({
-        type: actionType.SET_USER,
-        user: providerData[0],
-      });
-      localStorage.setItem("user", JSON.stringify(providerData[0]));
-    } else {
-      setIsMenu(!isMenu);
-    }
-  };
+  const menu = () => setShowNav(!showNav);
 
   const logout = () => {
     setIsMenu(false);

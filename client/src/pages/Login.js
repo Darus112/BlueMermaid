@@ -2,22 +2,103 @@ import React, { useState } from "react";
 import Bounce from "react-reveal/Bounce";
 import Fade from "react-reveal/Fade";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { app } from "../config/firebase.config";
+
 import bgImg from "../assets/Img/bg_1.jpg";
 import LogoImg from "../assets/Img/logo.png";
 import LoginInput from "../components/LoginInput";
 import { buttonClick } from "../animation";
+import { validateUserJWTToken } from "../api";
 
 export default function Login() {
   const [userEmail, setUserEmail] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const firebaseAuth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const navigate = useNavigate();
+
+  const loginWithGoogle = async () => {
+    await signInWithPopup(firebaseAuth, provider).then((userCred) => {
+      firebaseAuth.onAuthStateChanged((cred) => {
+        if (cred) {
+          cred.getIdToken().then((token) => {
+            validateUserJWTToken(token).then((data) => {
+              console.log(data);
+            });
+            navigate("/", { replace: true });
+          });
+        }
+      });
+    });
+  };
+
+  const signUpWithEmailPass = async () => {
+    if (userEmail === "" || password === "" || confirmPassword === "") {
+      //alert message
+    } else {
+      if (password === confirmPassword) {
+        setUserEmail("");
+        setConfirmPassword("");
+        setPassword("");
+        await createUserWithEmailAndPassword(
+          firebaseAuth,
+          userEmail,
+          password
+        ).then((userCred) => {
+          firebaseAuth.onAuthStateChanged((cred) => {
+            if (cred) {
+              cred.getIdToken().then((token) => {
+                validateUserJWTToken(token).then((data) => {
+                  console.log(data);
+                });
+                navigate("/", { replace: true });
+              });
+            }
+          });
+        });
+      } else {
+        //alert message
+      }
+    }
+  };
+
+  const signInWithEmailPass = async () => {
+    if (userEmail !== "" && password !== "") {
+      await signInWithEmailAndPassword(firebaseAuth, userEmail, password).then(
+        (userCred) => {
+          firebaseAuth.onAuthStateChanged((cred) => {
+            if (cred) {
+              cred.getIdToken().then((token) => {
+                validateUserJWTToken(token).then((data) => {
+                  console.log(data);
+                });
+                navigate("/", { replace: true });
+              });
+            }
+          });
+        }
+      );
+    } else {
+      //alert message
+    }
+  };
 
   return (
     <div className="w-screen h-screen relative overflow-hidden flex items-center justify-center">
@@ -114,6 +195,7 @@ export default function Login() {
                 className="w-1/3 px-4 py-2 rounded-lg bg-[#f07878] 
               cursor-pointer font-body text-white
               shadow-lg hover:shadow-[#dd6f6f] text-xl border-none outline-none"
+                onClick={signUpWithEmailPass}
               >
                 SIGN UP
               </motion.button>
@@ -123,6 +205,7 @@ export default function Login() {
                 className="w-1/3 px-4 py-2 rounded-lg bg-[#f07878] 
               cursor-pointer font-body  text-white
               shadow-lg hover:shadow-[#dd6f6f] text-xl border-none outline-none"
+                onClick={signInWithEmailPass}
               >
                 SIGN IN
               </motion.button>
@@ -140,6 +223,7 @@ export default function Login() {
             className="flex items-center px-20 py-2 bg-white bg-opacity-60 
             cursor-pointer rounded-3xl gap-4 border-none outline-none mt-12
             justify-center shadow-lg hover:shadow-[#afafaf]"
+            onClick={loginWithGoogle}
           >
             <FcGoogle className="text-3xl" />
             <p className="capitalize font-body font-extralight">
