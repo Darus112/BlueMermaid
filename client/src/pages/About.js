@@ -12,8 +12,8 @@ export default function About() {
     <>
       <section id="ourStory">
         <div className="container2">
-          <div className="ourStory_wrapper mr-14">
-            <div className="ourStory_img ml-14">
+          <div className="ourStory_wrapper">
+            <div className="ourStory_img">
               <Fade left>
                 <img src={aboutImg1} />
               </Fade>

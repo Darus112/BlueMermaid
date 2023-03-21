@@ -1,94 +1,91 @@
 /* our story styles */
 .ourStory_wrapper {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-    font-family: 'Dosis', sans-serif;
-    text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Dosis", sans-serif;
+  text-align: left;
 }
 .ourStory_img {
-    margin-top: auto;
+  margin-top: auto;
 }
 .ourStory_img img {
-    border-radius: 15px;
-    box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
+  border-radius: 15px;
+  box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
 }
 .ourStory_title,
 .ourGoals_title {
-	font-size: 1.8rem;
-	font-weight: 600;
-	color: black;
-	margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1rem;
 }
 .ourStory_subtitle {
-	font-size: 1.4rem;
-	font-weight: 600;
-	color: black;
-	margin-bottom: 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 2rem;
 }
 .ourStory_text,
 .ourGoals_text {
-	font-size: 1.4rem;
-	line-height: 1.4em;
-	color: black;
+  font-size: 1.4rem;
+  line-height: 1.4em;
+  color: black;
 }
 @media only screen and (min-width: 968px) {
-	.ourStory_wrapper {
-		flex-direction: row;
-		gap: 3rem;
-	}
-	.ourStory_info {
-		flex: 1;
-	}
-	.ourStory_title,
-	.ourGoals_title {
-		font-size: 3.2rem;
-	}
-	.ourStory_subtitle {
-		font-size: 1.5rem;
-	}
-	.ourStory_text,
-	.ourGoals_text {
-		font-size: 1.4rem;
-		max-width: 800px;
-	}
+  .ourStory_wrapper {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .ourStory_title,
+  .ourGoals_title {
+    font-size: 3.2rem;
+  }
+  .ourStory_subtitle {
+    font-size: 1.5rem;
+  }
+  .ourStory_text,
+  .ourGoals_text {
+    font-size: 1.4rem;
+    max-width: 800px;
+  }
 }
 /* end our story styles */
 
-
 /* Our Goals Styles */
 .ourGoals_info {
-    font-family: 'Dosis', sans-serif;
-	text-align: left;
-	margin-bottom: 5rem;
+  font-family: "Dosis", sans-serif;
+  text-align: left;
+  margin-bottom: 5rem;
 }
 .ourGoals_imgs_wrapper img {
-	object-fit: cover;
-    border-radius: 15px;
-    box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: rgba(165, 157, 157, 0.5) 0px 8px 24px;
 }
 .ourGoals_imgs_wrapper {
-	max-width: 800px;
-	margin: 20rem auto;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-row: auto;
-	gap: 1rem;
+  max-width: 800px;
+  margin: 20rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row: auto;
+  gap: 1rem;
 }
 .ourGoals_img1 {
-	grid-row: 1/3;
+  grid-row: 1/3;
 }
 
 @media only screen and (min-width: 968px) {
-	.ourGoals_info {
-		text-align: center;
-	}
-	.ourGoals_imgs_wrapper {
-		gap: 2rem;
-	}
-	.ourGoals_text {
-		margin: 0 auto;
-	}
+  .ourGoals_info {
+    text-align: center;
+  }
+  .ourGoals_imgs_wrapper {
+    gap: 2rem;
+  }
+  .ourGoals_text {
+    margin: 0 auto;
+  }
 }
 /* end our goals styles */

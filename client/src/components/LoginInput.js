@@ -17,7 +17,7 @@ export default function LoginInput({
       {...fadeInOut}
       className={`flex items-center justify-center gap-4 rounded-lg
      bg-seagull-300 backdrop-blur-md bg-opacity-50 w-full px-4 py-2 
-      ${isFocus ? "shadow-md shadow-[#f5806c]" : "shadow-md"}`}
+      ${isFocus ? "shadow-md shadow-seagull-400" : "shadow-md"}`}
     >
       {icon}
       <input

@@ -85,7 +85,7 @@ export default function Home() {
         <Fade bottom>
           <div className="flex justify-center items-center mx-64">
             <div className="ourSpecials__wrapper">
-              <div className="ourSpecials__left ml-20">
+              <div className="ourSpecials__left">
                 <div className="ourSpecials__item">
                   <div className="ourSpecials__item__img">
                     <img src={foodSpecial2} height={200} width={250} />
@@ -117,7 +117,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="ourSpecials__right mr-20">
+              <div className="ourSpecials__right">
                 <h2 className="ourSpecials__title">Our Specials</h2>
                 <p className="ourSpecials__text">
                   All of our food is prepared daily at our restaurants to ensure

@@ -35,8 +35,7 @@ export default function Login() {
         <div
           className="flex flex-col items-center backdrop-blur-lg w-[680px] h-[900px] 
                 z-10 rounded-[3rem] shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-seagull-300 bg-opacity-20
-                p-4 px-4 py-12
-            "
+                p-4 px-4 py-12 mx-2"
         >
           {/* content box */}
           <div className="flex items-center justify-start gap-4 w-full ml-5">
@@ -114,7 +113,7 @@ export default function Login() {
                 {...buttonClick}
                 className="w-1/3 px-4 py-2 rounded-lg bg-[#f07878] 
               cursor-pointer font-body text-white
-              shadow-lg hover:shadow-[#bddde6] text-xl border-none outline-none"
+              shadow-lg hover:shadow-[#dd6f6f] text-xl border-none outline-none"
               >
                 SIGN UP
               </motion.button>
@@ -123,7 +122,7 @@ export default function Login() {
                 {...buttonClick}
                 className="w-1/3 px-4 py-2 rounded-lg bg-[#f07878] 
               cursor-pointer font-body  text-white
-              shadow-lg hover:shadow-[#bddde6] text-xl border-none outline-none"
+              shadow-lg hover:shadow-[#dd6f6f] text-xl border-none outline-none"
               >
                 SIGN IN
               </motion.button>
@@ -140,13 +139,14 @@ export default function Login() {
             {...buttonClick}
             className="flex items-center px-20 py-2 bg-white bg-opacity-60 
             cursor-pointer rounded-3xl gap-4 border-none outline-none mt-12
-            justify-center"
+            justify-center shadow-lg hover:shadow-[#afafaf]"
           >
             <FcGoogle className="text-3xl" />
             <p className="capitalize font-body font-extralight">
               Sign-in with Google
             </p>
           </motion.div>
+
           <Link to="/">
             <motion.p
               {...buttonClick}

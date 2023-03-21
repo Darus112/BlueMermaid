@@ -1,18 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-.container {
-  text-align: center;
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-}
-
 .site-logo {
   transition: all 300ms;
 }
