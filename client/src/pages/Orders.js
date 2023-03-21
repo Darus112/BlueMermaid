@@ -1,8 +1,8 @@
 import CartContainer from "../components/CartContainer";
-import Bounce from 'react-reveal/Bounce';
+import Bounce from "react-reveal/Bounce";
 
 export default function Orders() {
-  return ( 
+  return (
     <>
       <Bounce>
         <div className="flex items-center justify-center my-12">
@@ -10,5 +10,5 @@ export default function Orders() {
         </div>
       </Bounce>
     </>
-  )
-  }
+  );
+}

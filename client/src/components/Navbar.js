@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "../firebase.config";
 
-import LogoImg from "../assets/logo.png"
-import UserImg from "../assets/userImg.png"
+import LogoImg from "../assets/Img/logo.png"
+import UserImg from "../assets/Img/userImg.png"
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 
@@ -57,7 +57,7 @@ export default function Navbar() {
     <nav className="nav z-50 w-screen p-3 px-1 md:p-6 md:px-16
     bg-gradient-to-t from-[#ffffff] to-[#d2f2f7] font-semibold">
       {/* desktop */}
-      <div className="hidden md:flex w-full h-full items-center justify-between ">
+      <div className="hidden md:flex w-full h-full items-center justify-between gap-4">
         <Link to="/" className="site-logo flex items-center gap-2 ml-14">
           <img src={LogoImg} className="w-10 object-cover" alt="logo" />
         </Link>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { AiOutlineClear, AiOutlineMinus, AiOutlinePlus  } from "react-icons/ai"
 import { useStateValue } from "../context/StateProvider";
-import EmptyCart from "../assets/empty_cart.png";
+import EmptyCart from "../assets/Img/empty_cart.png";
 import CartItem from "./CartItem";
 import { useEffect, useState } from "react";
 import { actionType } from "../context/reducer";
