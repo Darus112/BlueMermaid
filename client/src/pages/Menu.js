@@ -1,13 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-
-import { useStateValue } from "../context/StateProvider";
+import React from "react";
 
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 
 export default function Menu() {
-  const [{ foodItems }, dispatch] = useStateValue();
-
   return (
     <>
       <div className="mt-20 ">

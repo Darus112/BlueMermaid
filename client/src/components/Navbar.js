@@ -1,20 +1,13 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
 import LogoImg from "../assets/Img/logo.png";
 import UserImg from "../assets/Img/userImg.png";
-import { useStateValue } from "../context/StateProvider";
 
-import { MdAdd, MdLogout, MdOutlineBorderColor } from "react-icons/md";
-import { AiOutlineBook } from "react-icons/ai";
-import { RiContactsLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 
 export default function Navbar() {
-  const [{ user, cartItems }, dispatch] = useStateValue();
   const [isMenu, setIsMenu] = useState(false);
   const [showNav, setShowNav] = useState(false);
 
@@ -43,14 +36,12 @@ export default function Navbar() {
             to="/comenzi"
           >
             <i className="fa fa-bag-shopping" />
-            {cartItems && cartItems.length > 0 && (
-              <div
-                className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+            <div
+              className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
                ml-1 mb-5 flex items-center justify-center"
-              >
-                <p className="text-xs">{cartItems.length}</p>
-              </div>
-            )}
+            >
+              <p className="text-xs">2</p>
+            </div>
           </CustomLink>
           <CustomLink to="/about">Despre</CustomLink>
           <CustomLink to="/contact">Contact</CustomLink>
@@ -66,12 +57,12 @@ export default function Navbar() {
               className=" cursor-pointer"
             >
               <img
-                src={user ? user.photoURL : UserImg}
+                src={UserImg}
                 className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full
               shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
                 alt="userprofile"
               />
-              {!user && <p className="font-body">Login</p>}
+              <p className="font-body">Login</p>
             </motion.div>
           </Link>
           {isMenu && (
@@ -81,50 +72,7 @@ export default function Navbar() {
               exit={{ opacity: 0, scale: 0.6 }}
               className="w-44 bg-gradient-to-tr from-seagull-300 to-[#67e8f9]  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
             absolute top-12 -right-16 px-4 py2 z-50 items-center font-body"
-            >
-              {user && user.email === "edarius123@gmail.com" && (
-                <>
-                  <Link to="/newitem">
-                    <p
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105"
-                      onClick={() => setIsMenu(false)}
-                    >
-                      New Item <MdAdd />
-                    </p>
-                  </Link>
-                  <Link to="/seeorders">
-                    <p
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105"
-                      onClick={() => setIsMenu(false)}
-                    >
-                      Comenzi <MdOutlineBorderColor />
-                    </p>
-                  </Link>
-                  <Link to="/seebooktable">
-                    <p
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105"
-                      onClick={() => setIsMenu(false)}
-                    >
-                      Rezervari <AiOutlineBook />
-                    </p>
-                  </Link>
-                  <Link to="/seecontact">
-                    <p
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105"
-                      onClick={() => setIsMenu(false)}
-                    >
-                      Contact <RiContactsLine />
-                    </p>
-                  </Link>
-                </>
-              )}
-              <p
-                className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105
-              rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] m-2 p-2"
-              >
-                Logout <MdLogout />
-              </p>
-            </motion.div>
+            ></motion.div>
           )}
         </div>
       </div>
@@ -145,12 +93,12 @@ export default function Navbar() {
               className=" cursor-pointer"
             >
               <img
-                src={user ? user.photoURL : UserImg}
+                src={UserImg}
                 className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full
               shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
                 alt="userprofile"
               />
-              {!user && <p className="font-body">Login</p>}
+              <p className="font-body">Login</p>
             </motion.div>
           </Link>
           {isMenu && (
@@ -160,50 +108,7 @@ export default function Navbar() {
               exit={{ opacity: 0, scale: 0.6 }}
               className="w-44 bg-gradient-to-tr from-seagull-300 to-[#67e8f9]  shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
             absolute top-12 px-4 py2 z-50 items-center font-body"
-            >
-              {user && user.email === "edarius123@gmail.com" && (
-                <>
-                  <Link to="/newitem">
-                    <p
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105"
-                      onClick={() => setIsMenu(false)}
-                    >
-                      New Item <MdAdd />
-                    </p>
-                  </Link>
-                  <Link to="/seeorders">
-                    <p
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105"
-                      onClick={() => setIsMenu(false)}
-                    >
-                      Comenzi <MdOutlineBorderColor />
-                    </p>
-                  </Link>
-                  <Link to="/seebooktable">
-                    <p
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105"
-                      onClick={() => setIsMenu(false)}
-                    >
-                      Rezervari <AiOutlineBook />
-                    </p>
-                  </Link>
-                  <Link to="/seecontact">
-                    <p
-                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105"
-                      onClick={() => setIsMenu(false)}
-                    >
-                      Contact <RiContactsLine />
-                    </p>
-                  </Link>
-                </>
-              )}
-              <p
-                className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105
-              rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] m-2 p-2"
-              >
-                Logout <MdLogout />
-              </p>
-            </motion.div>
+            ></motion.div>
           )}
         </div>
         <div className="relative items-center justify-center flex mr-14">
@@ -232,14 +137,13 @@ export default function Navbar() {
                   onClick={() => setShowNav(false)}
                 >
                   <i className="fa fa-bag-shopping" />
-                  {cartItems && cartItems.length > 0 && (
-                    <div
-                      className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+
+                  <div
+                    className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
                      ml-1 mb-5 flex items-center justify-center"
-                    >
-                      <p className="text-xs">{cartItems.length}</p>
-                    </div>
-                  )}
+                  >
+                    <p className="text-xs">2</p>
+                  </div>
                 </CustomLink>
                 <CustomLink to="/about" onClick={() => setShowNav(false)}>
                   Despre
