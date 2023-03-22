@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import RowContainer from "../components/RowContainer";
-import MenuContainer from "../components/MenuContainer";
 import { useStateValue } from "../context/StateProvider";
 
 import Fade from "react-reveal/Fade";
@@ -30,15 +28,8 @@ export default function Menu() {
                 Our Specials
               </p>
             </div>
-
-            <RowContainer
-              flag={true}
-              data={foodItems?.filter((n) => n.category === "specials")}
-            />
           </section>
         </Fade>
-
-        <MenuContainer />
       </div>
     </>
   );

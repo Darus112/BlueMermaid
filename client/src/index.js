@@ -3,18 +3,29 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./components/styles/Navbar.css";
 import "./index.css";
+
+import { AnimatePresence } from "framer-motion";
+
 import { BrowserRouter } from "react-router-dom";
 import { StateProvider } from "./context/StateProvider";
 import { initialState } from "./context/initialState";
-import reducer from "./context/reducer";
+
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import myReducers from "./context/reducers";
+
+const myStore = createStore(
+  myReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.Fragment>
     <BrowserRouter>
-      <StateProvider initialState={initialState} reducer={reducer}>
+      <Provider store={myStore}>
         <App />
-      </StateProvider>
+      </Provider>
     </BrowserRouter>
   </React.Fragment>
 );

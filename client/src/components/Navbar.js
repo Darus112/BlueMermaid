@@ -6,7 +6,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import LogoImg from "../assets/Img/logo.png";
 import UserImg from "../assets/Img/userImg.png";
 import { useStateValue } from "../context/StateProvider";
-import { actionType } from "../context/reducer";
 
 import { MdAdd, MdLogout, MdOutlineBorderColor } from "react-icons/md";
 import { AiOutlineBook } from "react-icons/ai";
@@ -20,16 +19,6 @@ export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
 
   const menu = () => setShowNav(!showNav);
-
-  const logout = () => {
-    setIsMenu(false);
-    localStorage.clear();
-
-    dispatch({
-      type: actionType.SET_USER,
-      user: null,
-    });
-  };
 
   return (
     <nav
@@ -132,7 +121,6 @@ export default function Navbar() {
               <p
                 className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105
               rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] m-2 p-2"
-                onClick={logout}
               >
                 Logout <MdLogout />
               </p>
@@ -212,7 +200,6 @@ export default function Navbar() {
               <p
                 className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:scale-105
               rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] m-2 p-2"
-                onClick={logout}
               >
                 Logout <MdLogout />
               </p>

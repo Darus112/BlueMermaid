@@ -19,7 +19,6 @@ import { storage } from "../../config/firebase.config";
 import { saveItem } from "../../utils/firebaseFunctions";
 import { useStateValue } from "../../context/StateProvider";
 import { getAllFoodItems } from "../../utils/firebaseFunctions";
-import { actionType } from "../../context/reducer";
 
 export default function NewItem() {
   const [title, setTitle] = useState("");
@@ -134,15 +133,6 @@ export default function NewItem() {
     setImageAsset(null);
     setPrice("");
     setCategory("");
-  };
-
-  const fetchData = async () => {
-    await getAllFoodItems().then((data) => {
-      dispatch({
-        type: actionType.SET_FOOD_ITEMS,
-        foodItems: data,
-      });
-    });
   };
 
   return (

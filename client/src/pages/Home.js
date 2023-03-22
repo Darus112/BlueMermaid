@@ -7,8 +7,6 @@ import foodSpecial2 from "../assets/Food/food-3.png";
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 
-import FoodContainer from "../components/TopContainer";
-
 export default function Home() {
   return (
     <>
@@ -137,9 +135,7 @@ export default function Home() {
         <Fade bottom>
           <div className="">
             <h2 className="topdishes_title text-4xl">Top dishes</h2>
-            <div className="gap-8 grid lg:grid-cols-2 md:grid-cols-1">
-              <FoodContainer />
-            </div>
+            <div className="gap-8 grid lg:grid-cols-2 md:grid-cols-1"></div>
           </div>
         </Fade>
       </section>
