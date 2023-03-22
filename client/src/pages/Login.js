@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
+import { setUserDetails } from "../context/actions/userActions";
 
 import {
   getAuth,
@@ -22,6 +23,7 @@ import LogoImg from "../assets/Img/logo.png";
 import LoginInput from "../components/LoginInput";
 import { buttonClick } from "../animation";
 import { validateUserJWTToken } from "../api";
+import { useDispatch } from "react-redux";
 
 export default function Login() {
   const [userEmail, setUserEmail] = useState("");
@@ -33,6 +35,15 @@ export default function Login() {
   const provider = new GoogleAuthProvider();
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // actions
+
+  // reducer
+
+  // store -> globalized
+
+  // dispatch
 
   const loginWithGoogle = async () => {
     await signInWithPopup(firebaseAuth, provider).then((userCred) => {
@@ -41,6 +52,7 @@ export default function Login() {
           cred.getIdToken().then((token) => {
             validateUserJWTToken(token).then((data) => {
               console.log(data);
+              dispatch(setUserDetails(data));
             });
             navigate("/", { replace: true });
           });

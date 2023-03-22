@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/Home.css";
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { Link } from "react-router-dom";
 import foodImg from "../assets/Food/food-4.png";
 import foodSpecial1 from "../assets/Food/food-1.png";
 import foodSpecial2 from "../assets/Food/food-3.png";
