@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Bounce from "react-reveal/Bounce";
 import Fade from "react-reveal/Fade";
 import { motion } from "framer-motion";
@@ -23,7 +23,8 @@ import LogoImg from "../assets/Img/logo.png";
 import LoginInput from "../components/LoginInput";
 import { buttonClick } from "../animation";
 import { validateUserJWTToken } from "../api";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { alertInfo, alertWarning } from "../context/actions/alertActions";
 
 export default function Login() {
   const [userEmail, setUserEmail] = useState("");
@@ -36,6 +37,15 @@ export default function Login() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user);
+  const alert = useSelector((state) => state.alert);
+
+  useEffect(() => {
+    if (user) {
+      navigate("/", { replace: true });
+    }
+  }, [user]);
 
   // actions
 
@@ -51,7 +61,6 @@ export default function Login() {
         if (cred) {
           cred.getIdToken().then((token) => {
             validateUserJWTToken(token).then((data) => {
-              console.log(data);
               dispatch(setUserDetails(data));
             });
             navigate("/", { replace: true });
@@ -64,6 +73,7 @@ export default function Login() {
   const signUpWithEmailPass = async () => {
     if (userEmail === "" || password === "" || confirmPassword === "") {
       //alert message
+      dispatch(alertInfo("Required fields shouldn't be empty"));
     } else {
       if (password === confirmPassword) {
         setUserEmail("");
@@ -78,7 +88,7 @@ export default function Login() {
             if (cred) {
               cred.getIdToken().then((token) => {
                 validateUserJWTToken(token).then((data) => {
-                  console.log(data);
+                  dispatch(setUserDetails(data));
                 });
                 navigate("/", { replace: true });
               });
@@ -87,6 +97,7 @@ export default function Login() {
         });
       } else {
         //alert message
+        dispatch(alertWarning("Password doesn't match"));
       }
     }
   };
@@ -99,7 +110,7 @@ export default function Login() {
             if (cred) {
               cred.getIdToken().then((token) => {
                 validateUserJWTToken(token).then((data) => {
-                  console.log(data);
+                  dispatch(setUserDetails(data));
                 });
                 navigate("/", { replace: true });
               });
@@ -109,6 +120,7 @@ export default function Login() {
       );
     } else {
       //alert message
+      dispatch(alertWarning("Password or Email incorect"));
     }
   };
 
