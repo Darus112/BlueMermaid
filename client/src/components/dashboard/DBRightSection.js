@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Fade from "react-reveal/Fade";
-import Bounce from "react-reveal/Bounce";
 
 import DBHeader from "./DBHeader";
 import DBHome from "./DBHome";
