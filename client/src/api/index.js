@@ -23,3 +23,25 @@ export const addNewProduct = async (data) => {
     return null;
   }
 };
+
+// get all products
+export const getAllProducts = async () => {
+  try {
+    const res = await axios.get(`${baseURL}/api/products/all`);
+    return res.data.data;
+  } catch (err) {
+    return null;
+  }
+};
+
+// delete a product
+export const deleteProduct = async (productId) => {
+  try {
+    const res = await axios.delete(
+      `${baseURL}/api/products/delete/${productId}`
+    );
+    return res.data.data;
+  } catch (err) {
+    return null;
+  }
+};

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { statuses } from "../../utils/styles";
 import { motion } from "framer-motion";
 import Bounce from "react-reveal/Bounce";
@@ -24,7 +24,8 @@ import {
 import { buttonClick } from "../../animation";
 import ProgressBar from "../ProgressBar";
 
-import { addNewProduct } from "../../api";
+import { addNewProduct, getAllProducts } from "../../api";
+import { setAllProducts } from "../../context/actions/productActions";
 
 export default function DBNewItem() {
   const [itemName, setItemName] = useState("");
@@ -86,7 +87,7 @@ export default function DBNewItem() {
   const submitNewData = () => {
     const data = {
       product_name: itemName,
-      priduct_category: category,
+      product_category: category,
       product_price: price,
       imageURL: imageDownloadURL,
     };
@@ -99,6 +100,9 @@ export default function DBNewItem() {
       setItemName("");
       setPrice("");
       setCategory(null);
+    });
+    getAllProducts().then((data) => {
+      dispatch(setAllProducts(data));
     });
   };
 
