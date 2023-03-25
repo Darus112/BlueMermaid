@@ -4,8 +4,6 @@ import App from "./App";
 import "./components/styles/Navbar.css";
 import "./index.css";
 
-import { AnimatePresence } from "framer-motion";
-
 import { BrowserRouter } from "react-router-dom";
 
 import { createStore } from "redux";

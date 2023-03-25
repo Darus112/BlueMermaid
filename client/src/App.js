@@ -58,6 +58,7 @@ function App() {
         </motion.div>
       )}
       {location.pathname === "/login" ||
+      location.pathname === "/dashboard" ||
       location.pathname === "/dashboard/home" ||
       location.pathname === "/dashboard/orders" ||
       location.pathname === "/dashboard/items" ||
@@ -81,6 +82,7 @@ function App() {
         </Routes>
       </div>
       {location.pathname === "/login" ||
+      location.pathname === "/dashboard" ||
       location.pathname === "/dashboard/home" ||
       location.pathname === "/dashboard/orders" ||
       location.pathname === "/dashboard/items" ||

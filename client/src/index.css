@@ -31,3 +31,11 @@ body {
 .circle {
   @apply w-4 h-4 my-12 mx-1 bg-seagull-500 rounded-full;
 }
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

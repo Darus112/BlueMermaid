@@ -4,19 +4,102 @@ import { motion } from "framer-motion";
 import Bounce from "react-reveal/Bounce";
 import SimpleLoader from "../SimpleLoader";
 
-import { RiUploadCloudFill } from "react-icons/ri";
+import { RiUploadCloudFill, RiDeleteBin7Line } from "react-icons/ri";
+import { FiSave } from "react-icons/fi";
+
+import {
+  deleteObject,
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
+import { storage } from "../../config/firebase.config";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  alertDanger,
+  alertNULL,
+  alertSucces,
+} from "../../context/actions/alertActions";
+import { buttonClick } from "../../animation";
+import ProgressBar from "../ProgressBar";
+
+import { addNewProduct } from "../../api";
 
 export default function DBNewItem() {
   const [itemName, setItemName] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setcategory] = useState(null);
+  const [category, setCategory] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(null);
   const [imageDownloadURL, setImageDownloadURL] = useState(null);
 
+  const alert = useSelector((state) => state.alert);
+  const dispatch = useDispatch();
+
   const uploadImage = (e) => {
     setIsLoading(true);
     const imageFile = e.target.files[0];
+    const storageRef = ref(storage, `Images/${Date.now()}_${imageFile.name}`);
+
+    const uploadTask = uploadBytesResumable(storageRef, imageFile);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        setProgress((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      },
+      (error) => {
+        dispatch(alertDanger(`Error : ${error} `));
+        setTimeout(() => {
+          dispatch(alertNULL());
+        }, 3000);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setImageDownloadURL(downloadURL);
+          setIsLoading(false);
+          setProgress(null);
+          dispatch(alertSucces("Image uploaded succesfully"));
+          setTimeout(() => {
+            dispatch(alertNULL());
+          }, 3000);
+        });
+      }
+    );
+  };
+
+  const deleteImageFromFirebase = () => {
+    setIsLoading(true);
+    const deleteRef = ref(storage, imageDownloadURL);
+
+    deleteObject(deleteRef).then(() => {
+      setImageDownloadURL(null);
+      setIsLoading(false);
+      dispatch(alertSucces("Image deleted succesfully"));
+      setTimeout(() => {
+        dispatch(alertNULL());
+      }, 3000);
+    });
+  };
+
+  const submitNewData = () => {
+    const data = {
+      product_name: itemName,
+      priduct_category: category,
+      product_price: price,
+      imageURL: imageDownloadURL,
+    };
+    addNewProduct(data).then((res) => {
+      dispatch(alertSucces("New item added"));
+      setTimeout(() => {
+        dispatch(alertNULL());
+      }, 3000);
+      setImageDownloadURL(null);
+      setItemName("");
+      setPrice("");
+      setCategory(null);
+    });
   };
 
   return (
@@ -40,7 +123,7 @@ export default function DBNewItem() {
                 <motion.p
                   whileTap={{ scale: 0.99 }}
                   whileHover={{ scale: 1.05 }}
-                  onClick={() => setcategory(data.category)}
+                  onClick={() => setCategory(data.category)}
                   key={data.id}
                   className={`px-4 py-3 rounded-lg text-sm border-none outline-none
              font-semibold cursor-pointer shadow-lg
@@ -69,6 +152,7 @@ export default function DBNewItem() {
             {isLoading ? (
               <div className="w-full h-full flex flex-col items-center justify-evenly px-24">
                 <SimpleLoader />
+                <ProgressBar variant="determinate" value={progress} />
               </div>
             ) : (
               <>
@@ -101,11 +185,44 @@ export default function DBNewItem() {
                     </label>
                   </>
                 ) : (
-                  <></>
+                  <>
+                    <div className="relative w-full h-full overflow-hidden rounded-md flex justify-center">
+                      <div className="flex items-center justify-center w-96">
+                        <motion.img
+                          whileHover={{ scale: 1.1 }}
+                          src={imageDownloadURL}
+                          className="object-cover rounded-[1rem] shadow-lg"
+                        />
+                      </div>
+                      <motion.button
+                        {...buttonClick}
+                        type="button"
+                        className="absolute top-3 right-3 p-3 rounded-full hover:shadow-lg
+                        bg-gradient-to-tr from-seagull-400 to-seagull-100"
+                        onClick={() =>
+                          deleteImageFromFirebase(imageDownloadURL)
+                        }
+                      >
+                        <RiDeleteBin7Line className="text-seagull-50 -rotate-0" />
+                      </motion.button>
+                    </div>
+                  </>
                 )}
               </>
             )}
           </div>
+
+          <motion.button
+            {...buttonClick}
+            className="w-32 py-4 rounded-xl bg-gradient-to-tr from-[#aace88] to-[#e2ecd9]
+            flex items-center justify-center gap-3 shadow-lg hover:shadow-[#aace88]"
+            onClick={submitNewData}
+          >
+            <FiSave className="text-2xl text-seagull-50" />
+            <p className="font-body font-medium text-lg text-seagull-50">
+              Save
+            </p>
+          </motion.button>
         </div>
       </div>
     </Bounce>

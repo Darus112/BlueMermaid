@@ -24,7 +24,12 @@ import LoginInput from "../components/LoginInput";
 import { buttonClick } from "../animation";
 import { validateUserJWTToken } from "../api";
 import { useDispatch, useSelector } from "react-redux";
-import { alertInfo, alertWarning } from "../context/actions/alertActions";
+import {
+  alertInfo,
+  alertWarning,
+  alertNULL,
+  alertSucces,
+} from "../context/actions/alertActions";
 
 export default function Login() {
   const [userEmail, setUserEmail] = useState("");
@@ -74,6 +79,9 @@ export default function Login() {
     if (userEmail === "" || password === "" || confirmPassword === "") {
       //alert message
       dispatch(alertInfo("Required fields shouldn't be empty"));
+      setTimeout(() => {
+        dispatch(alertNULL());
+      }, 3000);
     } else {
       if (password === confirmPassword) {
         setUserEmail("");
@@ -98,6 +106,9 @@ export default function Login() {
       } else {
         //alert message
         dispatch(alertWarning("Password doesn't match"));
+        setTimeout(() => {
+          dispatch(alertNULL());
+        }, 3000);
       }
     }
   };
@@ -121,6 +132,9 @@ export default function Login() {
     } else {
       //alert message
       dispatch(alertWarning("Password or Email incorect"));
+      setTimeout(() => {
+        dispatch(alertNULL());
+      }, 3000);
     }
   };
 
