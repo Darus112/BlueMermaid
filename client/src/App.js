@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { app } from "./config/firebase.config";
 import { getAuth } from "firebase/auth";
-import { validateUserJWTToken } from "./api";
+import { getAllUsers, validateUserJWTToken } from "./api";
 import { useDispatch, useSelector } from "react-redux";
 
 import { setUserDetails } from "./context/actions/userActions";
@@ -22,6 +22,7 @@ import { fadeInOut } from "./animation";
 import MainLoader from "./components/MainLoader";
 import Alert from "./components/Alert";
 import Dashboard from "./pages/Dashboard";
+import { setAllUserDetails } from "./context/actions/allUsersActions";
 
 function App() {
   const location = useLocation();
@@ -45,6 +46,16 @@ function App() {
         setIsLoadind(false);
       }, 3000);
     });
+  }, []);
+
+  const allUsers = useSelector((state) => state.allUsers);
+
+  useEffect(() => {
+    if (!allUsers) {
+      getAllUsers().then((data) => {
+        dispatch(setAllUserDetails(data));
+      });
+    }
   }, []);
 
   return (
