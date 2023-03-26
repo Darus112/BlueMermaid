@@ -10,33 +10,31 @@ import aboutImg4 from "../assets/About/ourGoals_img3.png";
 export default function About() {
   return (
     <>
-      <section id="ourStory">
-        <div className="container2">
-          <div className="ourStory_wrapper">
-            <div className="ourStory_img">
-              <Fade left>
-                <img src={aboutImg1} />
-              </Fade>
-            </div>
-            <Fade right>
-              <div className="ourStory_info">
-                <h3 className="ourStory_title">Our Story</h3>
-                <p className="ourStory_subtitle">It's all started since 1998</p>
-                <p className="ourStory_text">
-                  Welcome Darius to Shaif's Cuisine. We take pride in delivering
-                  warm, friendly service and creating mouth-watering culinary
-                  delights for all. Using only the freshest locally sourced
-                  ingredients, we’ll ensure you have a dining experience to
-                  remember.<br></br>
-                  Since 1998, we are the perfect place for a romantic meal for
-                  two, a catch-up with friends, family parties, business
-                  meetings, and bringing loved ones together. With comfortable
-                  surroundings, affordable prices, and seating for up to 65
-                  guests, we can cater for all occasions.
-                </p>
-              </div>
+      <section className="flex justify-center items-center mt-52">
+        <div className="ourStory_wrapper">
+          <div className="ourStory_img">
+            <Fade left>
+              <img src={aboutImg1} />
             </Fade>
           </div>
+          <Fade right>
+            <div className="ourStory_info">
+              <h3 className="ourStory_title">Our Story</h3>
+              <p className="ourStory_subtitle">It's all started since 1998</p>
+              <p className="ourStory_text">
+                Welcome Darius to Shaif's Cuisine. We take pride in delivering
+                warm, friendly service and creating mouth-watering culinary
+                delights for all. Using only the freshest locally sourced
+                ingredients, we’ll ensure you have a dining experience to
+                remember.<br></br>
+                Since 1998, we are the perfect place for a romantic meal for
+                two, a catch-up with friends, family parties, business meetings,
+                and bringing loved ones together. With comfortable surroundings,
+                affordable prices, and seating for up to 65 guests, we can cater
+                for all occasions.
+              </p>
+            </div>
+          </Fade>
         </div>
       </section>
 

@@ -48,16 +48,6 @@ function App() {
     });
   }, []);
 
-  const allUsers = useSelector((state) => state.allUsers);
-
-  useEffect(() => {
-    if (!allUsers) {
-      getAllUsers().then((data) => {
-        dispatch(setAllUserDetails(data));
-      });
-    }
-  }, []);
-
   return (
     <>
       {isLoadind && (
