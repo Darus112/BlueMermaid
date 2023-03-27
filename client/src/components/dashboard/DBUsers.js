@@ -21,7 +21,7 @@ export default function DBUsers() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center gap-4 pt-6 w-full mt-28">
+    <div className="flex items-center justify-center gap-4 pt-6 w-full mt-12">
       <DataTable
         columns={[
           {

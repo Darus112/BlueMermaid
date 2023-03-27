@@ -2,6 +2,7 @@ import React from "react";
 
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
+import Slider from "../components/Slider";
 
 export default function Menu() {
   return (
@@ -24,6 +25,7 @@ export default function Menu() {
                 Our Specials
               </p>
             </div>
+            <Slider />
           </section>
         </Fade>
       </div>

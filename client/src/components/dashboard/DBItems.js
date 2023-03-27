@@ -10,7 +10,7 @@ export default function DBItems() {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex items-center justify-center gap-4 pt-6  mt-28">
+    <div className="flex items-center justify-center gap-4 pt-6  mt-12">
       <DataTable
         columns={[
           {
@@ -19,7 +19,7 @@ export default function DBItems() {
             render: (rowData) => (
               <img
                 src={rowData.imageURL}
-                className="w-32 h-16 object-contain rounded-lg shadow-lg"
+                className="w-28 object-contain rounded-lg shadow-lg"
               />
             ),
           },

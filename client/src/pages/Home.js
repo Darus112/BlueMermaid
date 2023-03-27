@@ -1,9 +1,10 @@
 import React from "react";
 import "./styles/Home.css";
 import { Link } from "react-router-dom";
+
 import foodImg from "../assets/Food/food-4.png";
-import foodSpecial1 from "../assets/Food/food-1.png";
-import foodSpecial2 from "../assets/Food/food-3.png";
+import OurSpecialBg from "../assets/Img/Hero_bg.png";
+
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 
@@ -79,66 +80,33 @@ export default function Home() {
         </Bounce>
       </section>
 
-      <section id="ourSpecials">
-        <Fade bottom>
-          <div className="flex justify-center items-center mx-64">
-            <div className="ourSpecials__wrapper">
-              <div className="ourSpecials__left">
-                <div className="ourSpecials__item">
-                  <div className="ourSpecials__item__img">
-                    <img src={foodSpecial2} height={200} width={250} />
-                  </div>
-                  <h2 className="ourSpecials__item__title">
-                    Sweet Potato Fries Bowl
-                  </h2>
-                  <h3 className="ourSpecials__item__price">$18</h3>
-                  <p className="ourSpecials__item__text">
-                    These Sweet Potato Fries bowl are a glorious, messy plate of
-                    goodness. Crispy sweet potato fries loaded with lots of
-                    fresh summer vegetables and a lime ranch. By adding a
-                    seasoning blend with chipotle powder, garlic, and onion,
-                    these spicy sweet potato fries are full of flavor.
-                  </p>
-                </div>
-                <div className="ourSpecials__item">
-                  <div className="ourSpecials__item__img">
-                    <img src={foodSpecial1} height={200} width={250} />
-                  </div>
-                  <h2 className="ourSpecials__item__title">Vegan Salad bowl</h2>
-                  <h3 className="ourSpecials__item__price">$18</h3>
-                  <p className="ourSpecials__item__text">
-                    Vegan salad bowl are immensely satisfying with any
-                    combination of whole grains, pulses, noodles, raw or cooked
-                    fruits, and veggies all topped off with a delicious sauce or
-                    dressing – each bite is an explosion of flavors and
-                    textures.
-                  </p>
-                </div>
-              </div>
-              <div className="ourSpecials__right">
-                <h2 className="ourSpecials__title">Our Specials</h2>
-                <p className="ourSpecials__text">
-                  All of our food is prepared daily at our restaurants to ensure
-                  the highest quality, freshest meals are delivered to our
-                  customers
-                </p>
-                <Link to="./booktable" className="btn-bg">
-                  Book Table
-                </Link>
-              </div>
-            </div>
+      <section className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-40">
+        <div className="flex flex-col items-center justify-center gap-6">
+          <div className="flex flex-col items-start justify-start w-52">
+            <p className=" font-content text-[40px] md:text-[60px] font-semibold tracking-wide">
+              Our Specials
+            </p>
+            <p className=" font-content text-[20px] md:text-[30px]">
+              All of our food is prepared daily at our restaurants to ensure the
+              highest quality, freshest meals are delivered to our customers
+            </p>
+            <Link to="./booktable" className="btn-bg mt-3">
+              Book Table
+            </Link>
           </div>
-        </Fade>
+        </div>
+        <div className="py-2 flex-1 flex items-center justify-center relative">
+          <img
+            className="absolute -top-12 w-full h-420
+           md:w-auto md:h-650 rounded-3xl shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+            src={OurSpecialBg}
+            alt=""
+          />
+          <div className="w-full md:w-460 ml-0 flex flex-wrap items-center justify-center gap-4 gap-y-14"></div>
+        </div>
       </section>
 
-      <section className="my-32 text-left">
-        <Fade bottom>
-          <div className="">
-            <h2 className="topdishes_title text-4xl">Top dishes</h2>
-            <div className="gap-8 grid lg:grid-cols-2 md:grid-cols-1"></div>
-          </div>
-        </Fade>
-      </section>
+      <section></section>
 
       <section id="whyUs">
         <div className="container2">
