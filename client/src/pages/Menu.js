@@ -6,29 +6,17 @@ import Slider from "../components/Slider";
 
 export default function Menu() {
   return (
-    <>
-      <div className="mt-20 ">
-        <Bounce>
-          <h2 className="font-content text-4xl font-black text-left">
-            Explore our menu
-          </h2>
-        </Bounce>
-        <Fade left>
-          <section className="w-full mt-12">
-            <div className="w-full flex items-center justify-between ">
-              <p
-                className="font-content text-2xl font-extrabold text-left relative
-              before:absolute before:content before:w-16 before:h-1
-              before:-bottom-2 before:left-0 before:bg-gradient-to-tr from-seagull-300 
-              to-[#8DEBFF] transition-all ease-in-out duration-100"
-              >
-                Our Specials
-              </p>
-            </div>
-            <Slider />
-          </section>
-        </Fade>
+    <div className="w-full flex flex-col items-start justify-start">
+      <p className="font-content text-4xl font-bold">Explore our menu</p>
+      <div className="flex flex-col items-start justify-start gap-1 mt-20">
+        <p className="font-content text-2xl font-bold">Our Specials</p>
+        <div
+          className="w-20 h-1 rounded-md 
+        bg-gradient-to-r from-seagull-300 to-[#95e9f8]"
+        ></div>
       </div>
-    </>
+
+      <Slider />
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import LogoImg from "../../assets/Img/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { isActiveStyles, isNotActiveStyles } from "../../utils/styles";
@@ -11,15 +11,18 @@ export default function DBLeftSection() {
       className="h-full py-12 flex flex-col min-w-[200px] w-[300px] gap-3
     bg-gradient-to-r from-[#ffffff] to-[#e1f7fa] shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
     >
-      <Link to="/" className="flex items-center justify-center">
+      <NavLink to="/" className="flex items-center justify-center">
         <motion.div
           whileHover={{ scale: 1.1 }}
           className="flex flex-row items-center"
         >
-          <img src={LogoImg} className="w-10 object-cover" alt="logo" />
-          <p className="font-body text-seagull-700 text-sm">go home</p>
+          <img src={LogoImg} className="w-9" alt="" />
+          <div className="font-logo font-semibold text-sm flex flex-col">
+            <p className="text-seagull-300">Blue</p>
+            <p>Mermaid</p>{" "}
+          </div>
         </motion.div>
-      </Link>
+      </NavLink>
 
       <hr className="text-seagull-600" />
 

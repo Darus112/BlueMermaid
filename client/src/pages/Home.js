@@ -1,163 +1,114 @@
-import React from "react";
-import "./styles/Home.css";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
-import foodImg from "../assets/Food/food-4.png";
+import { motion } from "framer-motion";
+
 import OurSpecialBg from "../assets/Img/Hero_bg.png";
+import { AiFillThunderbolt } from "react-icons/ai";
+import { MdRoomService } from "react-icons/md";
 
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
+import { buttonClick } from "../animation";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Home() {
-  return (
-    <>
-      <section id="hero">
-        <div className="container2">
-          <div className="hero_wrapper">
-            <Fade left>
-              <div className="hero_left">
-                <div className="hero_left_wrapper">
-                  <h1 className="hero_heading">The flavor of tradition</h1>
-                  <p className="hero_info">
-                    We are a multi-cuisine restaurant offering a wide variety of
-                    food experience in both casual and fine dining environment.
-                  </p>
-                  <div className="button_wrapper">
-                    <Link to="./menu" className="btn-bg">
-                      Explore Menu
-                    </Link>
-                    <Link to="./booktable" className="btn-nobg">
-                      Book Table
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </Fade>
-            <Fade right>
-              <div className="hero_right">
-                <div className="hero_imgWrapper">
-                  <div className="card">
-                    <img src={foodImg} />{" "}
-                  </div>
-                  <div className="card">
-                    {" "}
-                    <img src={foodImg} />
-                  </div>
-                </div>
-              </div>
-            </Fade>
-          </div>
-        </div>
-      </section>
+  const products = useSelector((state) => state.products);
+  const [specials, setSpecials] = useState(null);
 
-      <section id="storeInfo">
-        <Bounce>
-          <div className="">
-            <div className="storeInfo_wrapper">
-              <div className="storeInfo_item">
-                <div className="storeInfo_icon">
-                  <i className="fa-solid fa-clock"></i>
-                </div>
-                <h3 className="storeInfo_title">10 AM - 7 PM</h3>
-                <p className="storeInfo_text">Opening Hour</p>
-              </div>
-              <div className="storeInfo_item">
-                <div className="storeInfo_icon">
-                  <i className="fa-solid fa-location-dot"></i>
-                </div>
-                <h3 className="storeInfo_title">GEC, Chittagong</h3>
-                <p className="storeInfo_text">Address</p>
-              </div>
-              <div className="storeInfo_item">
-                <div className="storeInfo_icon">
-                  <i className="fa-solid fa-phone-volume"></i>
-                </div>
-                <h3 className="storeInfo_title">+880123443</h3>
-                <p className="storeInfo_text">Call Now</p>
-              </div>
+  useEffect(() => {
+    setSpecials(
+      products?.filter((data) => data.product_category === "ourspecials")
+    );
+    console.log(specials);
+  }, [products]);
+
+  return (
+    <div className="flex flex-col">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="flex flex-col items-center md:items-start justify-center gap-6 md:mr-32">
+          <div className="px-4 py-1 flex items-center justify-center gap-2 bg-seagull-200 rounded-full">
+            <div className="bg-seagull-50 w-7 h-7 flex items-center justify-center rounded-full shadow-lg">
+              <MdRoomService className="text-seagull-400" />
+            </div>
+            <p className="font-body text-seagull-400 text-xs font-semibold">
+              Best service & Fast delivery
+            </p>
+            <div className="bg-seagull-50 w-7 h-7 flex items-center justify-center rounded-full shadow-lg">
+              <AiFillThunderbolt className="text-seagull-400" />
             </div>
           </div>
-        </Bounce>
-      </section>
 
-      <section className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-40">
-        <div className="flex flex-col items-center justify-center gap-6">
-          <div className="flex flex-col items-start justify-start w-52">
-            <p className=" font-content text-[40px] md:text-[60px] font-semibold tracking-wide">
-              Our Specials
-            </p>
-            <p className=" font-content text-[20px] md:text-[30px]">
-              All of our food is prepared daily at our restaurants to ensure the
-              highest quality, freshest meals are delivered to our customers
-            </p>
-            <Link to="./booktable" className="btn-bg mt-3">
+          <p
+            className="text-[25px] text-seagull-900 md:text-[40px] font-content
+          font-extrabold tracking-wider"
+          >
+            The Best Sevice and Delivery in{" "}
+            <span className="text-seagull-300">Your City</span>
+          </p>
+
+          <p className="text-sm font-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <Link to={"/booktable"}>
+            <motion.button
+              {...buttonClick}
+              className=" bg-gradient-to-tr from-seagull-300 to-[#94e2fa]
+            px-4 py-2 rounded-xl font-body text-white font-semibold"
+            >
               Book Table
-            </Link>
-          </div>
+            </motion.button>
+          </Link>
         </div>
-        <div className="py-2 flex-1 flex items-center justify-center relative">
+        <div className="py-2 flex-1 flex items-center justify-center md:justify-end relative">
           <img
-            className="absolute -top-12 w-full h-420
-           md:w-auto md:h-650 rounded-3xl shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
             src={OurSpecialBg}
             alt=""
+            className="w-auto h-650 rounded-2xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] "
           />
-          <div className="w-full md:w-460 ml-0 flex flex-wrap items-center justify-center gap-4 gap-y-14"></div>
-        </div>
-      </section>
 
-      <section></section>
-
-      <section id="whyUs">
-        <div className="container2">
-          <div className="whyUs_wrapper">
-            <Fade left>
-              <div>
-                <div className="whyUs_left">
-                  <h2 className="whyUs_title">Why Choose Our Food</h2>
-                  <p className="whyUs_text">
-                    Quality of Service, Food, Ambiance, and Value of Money are
-                    the primary elements for choosing a restaurant. Shaif's
-                    Cuisine is one of the most exquisite fine-dinning restaurant
-                    in Chittagong cities with a captivating view of GEC Hills,
-                    perfect ambiance, and scrumptious food.
+          <div
+            className=" w-300 md:w-460 ml-0 grid grid-cols-2 md:flex md:flex-wrap
+          items-center justify-center gap-4 gap-y-14 absolute"
+          >
+            {specials &&
+              specials.map((data, i) => (
+                <div
+                  key={i}
+                  className="w-32 h-36 md:h-150 md:w-190 p-4 backdrop-blur-lg
+              rounded-xl flex flex-col items-center justify-center drop-shadow-lg
+              bg-seagull-300 bg-opacity-10 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                >
+                  <img
+                    src={data.imageURL}
+                    className="w-20 md:w-28 md:-mt-16 object-contain rounded-2xl
+                    shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                    alt=""
+                  />
+                  <p
+                    className="text-sm font-food lg:text-xl font-semibold
+                text-seagull-700"
+                  >
+                    {data.product_name.slice(0, 14)}
+                  </p>
+                  <p
+                    className="text-sm font-food  font-semibold
+                text-seagull-400"
+                  >
+                    <span className="text-xs text-seagull-300">RON</span>
+                    {data.product_price}
                   </p>
                 </div>
-              </div>
-            </Fade>
-            <Fade right>
-              <div className="whyUs_right">
-                <div className="whyUs_items_wrapper">
-                  <div className="whyUs_item">
-                    <div className="whyUs_item_icon">
-                      <i className="fa-solid fa-utensils"></i>
-                    </div>
-                    <p className="whyUs_item_text">Quality Food</p>
-                  </div>
-                  <div className="whyUs_item">
-                    <div className="whyUs_item_icon">
-                      <i className="fa-solid fa-bowl-food"></i>
-                    </div>
-                    <p className="whyUs_item_text">Classical taste</p>
-                  </div>
-                  <div className="whyUs_item">
-                    <div className="whyUs_item_icon">
-                      <i className="fa-solid fa-kitchen-set"></i>
-                    </div>
-                    <p className="whyUs_item_text">Skilled chef</p>
-                  </div>
-                  <div className="whyUs_item">
-                    <div className="whyUs_item_icon">
-                      <i className="fa-solid fa-person-walking"></i>
-                    </div>
-                    <p className="whyUs_item_text">Best service</p>
-                  </div>
-                </div>
-              </div>
-            </Fade>
+              ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }

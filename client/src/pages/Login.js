@@ -152,13 +152,17 @@ export default function Login() {
       {/* content box */}
       <Bounce>
         <div
-          className="flex flex-col items-center backdrop-blur-lg w-[680px] h-[900px] 
+          className="flex flex-col items-center backdrop-blur-lg w-[680px] h-[800px] 
                 z-10 rounded-[3rem] shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-seagull-300 bg-opacity-20
                 p-4 px-4 py-12 mx-2"
         >
           {/* content box */}
           <div className="flex items-center justify-start gap-4 w-full ml-5">
-            <img src={LogoImg} className="w-8" alt="logo" />
+            <img src={LogoImg} className="w-9" alt="" />
+            <div className="font-logo font-semibold text-sm flex flex-col">
+              <p className="text-seagull-300">Blue</p>
+              <p>Mermaid</p>{" "}
+            </div>
           </div>
 
           {/* sign in option */}

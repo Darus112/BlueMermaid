@@ -4,6 +4,12 @@ export const isActiveStyles =
 export const isNotActiveStyles =
   "text-xl text-seagull-900 font-body font-semibold hover:text-seagull-300 px-4 py-2 duration-100 transition-all ease-in-out";
 
+export const isActiveStyles2 =
+  "text-lg text-seagull-300 font-body font-bold hover:text-seagull-300 duration-100 transition-all ease-in-out";
+
+export const isNotActiveStyles2 =
+  "text-sm font-body font-semibold hover:text-seagull-300 duration-100 transition-all ease-in-out";
+
 export const statuses = [
   { id: 1, title: "Our Specials", category: "ourspecials" },
   { id: 2, title: "Breakfast", category: "breakfast" },

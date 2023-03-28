@@ -15,7 +15,7 @@ export default function Dashboard() {
         dispatch(setAllProducts(data));
       });
     }
-  });
+  }, []);
 
   return (
     <div className="w-screen h-screen flex items-center">

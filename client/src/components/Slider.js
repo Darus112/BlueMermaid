@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import "swiper/css";
 import "./styles/SwiperStyles.css";
-import "swiper/css/bundle";
+import SliderCard from "./SliderCard";
 
 export default function Slider() {
   const products = useSelector((state) => state.products);
@@ -18,16 +18,20 @@ export default function Slider() {
   }, [products]);
 
   return (
-    <div className="w-full pt-24">
+    <div className="w-full pt-10">
       <Swiper
         slidesPerView={4}
         centeredSlides={false}
-        spaceBetween={30}
+        spaceBetween={40}
         grabCursor={true}
         className="mySwiper"
       >
         {specials &&
-          specials.map((data, i) => <SwiperSlide key={i}>Slide 1</SwiperSlide>)}
+          specials.map((data, i) => (
+            <SwiperSlide key={i}>
+              <SliderCard key={i} data={data} index={1} />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   );

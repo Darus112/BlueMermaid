@@ -69,6 +69,7 @@ module.exports = {
       food: ["Raleway"],
       content: ["Dosis"],
       table: ["Roboto+Condensed"],
+      logo: ["Fasthand"],
     },
   },
   plugins: [require("tailwind-scrollbar")],
