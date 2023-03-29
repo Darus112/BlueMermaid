@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useDispatch, useSelector } from "react-redux";
 
-import "swiper/css";
+import { FreeMode } from "swiper";
+
 import "./styles/SwiperStyles.css";
+import "swiper/css";
+import "swiper/css/free-mode";
+
 import SliderCard from "./SliderCard";
 
 export default function Slider() {
@@ -18,13 +22,30 @@ export default function Slider() {
   }, [products]);
 
   return (
-    <div className="w-full pt-10">
+    <div className="w-full pt-12">
       <Swiper
-        slidesPerView={4}
-        centeredSlides={false}
-        spaceBetween={40}
+        freeMode={true}
         grabCursor={true}
+        modules={[FreeMode]}
         className="mySwiper"
+        spaceBetween={20}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          480: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+          1280: {
+            slidesPerView: 4,
+          },
+        }}
       >
         {specials &&
           specials.map((data, i) => (

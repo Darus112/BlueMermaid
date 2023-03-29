@@ -30,6 +30,7 @@ export default function Navbar() {
   const [showNav, setShowNav] = useState(false);
 
   const user = useSelector((state) => state.user);
+  const cart = useSelector((state) => state.cart);
 
   const firebaseAuth = getAuth(app);
   const navigate = useNavigate();
@@ -50,14 +51,22 @@ export default function Navbar() {
   return (
     <>
       {/* desktop */}
-      <header className="hidden md:flex bg-gradient-to-b from-seagull-100 to-white fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6">
-        <NavLink to={"/"} className="flex items-center justify-center gap-4">
+      <header
+        className="hidden md:flex bg-seagull-300 
+      fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6
+      backdrop-blur-md bg-opacity-5 shadow-sm"
+      >
+        <motion.NavLink
+          whileHover={{ scale: 1.02 }}
+          to={"/"}
+          className="flex items-center justify-center gap-1 cursor-pointer"
+        >
           <img src={LogoImg} className="w-10" alt="" />
           <div className="font-logo font-semibold text-base flex flex-col">
             <p className="text-seagull-300">Blue</p>
             <p>Mermaid</p>{" "}
           </div>
-        </NavLink>
+        </motion.NavLink>
 
         <nav className="flex items-center justify-center gap-8 ml-5">
           <ul className="flex items-center justify-center gap-7 text-sm">
@@ -86,12 +95,14 @@ export default function Navbar() {
               to={"/orders"}
             >
               <TbPaperBag className=" text-3xl" />
-              <div
-                className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+              {cart?.length > 0 && (
+                <div
+                  className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
               mb-5 flex items-center justify-center border-2"
-              >
-                <p className="text-xs">2</p>
-              </div>
+                >
+                  <p className="text-xs">{cart?.length}</p>
+                </div>
+              )}
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -129,7 +140,7 @@ export default function Navbar() {
               <img
                 src={user?.picture ? user?.picture : UserImg}
                 className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full
-                      shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
@@ -205,14 +216,22 @@ export default function Navbar() {
         )}
       </header>
       {/* mobile */}
-      <header className="flex md:hidden bg-gradient-to-b from-seagull-100 to-white fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6">
-        <NavLink to={"/"} className="flex items-center justify-center gap-4">
+      <header
+        className="flex md:hidden bg-seagull-300
+      fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6
+      backdrop-blur-md bg-opacity-5 shadow-sm"
+      >
+        <motion.NavLink
+          whileHover={{ scale: 1.02 }}
+          to={"/"}
+          className="flex items-center justify-center gap-1 cursor-pointer"
+        >
           <img src={LogoImg} className="w-10" alt="" />
           <div className="font-logo font-semibold text-base flex flex-col">
             <p className="text-seagull-300">Blue</p>
             <p>Mermaid</p>{" "}
           </div>
-        </NavLink>
+        </motion.NavLink>
         <div className="relative items-center justify-center flex mr-14">
           {user ? (
             <div
@@ -352,13 +371,14 @@ export default function Navbar() {
                   onClick={() => setShowNav(false)}
                 >
                   <TbPaperBag className=" text-3xl" />
-
-                  <div
-                    className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
-                    mb-5 flex items-center justify-center border-2"
-                  >
-                    <p className="text-xs">2</p>
-                  </div>
+                  {cart?.length > 0 && (
+                    <div
+                      className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+              mb-5 flex items-center justify-center border-2"
+                    >
+                      <p className="text-xs">{cart?.length}</p>
+                    </div>
+                  )}
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>

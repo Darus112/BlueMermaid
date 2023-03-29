@@ -157,7 +157,7 @@ export default function Login() {
                 p-4 px-4 py-12 mx-2"
         >
           {/* content box */}
-          <div className="flex items-center justify-start gap-4 w-full ml-5">
+          <div className="flex items-center justify-start gap-1 w-full ml-5">
             <img src={LogoImg} className="w-9" alt="" />
             <div className="font-logo font-semibold text-sm flex flex-col">
               <p className="text-seagull-300">Blue</p>

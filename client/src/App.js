@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Route, Routes } from "react-router-dom";
 import { app } from "./config/firebase.config";
 import { getAuth } from "firebase/auth";
-import { validateUserJWTToken } from "./api";
+import { getAllCartItems, validateUserJWTToken } from "./api";
 import { useDispatch, useSelector } from "react-redux";
 
 import { setUserDetails } from "./context/actions/userActions";
@@ -15,6 +15,7 @@ import { fadeInOut } from "./animation";
 import MainLoader from "./components/MainLoader";
 import Alert from "./components/Alert";
 import Dashboard from "./pages/Dashboard";
+import { setCartItems } from "./context/actions/cartActions";
 
 function App() {
   const firebaseAuth = getAuth(app);
@@ -29,6 +30,12 @@ function App() {
       if (cred) {
         cred.getIdToken().then((token) => {
           validateUserJWTToken(token).then((data) => {
+            if (data) {
+              getAllCartItems(data.user_id).then((items) => {
+                console.log(items);
+                dispatch(setCartItems(items));
+              });
+            }
             dispatch(setUserDetails(data));
           });
         });
