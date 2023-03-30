@@ -24,6 +24,7 @@ import { getAuth } from "firebase/auth";
 import { app } from "../config/firebase.config";
 import { setUserNull } from "../context/actions/userActions";
 import { isActiveStyles2, isNotActiveStyles2 } from "../utils/styles";
+import { setCartOn } from "../context/actions/displayCartAction";
 
 export default function Navbar() {
   const [isMenu, setIsMenu] = useState(false);
@@ -88,24 +89,6 @@ export default function Navbar() {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                isActive
-                  ? `${isActiveStyles2} relative flex items-center justify-center`
-                  : `${isNotActiveStyles2} relative flex items-center justify-center`
-              }
-              to={"/orders"}
-            >
-              <TbPaperBag className=" text-3xl" />
-              {cart?.length > 0 && (
-                <div
-                  className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
-              mb-5 flex items-center justify-center border-2"
-                >
-                  <p className="text-xs">{cart?.length}</p>
-                </div>
-              )}
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
                 isActive ? isActiveStyles2 : isNotActiveStyles2
               }
               to={"/aboutus"}
@@ -129,6 +112,24 @@ export default function Navbar() {
               Book Table
             </NavLink>
           </ul>
+          <motion.div
+            {...buttonClick}
+            onClick={() => dispatch(setCartOn())}
+            whileHover={{ scale: 1.1 }}
+            className="relative cursor-pointer mr-8"
+          >
+            <TbPaperBag className=" text-3xl" />
+            {cart?.length > 0 && (
+              <div
+                className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+              mb-5 flex items-center justify-center border-2 absolute -top-4 -right-4"
+              >
+                <p className="text-xs font-body font-semibold">
+                  {cart?.length}
+                </p>
+              </div>
+            )}
+          </motion.div>
         </nav>
 
         {user ? (
@@ -329,7 +330,26 @@ export default function Navbar() {
             ></motion.div>
           )}
         </div>
-        <div className="relative items-center justify-center flex mr-14">
+
+        <div className="relative items-center justify-center flex gap-5">
+          <motion.div
+            {...buttonClick}
+            onClick={() => dispatch(setCartOn())}
+            whileHover={{ scale: 1.1 }}
+            className="relative cursor-pointer"
+          >
+            <TbPaperBag className=" text-3xl" />
+            {cart?.length > 0 && (
+              <div
+                className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+              mb-5 flex items-center justify-center border-2 absolute -top-4 -right-4"
+              >
+                <p className="text-xs font-body font-semibold">
+                  {cart?.length}
+                </p>
+              </div>
+            )}
+          </motion.div>
           <FaBars
             className="site-logo text-2xl text-seagull-300 cursor-pointer"
             onClick={menu}
@@ -360,25 +380,6 @@ export default function Navbar() {
                   onClick={() => setShowNav(false)}
                 >
                   Menu
-                </NavLink>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive
-                      ? `${isActiveStyles2} relative flex items-center justify-center`
-                      : `${isNotActiveStyles2} relative flex items-center justify-center`
-                  }
-                  to="/orders"
-                  onClick={() => setShowNav(false)}
-                >
-                  <TbPaperBag className=" text-3xl" />
-                  {cart?.length > 0 && (
-                    <div
-                      className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
-              mb-5 flex items-center justify-center border-2"
-                    >
-                      <p className="text-xs">{cart?.length}</p>
-                    </div>
-                  )}
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>

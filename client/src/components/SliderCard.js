@@ -16,8 +16,7 @@ export default function SliderCard({ data, index }) {
 
   const sendToCart = () => {
     dispatch(alertSucces("Added to the cart"));
-
-    addNewItemToCart(user?.user_id, data).then(() => {
+    addNewItemToCart(user?.user_id, data).then((res) => {
       getAllCartItems(user?.user_id).then((items) => {
         console.log(items);
         dispatch(setCartItems(items));

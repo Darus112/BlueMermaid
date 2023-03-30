@@ -13,9 +13,12 @@ import BookTable from "./BookTable";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllProducts } from "../context/actions/productActions";
 import { getAllProducts } from "../api";
+import Cart from "../components/Cart";
 
 export default function Main() {
   const products = useSelector((state) => state.products);
+  const isCart = useSelector((state) => state.isCart);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -36,12 +39,13 @@ export default function Main() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/orders" element={<Orders />} />
           <Route path="/aboutus" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/booktable" element={<BookTable />} />
+          <Route path="/user-orders" element={<Orders />} />
         </Routes>
       </div>
+      {isCart && <Cart />}
       <Footer />
     </main>
   );
