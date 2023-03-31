@@ -16,6 +16,7 @@ import MainLoader from "./components/MainLoader";
 import Alert from "./components/Alert";
 import Dashboard from "./pages/Dashboard";
 import { setCartItems } from "./context/actions/cartActions";
+import CheckOutSuccess from "./components/CheckOutSuccess";
 
 function App() {
   const firebaseAuth = getAuth(app);
@@ -61,6 +62,7 @@ function App() {
           <Route path="/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
+          <Route path="/checkout-succes" element={<CheckOutSuccess />} />
         </Routes>
         {alert?.type && <Alert type={alert?.type} message={alert?.message} />}
       </div>

@@ -95,3 +95,13 @@ export const increaseItemQuantity = async (user_id, productId, type) => {
     return null;
   }
 };
+
+// get all orders
+export const getAllOrders = async () => {
+  try {
+    const res = await axios.get(`${baseURL}/api/products/orders`);
+    return res.data.data;
+  } catch (err) {
+    return null;
+  }
+};

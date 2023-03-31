@@ -11,12 +11,16 @@ import { setCartOff } from "../context/actions/displayCartAction";
 
 import EmptyCart from "../assets/Img/empty_cart.png";
 
-import { getAllCartItems, increaseItemQuantity } from "../api";
+import { baseURL, getAllCartItems, increaseItemQuantity } from "../api";
 import { setCartItems } from "../context/actions/cartActions";
+import { MdShoppingCartCheckout } from "react-icons/md";
+import axios from "axios";
 
 export default function Cart() {
-  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
 
   const [total, setTotal] = useState(0);
 
@@ -30,10 +34,26 @@ export default function Cart() {
     }
   }, [cart]);
 
+  const handleCheckOut = () => {
+    const data = {
+      user: user,
+      cart: cart,
+      total: total,
+    };
+    axios
+      .post(`${baseURL}/api/products/create-checkout-session`, { data })
+      .then((res) => {
+        if (res.data.url) {
+          window.location.href = res.data.url;
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <motion.div
       {...slideIn}
-      className="fixed z-50 top-0 right-0 w-508 md:w-460 bg-seagull-300 backdrop-blur-lg h-screen shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-opacity-40"
+      className="fixed z-50 top-0 right-0 w-508 md:w-460 bg-seagull-300 backdrop-blur-lg h-full shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-opacity-40"
     >
       <div className="w-full flex items-center justify-between py-4 pb-12 px-3">
         <motion.i
@@ -64,9 +84,9 @@ export default function Cart() {
             </div>
             <div
               className="bg-seagull-900 rounded-t-[60px] w-full h-[35%]
-      flex flex-col items-center justify-center px-4 py-6 gap-24 bg-opacity-20 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+      flex flex-col items-center  px-4 py-12 gap-2 bg-opacity-20 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
             >
-              <div className="w-full flex items-center justify-evenly">
+              <div className="w-full flex items-center justify-evenly ">
                 <p className="text-base text-seagull-900 font-body font-bold">
                   Total
                 </p>
@@ -77,6 +97,28 @@ export default function Cart() {
                   {parseFloat(total).toFixed(2)}
                 </p>
               </div>
+              <div className="flex items-center justify-between gap-10">
+                <div
+                  className="w-[150px] h-[3px] rounded-xl
+        bg-gradient-to-r from-seagull-900 to-seagull-600"
+                ></div>
+                <MdShoppingCartCheckout className=" text-lg text-seagull-400" />
+                <div
+                  className="w-[150px] h-[3px] rounded-xl
+        bg-gradient-to-l from-seagull-900 to-seagull-600"
+                ></div>
+              </div>
+              <motion.button
+                {...buttonClick}
+                whileHover={{ scale: 1.02 }}
+                className=" bg-gradient-to-tr from-[#8400ff] to-[#e9d4f8]
+              w-[30%] px-2 py-3 text-sm text-[#e2cdfd] shadow-md font-extrabold
+               hover:shadow-[#8400ff] rounded-xl border-none outline-none mt-5
+                font-body"
+                onClick={handleCheckOut}
+              >
+                Check Out
+              </motion.button>
             </div>
           </>
         ) : (
