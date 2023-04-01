@@ -6,7 +6,6 @@ import Navbar from "../components/Navbar";
 
 import Home from "./Home";
 import Menu from "./Menu";
-import Orders from "./Orders";
 import About from "./About";
 import Contact from "./Contact";
 import BookTable from "./BookTable";
@@ -17,6 +16,7 @@ import Cart from "../components/Cart";
 
 export default function Main() {
   const products = useSelector((state) => state.products);
+
   const isCart = useSelector((state) => state.isCart);
 
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ export default function Main() {
         dispatch(setAllProducts(data));
       });
     }
-  }, []);
+  }, [products]);
 
   return (
     <main className="w-screen min-h-screen flex items-center flex-col">
@@ -42,7 +42,6 @@ export default function Main() {
           <Route path="/aboutus" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/booktable" element={<BookTable />} />
-          <Route path="/user-orders" element={<Orders />} />
         </Routes>
       </div>
       {isCart && <Cart />}

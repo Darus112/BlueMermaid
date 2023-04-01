@@ -154,12 +154,15 @@ export default function Navbar() {
                       bg-gradient-to-tr from-seagull-300 to-[#67e8f9] rounded-lg
                       absolute top-12 flex flex-col gap-4 text-center z-50 mr-32"
               >
-                <NavLink
-                  className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
-                  to={"/dashboard/home"}
-                >
-                  <MdOutlineDashboardCustomize className="text-2xl" /> Dashboard
-                </NavLink>
+                {user?.user_id === process.env.REACT_APP_ADMIN_ID && (
+                  <NavLink
+                    className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
+                    to={"/dashboard/home"}
+                  >
+                    <MdOutlineDashboardCustomize className="text-2xl" />{" "}
+                    Dashboard
+                  </NavLink>
+                )}
                 <NavLink
                   className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                   to={"/profile"}
@@ -258,13 +261,15 @@ export default function Navbar() {
                 bg-gradient-to-tr from-seagull-300 to-[#67e8f9] rounded-lg
                 absolute top-12 flex flex-col gap-4 text-center z-50"
                 >
-                  <NavLink
-                    className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
-                    to={"/dashboard/home"}
-                  >
-                    <MdOutlineDashboardCustomize className="text-2xl" />{" "}
-                    Dashboard
-                  </NavLink>
+                  {user?.user_id === process.env.REACT_APP_ADMIN_ID && (
+                    <NavLink
+                      className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
+                      to={"/dashboard/home"}
+                    >
+                      <MdOutlineDashboardCustomize className="text-2xl" />{" "}
+                      Dashboard
+                    </NavLink>
+                  )}
                   <NavLink
                     className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                     to={"/profile"}

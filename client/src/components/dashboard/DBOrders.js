@@ -5,8 +5,6 @@ import { setOrders } from "../../context/actions/ordersActions";
 import NoOrders from "../../assets/Img/no_orders.png";
 import OrderData from "../OrderData";
 
-import Bounce from "react-reveal/Bounce";
-
 export default function DBOrders() {
   const orders = useSelector((state) => state.orders);
   const dispatch = useDispatch();
@@ -20,12 +18,12 @@ export default function DBOrders() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center flex-col pt-6 w-full gap-4">
-      {orders ? (
+    <div className="flex items-center justify-center flex-col pt-6 w-full h-full gap-4">
+      {orders?.lenght > 0 ? (
         <>
           {orders.map((item, i) => (
             <OrderData key={i} index={i} data={item} admin={true} />
-          ))}{" "}
+          ))}
         </>
       ) : (
         <div className="flex w-full h-full items-center justify-center flex-col">

@@ -1,9 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { buttonClick, staggerFadeInOut } from "../animation";
+import { getAllOrders, updateOrderSts } from "../api";
+import { setOrders } from "../context/actions/ordersActions";
+import { useDispatch } from "react-redux";
 
 export default function OrderData({ index, data, admin }) {
-  const handleClick = (orderId, sts) => {};
+  const dispatch = useDispatch();
+
+  const handleClick = (orderId, sts) => {
+    updateOrderSts(orderId, sts).then((response) => {
+      getAllOrders().then((data) => {
+        dispatch(setOrders(data));
+      });
+    });
+  };
 
   return (
     <motion.div
@@ -13,7 +24,8 @@ export default function OrderData({ index, data, admin }) {
     >
       <div className="w-full flex items-center justify-between">
         <h1 className="text-lg text-[#002849] font-semibold font-body">
-          Orders
+          Order:{" "}
+          <span className="text-[12px] text-[#004caf]"> {data?.orderId} </span>
         </h1>
 
         <div className="flex items-center gap-4">
@@ -66,7 +78,7 @@ export default function OrderData({ index, data, admin }) {
 
               <motion.p
                 {...buttonClick}
-                onClick={() => handleClick(data.orderId, "preparing")}
+                onClick={() => handleClick(data.orderId, "cancelled")}
                 className="text-[11px] font-body font-semibold capitalize border border-[#d4d4d4] px-2 py-[2px] rounded-md shadow-lg text-[#ee5050] bg-[#ee5050] bg-opacity-5 cursor-pointer"
               >
                 cancelled
@@ -74,7 +86,7 @@ export default function OrderData({ index, data, admin }) {
 
               <motion.p
                 {...buttonClick}
-                onClick={() => handleClick(data.orderId, "preparing")}
+                onClick={() => handleClick(data.orderId, "delivered")}
                 className="text-[11px] font-body font-semibold capitalize border border-[#d4d4d4] px-2 py-[2px] rounded-md shadow-lg text-[#66d48b] bg-[#66d48b] bg-opacity-5 cursor-pointer"
               >
                 delivered

@@ -17,11 +17,14 @@ import Alert from "./components/Alert";
 import Dashboard from "./pages/Dashboard";
 import { setCartItems } from "./context/actions/cartActions";
 import CheckOutSuccess from "./components/CheckOutSuccess";
+import Orders from "./pages/Orders";
 
 function App() {
   const firebaseAuth = getAuth(app);
   const [isLoadind, setIsLoadind] = useState(false);
   const alert = useSelector((state) => state.alert);
+
+  const user = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
 
@@ -61,8 +64,11 @@ function App() {
         <Routes>
           <Route path="/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard/*" element={<Dashboard />} />
+          {user?.user_id === process.env.REACT_APP_ADMIN_ID && (
+            <Route path="/dashboard/*" element={<Dashboard />} />
+          )}
           <Route path="/checkout-succes" element={<CheckOutSuccess />} />
+          <Route path="/user-orders" element={<Orders />} />
         </Routes>
         {alert?.type && <Alert type={alert?.type} message={alert?.message} />}
       </div>
