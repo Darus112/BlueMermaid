@@ -18,6 +18,7 @@ router.post("/create", async (req, res) => {
     };
 
     const response = await db.collection("products").doc(`/${id}/`).set(data);
+    console.log(response);
     return res.status(200).send({ success: true, data: response });
   } catch (err) {
     return res.send({ success: false, msg: `Error :${err}` });
@@ -98,6 +99,8 @@ router.post("/addToCart/:userId", async (req, res) => {
         .collection("items")
         .doc(`/${productId}/`)
         .set(data);
+
+      return res.status(200).send({ succes: true, data: addItems });
     }
   } catch (err) {
     return res.send({ success: false, msg: `Error :${err}` });
