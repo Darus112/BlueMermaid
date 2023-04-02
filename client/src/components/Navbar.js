@@ -57,17 +57,18 @@ export default function Navbar() {
       fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6
       backdrop-blur-md bg-opacity-5 shadow-sm"
       >
-        <motion.NavLink
-          whileHover={{ scale: 1.02 }}
-          to={"/"}
-          className="flex items-center justify-center gap-1 cursor-pointer"
-        >
-          <img src={LogoImg} className="w-10" alt="" />
-          <div className="font-logo font-semibold text-base flex flex-col">
-            <p className="text-seagull-300">Blue</p>
-            <p>Mermaid</p>{" "}
-          </div>
-        </motion.NavLink>
+        <NavLink to="/" className="flex items-center justify-center">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="flex flex-row items-center"
+          >
+            <img src={LogoImg} className="w-12" alt="" />
+            <div className="font-logo font-semibold text-base flex flex-col">
+              <p className="text-seagull-300">Blue</p>
+              <p>Mermaid</p>{" "}
+            </div>
+          </motion.div>
+        </NavLink>
 
         <nav className="flex items-center justify-center gap-8 ml-5">
           <ul className="flex items-center justify-center gap-7 text-sm">
@@ -225,17 +226,19 @@ export default function Navbar() {
       fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6
       backdrop-blur-md bg-opacity-5 shadow-sm"
       >
-        <motion.NavLink
-          whileHover={{ scale: 1.02 }}
-          to={"/"}
-          className="flex items-center justify-center gap-1 cursor-pointer"
-        >
-          <img src={LogoImg} className="w-10" alt="" />
-          <div className="font-logo font-semibold text-base flex flex-col">
-            <p className="text-seagull-300">Blue</p>
-            <p>Mermaid</p>{" "}
-          </div>
-        </motion.NavLink>
+        <NavLink to="/" className="flex items-center justify-center">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="flex flex-row items-center"
+          >
+            <img src={LogoImg} className="w-12" alt="" />
+            <div className="font-logo font-semibold text-base flex flex-col">
+              <p className="text-seagull-300">Blue</p>
+              <p>Mermaid</p>{" "}
+            </div>
+          </motion.div>
+        </NavLink>
+
         <div className="relative items-center justify-center flex mr-14">
           {user ? (
             <div

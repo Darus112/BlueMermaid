@@ -35,7 +35,9 @@ export default function OrderData({ index, data, admin }) {
           >
             Total:{" "}
             <div className="flex items-center justify-center gap-2">
-              <span className="font-food">{data?.total}</span>
+              <span className="font-food">
+                {parseFloat(data?.total).toFixed(2)}
+              </span>
               <div className="rounded-full w-6 flex items-center justify-center h-6 bg-seagull-100 shadow-md">
                 <span className=" text-[8px] font-body font-medium text-[#ebdd64] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                   RON
@@ -124,7 +126,9 @@ export default function OrderData({ index, data, admin }) {
                       <span className=" text-[8px] font-body font-medium text-[#ebdd64] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                         RON
                       </span>
-                      <span className="font-food">{item.product_price}</span>
+                      <span className="font-food">
+                        {parseFloat(item.product_price).toFixed(2)}
+                      </span>
                     </div>
                   </div>
                 </div>

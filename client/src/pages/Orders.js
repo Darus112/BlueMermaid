@@ -20,7 +20,7 @@ export default function Orders() {
   const [userOrders, setUserOrders] = useState(null);
 
   useEffect(() => {
-    if (!orders) {
+    if (!userOrders) {
       getAllOrders().then((data) => {
         dispatch(setOrders(data));
         setUserOrders(data.filter((item) => item.userId === user?.user_id));
@@ -28,7 +28,7 @@ export default function Orders() {
     } else {
       setUserOrders(orders.filter((data) => data.userId === user?.user_id));
     }
-  }, [orders]);
+  }, [userOrders]);
 
   return (
     <>
@@ -40,7 +40,7 @@ export default function Orders() {
       px-6 md:px-24 2xl:px-96"
           >
             <div className="flex items-center justify-center flex-col pt-6 w-full gap-4">
-              {userOrders?.lenght > 0 ? (
+              {userOrders?.length > 0 ? (
                 <>
                   {userOrders.map((item, i) => (
                     <OrderData key={i} index={i} data={item} admin={false} />

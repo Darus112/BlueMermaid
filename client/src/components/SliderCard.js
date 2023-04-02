@@ -15,12 +15,12 @@ export default function SliderCard({ data, index }) {
   const dispatch = useDispatch();
 
   const sendToCart = () => {
-    dispatch(alertSucces("Added to the cart"));
     addNewItemToCart(user?.user_id, data).then((res) => {
       getAllCartItems(user?.user_id).then((items) => {
         console.log(items);
         dispatch(setCartItems(items));
       });
+      dispatch(alertSucces("Added to the cart"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -54,7 +54,7 @@ export default function SliderCard({ data, index }) {
       </div>
       <motion.div
         {...buttonClick}
-        onClick={sendToCart}
+        onClick={() => sendToCart()}
         className="w-7 h-7 rounded-full flex items-center justify-center
         absolute top-3 right-2 cursor-pointer border-none outline-none
          bg-gradient-to-tr from-seagull-300 to-[#a4e6fa] hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)]"

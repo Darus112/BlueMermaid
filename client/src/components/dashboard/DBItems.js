@@ -10,7 +10,7 @@ export default function DBItems() {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex items-center justify-center gap-4 pt-6  mt-12">
+    <div className="flex items-center justify--self-center gap-4 pt-6  mt-12">
       <DataTable
         columns={[
           {
@@ -26,16 +26,26 @@ export default function DBItems() {
           {
             title: "Name",
             field: "product_name",
+            render: (rowData) => (
+              <p className="font-body text-lg font-bold text-seagull-900">
+                {rowData.product_name}
+              </p>
+            ),
           },
           {
             title: "Category",
             field: "product_category",
+            render: (rowData) => (
+              <p className="font-body text-lg font-bold text-[#979eb4]">
+                {rowData.product_category}
+              </p>
+            ),
           },
           {
             title: "Price",
             field: "product_price",
             render: (rowData) => (
-              <p className="font-body text-base flex items-center justify-center">
+              <p className="font-food text-xl flex items-center justify-center font-semibold">
                 <div className="rounded-full bg-seagull-300 p-2 w-10 h-10 flex items-center justify-center mr-2">
                   <span className="font-food font-bold text-seagull-50 text-sm">
                     RON
@@ -49,13 +59,6 @@ export default function DBItems() {
         data={products}
         title="List of products"
         actions={[
-          {
-            icon: "edit",
-            tooltip: "Edit Data",
-            onClick: (event, rowData) => {
-              alert("You want to edit " + rowData.product_name);
-            },
-          },
           {
             icon: "delete",
             tooltip: "Delete Data",

@@ -1,19 +1,14 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts, getAllUsers } from "../../api";
-import { setAllProducts } from "../../context/actions/productActions";
+import { useSelector } from "react-redux";
 
 import { CChart } from "@coreui/react-chartjs";
-import { setAllUserDetails } from "../../context/actions/allUsersActions";
 
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 
 export default function DBHome() {
   const products = useSelector((state) => state.products);
-  const allUsers = useSelector((state) => state.allUsers);
-
-  const dispatch = useDispatch();
+  const orders = useSelector((state) => state.orders);
 
   const ourspecials = products?.filter(
     (item) => item.product_category === "ourspecials"
@@ -24,21 +19,12 @@ export default function DBHome() {
   const launch = products?.filter((item) => item.product_category === "launch");
   const dinner = products?.filter((item) => item.product_category === "dinner");
 
-  useEffect(() => {
-    if (!products) {
-      getAllProducts().then((data) => {
-        dispatch(setAllProducts(data));
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!allUsers) {
-      getAllUsers().then((data) => {
-        dispatch(setAllUserDetails(data));
-      });
-    }
-  }, []);
+  // orders
+  const delivered = orders?.filter((item) => item.sts === "delivered");
+  const cancelled = orders?.filter((item) => item.sts === "cancelled");
+  const preparing = orders?.filter((item) => item.sts === "preparing");
+  const paid = orders?.filter((item) => item.status === "paid");
+  const notpaid = orders?.filter((item) => item.status === "not paid");
 
   return (
     <div className="flex items-center justify-center flex-col pt-6 w-full h-full">
@@ -77,19 +63,28 @@ export default function DBHome() {
                     "Orders",
                     "Delivered",
                     "Cancelled",
+                    "Preparing",
                     "Paid",
                     "Not Paid",
                   ],
                   datasets: [
                     {
                       backgroundColor: [
-                        "#d1af34",
-                        "#68d134",
+                        "#ebed7b",
+                        "#89e05e",
                         "#d13456",
+                        "#e0925e",
                         "#34d1c1",
                         "#ac34d1",
                       ],
-                      data: [40, 20, 80, 10, 12],
+                      data: [
+                        orders?.length,
+                        delivered?.length,
+                        cancelled?.length,
+                        preparing?.length,
+                        paid?.length,
+                        notpaid?.length,
+                      ],
                     },
                   ],
                 }}

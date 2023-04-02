@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-20">
         <Fade left>
           <div className="flex flex-col items-center md:items-start justify-center gap-6 md:mr-32">
             <div className="px-4 py-1 flex items-center justify-center gap-2 bg-seagull-200 rounded-full">
@@ -57,13 +57,14 @@ export default function Home() {
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <Link to={"/booktable"}>
+            <Link to={"/menu"}>
               <motion.button
                 {...buttonClick}
+                whileHover={{ scale: 1.02 }}
                 className=" bg-gradient-to-tr from-seagull-300 to-[#94e2fa]
             px-4 py-2 rounded-xl font-body text-white font-semibold"
               >
-                Book Table
+                Explore Menu
               </motion.button>
             </Link>
           </div>
@@ -78,7 +79,7 @@ export default function Home() {
 
             <div
               className=" w-300 md:w-460 ml-0 grid grid-cols-2 md:flex md:flex-wrap
-          items-center justify-center gap-4 gap-y-14 absolute"
+          items-center justify-center gap-4 gap-y-14 absolute -top-10"
             >
               {specials &&
                 specials.map((data, i) => (

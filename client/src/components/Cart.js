@@ -11,10 +11,20 @@ import { setCartOff } from "../context/actions/displayCartAction";
 
 import EmptyCart from "../assets/Img/empty_cart.png";
 
-import { baseURL, getAllCartItems, increaseItemQuantity } from "../api";
-import { setCartItems } from "../context/actions/cartActions";
+import {
+  baseURL,
+  deleteCartItems,
+  getAllCartItems,
+  increaseItemQuantity,
+} from "../api";
+import { clearCartItems, setCartItems } from "../context/actions/cartActions";
 import { MdShoppingCartCheckout } from "react-icons/md";
 import axios from "axios";
+import {
+  alertInfo,
+  alertNULL,
+  alertSucces,
+} from "../context/actions/alertActions";
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart);
@@ -40,14 +50,21 @@ export default function Cart() {
       cart: cart,
       total: total,
     };
-    axios
-      .post(`${baseURL}/api/products/create-checkout-session`, { data })
-      .then((res) => {
-        if (res.data.url) {
-          window.location.href = res.data.url;
-        }
-      })
-      .catch((err) => console.log(err));
+    if (!user) {
+      dispatch(alertInfo("Please login to Checkout!"));
+      setTimeout(() => {
+        dispatch(alertNULL());
+      }, 3000);
+    } else {
+      axios
+        .post(`${baseURL}/api/products/create-checkout-session`, { data })
+        .then((res) => {
+          if (res.data.url) {
+            window.location.href = res.data.url;
+          }
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   return (

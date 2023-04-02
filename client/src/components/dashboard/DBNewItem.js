@@ -91,19 +91,26 @@ export default function DBNewItem() {
       product_price: price,
       imageURL: imageDownloadURL,
     };
-    addNewProduct(data).then((res) => {
-      dispatch(alertSucces("New item added"));
+    if (!itemName || !category || !price || !imageDownloadURL) {
+      dispatch(alertDanger("Required fields can't be empty"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
-      setImageDownloadURL(null);
-      setItemName("");
-      setPrice("");
-      setCategory(null);
-    });
-    getAllProducts().then((data) => {
-      dispatch(setAllProducts(data));
-    });
+    } else {
+      addNewProduct(data).then((res) => {
+        dispatch(alertSucces("New item added"));
+        getAllProducts().then((data) => {
+          dispatch(setAllProducts(data));
+        });
+        setTimeout(() => {
+          dispatch(alertNULL());
+        }, 3000);
+        setImageDownloadURL(null);
+        setItemName("");
+        setPrice("");
+        setCategory(null);
+      });
+    }
   };
 
   return (
@@ -220,7 +227,7 @@ export default function DBNewItem() {
             {...buttonClick}
             className="w-32 py-4 rounded-xl bg-gradient-to-tr from-[#aace88] to-[#e2ecd9]
             flex items-center justify-center gap-3 shadow-lg hover:shadow-[#aace88]"
-            onClick={submitNewData}
+            onClick={() => submitNewData()}
           >
             <FiSave className="text-2xl text-seagull-50" />
             <p className="font-body font-medium text-lg text-seagull-50">

@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-import { getAllUsers } from "../../api";
-import { setAllUserDetails } from "../../context/actions/allUsersActions";
+import { useSelector } from "react-redux";
 
 import UserImg from "../../assets/Img/userImg.png";
 
@@ -10,18 +7,9 @@ import DataTable from "../DataTable";
 
 export default function DBUsers() {
   const allUsers = useSelector((state) => state.allUsers);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!allUsers) {
-      getAllUsers().then((data) => {
-        dispatch(setAllUserDetails(data));
-      });
-    }
-  }, []);
 
   return (
-    <div className="flex items-center justify-center gap-4 pt-6 w-full mt-12">
+    <div className="flex items-center justify-self-center gap-4 pt-6 w-full mt-12">
       <DataTable
         columns={[
           {

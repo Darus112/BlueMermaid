@@ -44,19 +44,6 @@ export default function DBHeader() {
       </p>
 
       <div className="flex items-center justify-center gap-4">
-        <div
-          className="flex items-center justify-center gap-3 px-4 py-2 rounded-md shadow-lg
-        bg-gradient-to-r from-[#ffffff] to-[#d2f2f7]"
-        >
-          <BiSearchAlt className="text-[#bbb9b9] text-xl" />
-          <input
-            className="font-body text-sm bg-transparent border-none outline-none"
-            type="text"
-            placeholder="Search here..."
-          />
-          <BsToggles2 className="text-[#bbb9b9] text-xl" />
-        </div>
-
         <motion.div
           {...buttonClick}
           whileHover={{ scale: 1.1 }}
@@ -66,7 +53,7 @@ export default function DBHeader() {
           <TbBellFilled className="text-[#bbb9b9] text-xl" />
         </motion.div>
 
-        <motion.div whileHover={{ scale: 1.1 }} className=" cursor-pointer">
+        <motion.div whileHover={{ scale: 1.1 }}>
           <img
             src={user?.picture}
             className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-md
