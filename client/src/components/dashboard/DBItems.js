@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteProduct, getAllProducts } from "../../api";
 import { setAllProducts } from "../../context/actions/productActions";
 import { alertNULL, alertSucces } from "../../context/actions/alertActions";
+import { RiDeleteBin5Line } from "react-icons/ri";
 
 export default function DBItems() {
   const products = useSelector((state) => state.products);
@@ -19,7 +20,7 @@ export default function DBItems() {
             render: (rowData) => (
               <img
                 src={rowData.imageURL}
-                className="w-28 object-contain rounded-lg shadow-lg"
+                className="w-28 object-contain rounded-lg shadow-lg border-[2px] border-seagull-300"
               />
             ),
           },
@@ -27,7 +28,7 @@ export default function DBItems() {
             title: "Name",
             field: "product_name",
             render: (rowData) => (
-              <p className="font-body text-lg font-bold text-seagull-900">
+              <p className="font-body text-lg font-bold text-seagull-900 drop-shadow-lg">
                 {rowData.product_name}
               </p>
             ),
@@ -36,7 +37,7 @@ export default function DBItems() {
             title: "Category",
             field: "product_category",
             render: (rowData) => (
-              <p className="font-body text-lg font-bold text-[#979eb4]">
+              <p className="font-body text-lg font-bold text-[#979eb4] drop-shadow-lg">
                 {rowData.product_category}
               </p>
             ),
@@ -45,7 +46,7 @@ export default function DBItems() {
             title: "Price",
             field: "product_price",
             render: (rowData) => (
-              <p className="font-food text-xl flex items-center justify-center font-semibold">
+              <p className="font-food text-xl flex items-center justify-center font-semibold drop-shadow-lg">
                 <div className="rounded-full bg-seagull-300 p-2 w-10 h-10 flex items-center justify-center mr-2">
                   <span className="font-food font-bold text-seagull-50 text-sm">
                     RON
@@ -60,7 +61,9 @@ export default function DBItems() {
         title="List of products"
         actions={[
           {
-            icon: "delete",
+            icon: () => (
+              <RiDeleteBin5Line className="text-seagull-900 text-3xl drop-shadow-lg" />
+            ),
             tooltip: "Delete Data",
             onClick: (event, rowData) => {
               if (

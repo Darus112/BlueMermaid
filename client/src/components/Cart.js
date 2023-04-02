@@ -187,7 +187,7 @@ export const CartItemCard = ({ index, data }) => {
     >
       <img
         src={data?.imageURL}
-        className="w-24 min-w-[90px] object-contain rounded-lg shadow-xl"
+        className="w-24 min-w-[90px] object-contain rounded-lg shadow-xl border-[2px] border-seagull-600"
         alt=""
       />
 

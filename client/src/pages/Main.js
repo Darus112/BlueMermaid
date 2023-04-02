@@ -11,11 +11,13 @@ import Contact from "./Contact";
 import BookTable from "./BookTable";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllProducts } from "../context/actions/productActions";
-import { getAllProducts } from "../api";
+import { getAllProducts, getAllUsers } from "../api";
 import Cart from "../components/Cart";
+import { setAllUserDetails } from "../context/actions/allUsersActions";
 
 export default function Main() {
   const products = useSelector((state) => state.products);
+  const allUsers = useSelector((state) => state.allUsers);
 
   const isCart = useSelector((state) => state.isCart);
 
@@ -28,6 +30,14 @@ export default function Main() {
       });
     }
   }, [products]);
+
+  useEffect(() => {
+    if (!allUsers) {
+      getAllUsers().then((data) => {
+        dispatch(setAllUserDetails(data));
+      });
+    }
+  }, [allUsers]);
 
   return (
     <main className="w-screen min-h-screen flex items-center flex-col">

@@ -32,12 +32,12 @@ export default function SliderCard({ data, index }) {
       whileHover={{ scale: 1.03 }}
       className="bg-seagull-100 shadow-[0_3px_10px_rgb(0,0,0,0.2)] 
     rounded-xl flex items-center justify-between relative px-5 py-5 
-    w-full md:w-340 md:min-w-350 gap-3 mx-3 my-3"
+    w-full md:w-340 md:min-w-350 gap-3 mx-3 my-3 border-[2px] border-seagull-200"
     >
       <img
         src={data.imageURL}
         className="w-40 object-contain shadow-[0_3px_10px_rgb(0,0,0,0.2)]
-        rounded-xl"
+        rounded-xl border-[2px] border-seagull-200"
         alt=""
       />
       <div className="relative pt-5 pl-2">

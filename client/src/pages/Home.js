@@ -87,12 +87,13 @@ export default function Home() {
                     key={i}
                     className="w-32 h-36 md:h-150 md:w-190 p-4 backdrop-blur-lg
               rounded-xl flex flex-col items-center justify-center drop-shadow-lg
-              bg-seagull-300 bg-opacity-10 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+              bg-seagull-300 bg-opacity-10 shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-[2px]
+              border-seagull-200"
                   >
                     <img
                       src={data.imageURL}
                       className="w-20 md:w-28 md:-mt-16 object-contain rounded-2xl
-                    shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                    shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-[2px] border-seagull-200"
                       alt=""
                     />
                     <p
