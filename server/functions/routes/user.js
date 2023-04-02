@@ -46,7 +46,6 @@ const listAllUsers = async (nextPageToken) => {
 listAllUsers();
 
 router.get("/all", async (req, res) => {
-  listAllUsers();
   try {
     return res.status(200).send({ success: true, data: data });
   } catch (err) {
