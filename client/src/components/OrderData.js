@@ -4,6 +4,7 @@ import { buttonClick, staggerFadeInOut } from "../animation";
 import { getAllOrders, updateOrderSts } from "../api";
 import { setOrders } from "../context/actions/ordersActions";
 import { useDispatch } from "react-redux";
+import FoodItem from "../assets/Img/food_item.png";
 
 export default function OrderData({ index, data, admin }) {
   const dispatch = useDispatch();
@@ -108,7 +109,7 @@ export default function OrderData({ index, data, admin }) {
                 className="flex items-center justify-center gap-1"
               >
                 <img
-                  src={item.imageURL}
+                  src={FoodItem}
                   className="w-10 object-contain rounded-md drop-shadow-lg"
                   alt=""
                 />

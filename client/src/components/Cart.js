@@ -11,13 +11,8 @@ import { setCartOff } from "../context/actions/displayCartAction";
 
 import EmptyCart from "../assets/Img/empty_cart.png";
 
-import {
-  baseURL,
-  deleteCartItems,
-  getAllCartItems,
-  increaseItemQuantity,
-} from "../api";
-import { clearCartItems, setCartItems } from "../context/actions/cartActions";
+import { baseURL, getAllCartItems, increaseItemQuantity } from "../api";
+import { setCartItems } from "../context/actions/cartActions";
 import { MdShoppingCartCheckout } from "react-icons/md";
 import axios from "axios";
 import {
