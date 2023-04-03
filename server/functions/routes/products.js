@@ -192,7 +192,12 @@ router.post("/create-checkout-session", async (req, res) => {
   const customer = await stripe.customers.create({
     metadata: {
       user_id: req.body.data.user.user_id,
-      cart: JSON.stringify(req.body.data.cart),
+      cart: JSON.stringify(req.body.data.cart, (key, value) => {
+        if (key === "imageURL" || key === "product_category") {
+          return undefined;
+        }
+        return value;
+      }),
       total: req.body.data.total,
     },
   });
