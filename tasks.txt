@@ -1,0 +1,68 @@
+Bugs:
+
+1. More items on cart ./
+2. DB Users on refresh ./ 
+3. DB Users count ./
+4. Add new item inputs required ./
+
+Implement:
+
+1. Cart clear items button
+2. Products igredients show 
+? Contact
+? Book Table
+? Hide/Delete order
+
+Frontend design:
+
+1. Footer
+2. More info on home
+3. Abous us
+4. My profile
+5. Slider redone
+
+Final:
+
+1. Responsive
+2. Info && details match
+
+
+
+
+stripe login
+stripe listen --forward-to http://localhost:5001/restaurant-website-60f84/us-central1/app/api/products/webhook
+stripe trigger payment_intent.succeeded
+
+
+
+<motion.div
+  {...staggerFadeInOut(index)}
+  className="w-[95%] flex flex-col items-start justify-start px-3 py-2 border relative border-seagull-100
+bg-seagull-50 drop-shadow-lg rounded-lg gap-4"
+>
+  <div className="w-full flex items-center justify-between">
+    <h1 className="text-lg text-[#002849] font-semibold font-body">
+      Order:{" "}
+      <span className="text-[12px] text-[#004caf]"> {data?.orderId} </span>
+    </h1>
+  </div>
+
+  <motion.div
+    {...buttonClick}
+    onClick={() => dispatch(setCartOn())}
+    whileHover={{ scale: 1.02 }}
+    className="absolute bottom-1 right-1 cursor-pointer"
+  >
+    <BiShowAlt className="text-xl drop-shadow-lg" />
+  </motion.div>
+</motion.div>;
+
+      <motion.div
+        {...buttonClick}
+        whileHover={{ scale: 1.02 }}
+        onClick={() => dispatch(setOrderOff())}
+        className="absolute bottom-1 right-1 cursor-pointer"
+      >
+        <BiHide className="text-xl drop-shadow-lg" />
+      </motion.div>
+
