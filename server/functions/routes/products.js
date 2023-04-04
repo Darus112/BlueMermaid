@@ -378,4 +378,31 @@ router.post("/updateOrder/:order_id", async (req, res) => {
   }
 });
 
+// delete cart
+router.delete("/deleteCart/:userId", async (req, res) => {
+  const userId = req.params.userId;
+
+  try {
+    const cartItems = await db
+      .collection("cartItems")
+      .doc(`/${userId}/`)
+      .collection("items")
+      .get();
+
+    const batch = db.batch();
+
+    cartItems.forEach((doc) => {
+      batch.delete(doc.ref);
+    });
+
+    await batch.commit();
+
+    await db.collection("cartItems").doc(`/${userId}/`).delete();
+
+    return res.status(200).send({ success: true });
+  } catch (err) {
+    return res.send({ success: false, msg: `Error: ${err}` });
+  }
+});
+
 module.exports = router;
