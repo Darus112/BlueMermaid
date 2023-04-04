@@ -13,8 +13,13 @@ export default function DBOrders() {
     <div className="flex items-center justify-start flex-col pt-6 w-full h-full gap-4">
       {orders?.length > 0 ? (
         <>
-          {orders.map((item, i) => (
-            <OrderData key={i} index={i} data={item} admin={true} />
+          {orders.reverse().map((item, i) => (
+            <OrderData
+              key={i}
+              index={orders.length - (i + 1)}
+              data={item}
+              admin={true}
+            />
           ))}
         </>
       ) : (

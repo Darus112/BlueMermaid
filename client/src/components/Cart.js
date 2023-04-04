@@ -11,7 +11,12 @@ import { setCartOff } from "../context/actions/displayCartAction";
 
 import EmptyCart from "../assets/Img/empty_cart.png";
 
-import { baseURL, getAllCartItems, increaseItemQuantity } from "../api";
+import {
+  baseURL,
+  deleteCartItems,
+  getAllCartItems,
+  increaseItemQuantity,
+} from "../api";
 import { setCartItems } from "../context/actions/cartActions";
 import { MdShoppingCartCheckout } from "react-icons/md";
 import axios from "axios";
@@ -62,6 +67,18 @@ export default function Cart() {
     }
   };
 
+  const deleteCart = () => {
+    deleteCartItems(user?.user_id).then((res) => {
+      dispatch(alertSucces("Cart cleared"));
+      setTimeout(() => {
+        dispatch(alertNULL());
+      }, 3000);
+      getAllCartItems(user?.user_id).then((data) => {
+        dispatch(setCartItems(data));
+      });
+    });
+  };
+
   return (
     <motion.div
       {...slideIn}
@@ -80,6 +97,7 @@ export default function Cart() {
         <motion.i
           {...buttonClick}
           whileHover={{ scale: 1.02 }}
+          onClick={deleteCart}
           className="cursor-pointer border-none outline-none shadow-lg rounded-full p-2 hover:shadow-seagull-300"
         >
           <AiOutlineClear className="text-[30px] text-seagull-900 drop-shadow-lg" />

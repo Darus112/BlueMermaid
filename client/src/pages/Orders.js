@@ -42,8 +42,13 @@ export default function Orders() {
             <div className="flex items-center justify-center flex-col pt-6 w-full gap-4">
               {userOrders?.length > 0 ? (
                 <>
-                  {userOrders.map((item, i) => (
-                    <OrderData key={i} index={i} data={item} admin={false} />
+                  {userOrders.reverse().map((item, i) => (
+                    <OrderData
+                      key={i}
+                      index={userOrders.length - (i + 1)}
+                      data={item}
+                      admin={false}
+                    />
                   ))}
                 </>
               ) : (

@@ -119,3 +119,15 @@ export const updateOrderSts = async (order_id, sts) => {
     return null;
   }
 };
+
+// delet cart
+export const deleteCartItems = async (userId) => {
+  try {
+    const res = await axios.delete(
+      `${baseURL}/api/products/deleteCart/${userId}`
+    );
+    return res.data.data;
+  } catch (err) {
+    return null;
+  }
+};
