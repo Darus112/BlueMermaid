@@ -100,7 +100,7 @@ export default function Home() {
                       className="text-sm font-food md:text-lg font-semibold
                 text-seagull-700 drop-shadow-xl"
                     >
-                      {data.product_name.slice(0, 14)}
+                      {data.product_name.slice(0, 17)}
                     </p>
                     <p
                       className="text-base font-food font-semibold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]

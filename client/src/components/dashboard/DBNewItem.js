@@ -34,6 +34,7 @@ export default function DBNewItem() {
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(null);
   const [imageDownloadURL, setImageDownloadURL] = useState(null);
+  const [itemIngredients, setItemIngredients] = useState("");
 
   const alert = useSelector((state) => state.alert);
   const dispatch = useDispatch();
@@ -90,6 +91,7 @@ export default function DBNewItem() {
       product_category: category,
       product_price: price,
       imageURL: imageDownloadURL,
+      ingredients: itemIngredients,
     };
     if (!itemName || !category || !price || !imageDownloadURL) {
       dispatch(alertDanger("Required fields can't be empty"));
@@ -109,6 +111,7 @@ export default function DBNewItem() {
         setItemName("");
         setPrice("");
         setCategory(null);
+        setItemIngredients("");
       });
     }
   };
@@ -154,6 +157,15 @@ export default function DBNewItem() {
             placeHolder={"Item price here"}
             stateFunc={setPrice}
             stateValue={price}
+          />
+
+          <TextAreaField
+            type="text"
+            placeHolder="Enter ingredients here"
+            stateValue={itemIngredients}
+            stateFunc={setItemIngredients}
+            rows={4}
+            cols={50}
           />
 
           <div
@@ -245,6 +257,8 @@ export const InputValueField = ({
   placeHolder,
   stateValue,
   stateFunc,
+  rows,
+  cols,
 }) => {
   return (
     <input
@@ -253,6 +267,31 @@ export const InputValueField = ({
       className="w-full px-4 py-1 bg-gradient-to-l from-seagull-200 to-seagull-50
         shadow-lg outline-none rounded-md border-seagull-100 border 
         focus:border-seagull-200 focus:shadow-seagull-300 font-body font-semibold text-seagull-900"
+      rows={rows}
+      cols={cols}
+      value={stateValue}
+      onChange={(e) => stateFunc(e.target.value)}
+    />
+  );
+};
+
+export const TextAreaField = ({
+  type,
+  placeHolder,
+  stateValue,
+  stateFunc,
+  rows,
+  cols,
+}) => {
+  return (
+    <textarea
+      type={type}
+      placeholder={placeHolder}
+      className="w-full px-4 py-1 bg-gradient-to-l from-seagull-200 to-seagull-50
+        shadow-lg outline-none rounded-md border-seagull-100 border 
+        focus:border-seagull-200 focus:shadow-seagull-300 font-body font-semibold text-seagull-900"
+      rows={rows}
+      cols={cols}
       value={stateValue}
       onChange={(e) => stateFunc(e.target.value)}
     />
