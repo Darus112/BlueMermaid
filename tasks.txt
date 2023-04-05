@@ -5,11 +5,12 @@ Bugs:
 3. DB Users count ./
 4. Add new item inputs required ./
 
+
 Implement:
 
 1. Cart clear items button ./
 2. Hide/Show order ./
-3. Products igredients show 
+3. Products igredients show ./
 ? Contact
 ? Book Table
 
@@ -21,6 +22,7 @@ Frontend design:
 3. Abous us
 4. My profile
 5. Slider redone
+
 
 Final:
 
