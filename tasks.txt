@@ -11,9 +11,8 @@ Implement:
 1. Cart clear items button ./
 2. Hide/Show order ./
 3. Products igredients show ./
-4. New order notification for admin
-? Contact
-? Book Table
+4. New order notification for admin ???
+5. Contact
 
 
 Frontend design:
