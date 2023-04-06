@@ -406,4 +406,45 @@ router.delete("/deleteCart/:userId", async (req, res) => {
   }
 });
 
+// create contact
+router.post("/create/contact", async (req, res) => {
+  try {
+    const id = Date.now();
+    const data = {
+      contactId: id,
+      contact_firstName: req.body.contact_firstName,
+      contact_lastName: req.body.contact_lastName,
+      contact_email: req.body.contact_email,
+      contact_subject: req.body.contact_subject,
+      contact_message: req.body.contact_message,
+    };
+
+    const response = await db.collection("contacts").doc(`/${id}/`).set(data);
+    console.log(response);
+    return res.status(200).send({ success: true, data: response });
+  } catch (err) {
+    return res.send({ success: false, msg: `Error :${err}` });
+  }
+});
+
+// get all contacts
+router.get("/contacts/all", async (req, res) => {
+  (async () => {
+    try {
+      let query = db.collection("contacts");
+      let response = [];
+      await query.get().then((querysnap) => {
+        let docs = querysnap.docs;
+        docs.map((doc) => {
+          response.push({ ...doc.data() });
+        });
+        return response;
+      });
+      return res.status(200).send({ success: true, data: response });
+    } catch (err) {
+      return res.send({ success: false, msg: `Error :${err}` });
+    }
+  })();
+});
+
 module.exports = router;

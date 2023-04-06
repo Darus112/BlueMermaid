@@ -11,6 +11,7 @@ Implement:
 1. Cart clear items button ./
 2. Hide/Show order ./
 3. Products igredients show ./
+4. New order notification for admin
 ? Contact
 ? Book Table
 
@@ -21,7 +22,7 @@ Frontend design:
 2. More info on home
 3. Abous us
 4. My profile
-5. Slider redone
+5. Slider redone ./
 
 
 Final:
