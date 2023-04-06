@@ -1,0 +1,12 @@
+export const setAllContacts = (contacts) => {
+  return {
+    type: "SET_ALL_CONTACTS",
+    products: contacts,
+  };
+};
+
+export const getAllContacts = () => {
+  return {
+    type: "GET_ALL_CONTACTS",
+  };
+};

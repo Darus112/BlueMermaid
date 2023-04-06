@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import NoOrders from "../../assets/Img/no_orders.png";
 import OrderData from "../OrderData";
 
-import { BiShowAlt } from "react-icons/bi";
-
 export default function DBOrders() {
-  const isOrder = useSelector((state) => state.isOrder);
   const orders = useSelector((state) => state.orders);
 
   return (

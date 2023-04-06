@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
-import { BiSearchAlt } from "react-icons/bi";
-import { BsToggles2 } from "react-icons/bs";
 import { TbBellFilled } from "react-icons/tb";
 import { buttonClick } from "../../animation";
 import { FiLogOut } from "react-icons/fi";
@@ -44,15 +42,6 @@ export default function DBHeader() {
       </p>
 
       <div className="flex items-center justify-center gap-4">
-        <motion.div
-          {...buttonClick}
-          whileHover={{ scale: 1.1 }}
-          className="w-10 h-10 rounded-md cursor-pointer  bg-gradient-to-r from-[#ffffff] to-[#d2f2f7]
-        shadow-lg flex items-center justify-center border-none outline-none"
-        >
-          <TbBellFilled className="text-[#bbb9b9] text-xl" />
-        </motion.div>
-
         <motion.div whileHover={{ scale: 1.1 }}>
           <img
             src={user?.picture}

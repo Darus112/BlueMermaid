@@ -104,14 +104,6 @@ export default function Navbar() {
             >
               Contact
             </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? isActiveStyles2 : isNotActiveStyles2
-              }
-              to={"/booktable"}
-            >
-              Book Table
-            </NavLink>
           </ul>
           <motion.div
             {...buttonClick}
@@ -406,15 +398,6 @@ export default function Navbar() {
                   onClick={() => setShowNav(false)}
                 >
                   Contact
-                </NavLink>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? isActiveStyles2 : isNotActiveStyles2
-                  }
-                  to="/booktable"
-                  onClick={() => setShowNav(false)}
-                >
-                  Book Table
                 </NavLink>
               </ul>
             </motion.div>

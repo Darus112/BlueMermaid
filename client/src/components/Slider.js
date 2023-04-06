@@ -11,36 +11,8 @@ import { buttonClick } from "../animation";
 export default function Slider() {
   const products = useSelector((state) => state.products);
   const [specials, setSpecials] = useState(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(null);
-  const [scrollLeft, setScrollLeft] = useState(null);
 
   const sliderContainerRef = useRef(null);
-
-  useEffect(() => {
-    if (isDragging) {
-      const handleMouseMove = (event) => {
-        const x = event.pageX - sliderContainerRef.current.offsetLeft;
-        const distance = x - startX;
-        sliderContainerRef.current.scrollLeft = scrollLeft - distance;
-      };
-      const handleMouseUp = () => {
-        setIsDragging(false);
-      };
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
-      return () => {
-        document.removeEventListener("mousemove", handleMouseMove);
-        document.removeEventListener("mouseup", handleMouseUp);
-      };
-    }
-  }, [isDragging, startX, scrollLeft]);
-
-  const handleMouseDown = (event) => {
-    setIsDragging(true);
-    setStartX(event.pageX - sliderContainerRef.current.offsetLeft);
-    setScrollLeft(sliderContainerRef.current.scrollLeft);
-  };
 
   useEffect(() => {
     setSpecials(
@@ -52,24 +24,20 @@ export default function Slider() {
   const handleScrollLeft = () => {
     sliderContainerRef.current.scrollBy({
       left: -300,
-      behavior: "smooth",
     });
   };
 
   const handleScrollRight = () => {
     sliderContainerRef.current.scrollBy({
       left: 300,
-      behavior: "smooth",
     });
   };
 
   return (
     <div className="w-full h-auto relative">
       <div
-        className="w-full h-auto flex items-center justify-between overflow-x-scroll scrollbar-none"
+        className="w-full h-auto flex items-center justify-between overflow-x-scroll scrollbar-none scroll-smooth"
         ref={sliderContainerRef}
-        onMouseDown={handleMouseDown}
-        style={{ cursor: isDragging ? "grabbing" : "grab" }}
       >
         {specials &&
           specials.map((data, i) => (

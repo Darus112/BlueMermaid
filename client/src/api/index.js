@@ -131,3 +131,25 @@ export const deleteCartItems = async (userId) => {
     return null;
   }
 };
+
+// add new contact message
+export const addNewContact = async (data) => {
+  try {
+    const res = await axios.post(`${baseURL}/api/products/create/contact`, {
+      ...data,
+    });
+    return res.data.data;
+  } catch (err) {
+    return null;
+  }
+};
+
+// get all contacts
+export const getAllContacts = async () => {
+  try {
+    const res = await axios.get(`${baseURL}/api/products/contacts/all`);
+    return res.data.data;
+  } catch (err) {
+    return null;
+  }
+};

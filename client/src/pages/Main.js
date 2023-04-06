@@ -8,7 +8,6 @@ import Home from "./Home";
 import Menu from "./Menu";
 import About from "./About";
 import Contact from "./Contact";
-import BookTable from "./BookTable";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllProducts } from "../context/actions/productActions";
 import { getAllProducts, getAllUsers } from "../api";
@@ -51,7 +50,6 @@ export default function Main() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/aboutus" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/booktable" element={<BookTable />} />
         </Routes>
       </div>
       {isCart && <Cart />}

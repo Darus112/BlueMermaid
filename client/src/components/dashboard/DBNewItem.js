@@ -161,7 +161,7 @@ export default function DBNewItem() {
 
           <TextAreaField
             type="text"
-            placeHolder="Enter ingredients here"
+            placeHolder="Add ingredients here"
             stateValue={itemIngredients}
             stateFunc={setItemIngredients}
             rows={4}
