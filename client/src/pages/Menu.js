@@ -22,7 +22,7 @@ export default function Menu() {
       </Fade>
 
       <Bounce>
-        <div className="w-full">
+        <div className="w-full mt-12">
           <Slider />
         </div>
       </Bounce>

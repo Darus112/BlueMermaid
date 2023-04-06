@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { motion } from "framer-motion";
 
 import { IoBasket } from "react-icons/io5";
-import {
-  buttonClick,
-  fadeInOut,
-  slideIn,
-  staggerFadeInOut,
-} from "../animation";
+import { buttonClick, slideIn } from "../animation";
 import { addNewItemToCart, getAllCartItems } from "../api";
 
 import { useDispatch, useSelector } from "react-redux";
 import { alertNULL, alertSucces } from "../context/actions/alertActions";
-import { getCartItems, setCartItems } from "../context/actions/cartActions";
+import { setCartItems } from "../context/actions/cartActions";
 
 import { BiFoodMenu } from "react-icons/bi";
 import { BsCardList } from "react-icons/bs";
@@ -42,7 +37,7 @@ export default function SliderCard({ data, index }) {
       whileHover={{ scale: 1.03 }}
       className="bg-seagull-100 shadow-[0_3px_10px_rgb(0,0,0,0.2)] 
     rounded-xl flex items-center justify-between relative px-5 py-5 h-[180px]
-    w-full md:w-340 md:min-w-350 gap-3 mx-3 my-3 border-[2px] border-seagull-200"
+    min-w-350 md:w-340 md:min-w-350 gap-3 mx-3 my-3 border-[2px] border-seagull-200"
     >
       {showIngredients ? (
         <motion.div

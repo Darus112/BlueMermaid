@@ -41,7 +41,7 @@ export default function FilterSection() {
         bg-gradient-to-l from-seagull-500 to-seagull-200"
         ></div>
       </div>
-      <div className="w-ful flex items-center justify-evenly flex-wrap mt-12">
+      <div className="w-full flex items-center justify-evenly flex-wrap mt-12">
         {products &&
           products
             .filter((data) => data.product_category === category)
