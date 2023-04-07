@@ -129,7 +129,7 @@ export default function Contact() {
 
           <motion.button
             {...buttonClick}
-            className="w-32 py-4 rounded-full bg-gradient-to-tr from-[#81e2f3] to-[#e2ecd9]
+            className="w-32 py-4 rounded-full bg-gradient-to-tr from-[#5ad5eb] to-[#cdecb2]
         flex items-center justify-center gap-3 shadow-lg hover:shadow-[#81e2f3]"
             onClick={() => send()}
           >

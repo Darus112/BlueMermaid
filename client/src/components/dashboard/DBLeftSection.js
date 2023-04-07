@@ -81,6 +81,16 @@ export default function DBLeftSection() {
         >
           Users
         </NavLink>
+        <NavLink
+          to="/dashboard/contacts"
+          className={({ isActive }) =>
+            isActive
+              ? `${isActiveStyles} px-4 py-2 border-l-8 border-seagull-300`
+              : isNotActiveStyles
+          }
+        >
+          Contacts
+        </NavLink>
       </ul>
     </div>
   );

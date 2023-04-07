@@ -8,6 +8,7 @@ import DBOrders from "./DBOrders";
 import DBItems from "./DBItems";
 import DBNewItem from "./DBNewItem";
 import DBUsers from "./DBUsers";
+import DBContacts from "./DBContacts";
 
 export default function DBRightSection() {
   return (
@@ -15,13 +16,14 @@ export default function DBRightSection() {
       <Fade right>
         <DBHeader />
       </Fade>
-      <div className="flex flex-col flex-1 overflow-y-scroll scrollbar-none">
+      <div className="flex items-center px-3 flex-col flex-1 overflow-y-scroll scrollbar-none">
         <Routes>
           <Route path="/home" element={<DBHome />} />
           <Route path="/orders" element={<DBOrders />} />
           <Route path="/items" element={<DBItems />} />
           <Route path="/newItem" element={<DBNewItem />} />
           <Route path="/users" element={<DBUsers />} />
+          <Route path="/contacts" element={<DBContacts />} />
         </Routes>
       </div>
     </div>
