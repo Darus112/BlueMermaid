@@ -9,7 +9,26 @@ import {
 } from "react-icons/ai";
 import { MdSubject, MdOutlineDeleteSweep } from "react-icons/md";
 
+import { useDispatch } from "react-redux";
+import { deleteContact, getAllContacts } from "../api";
+import { setAllContacts } from "../context/actions/contactActions";
+import { alertNULL, alertSucces } from "../context/actions/alertActions";
+
 export default function ContactData({ index, data }) {
+  const dispatch = useDispatch();
+
+  const deleteMessage = (contactId) => {
+    deleteContact(contactId).then((res) => {
+      dispatch(alertSucces("Message deleted"));
+      setInterval(() => {
+        dispatch(alertNULL());
+      }, 3000);
+      getAllContacts().then((data) => {
+        dispatch(setAllContacts(data));
+      });
+    });
+  };
+
   return (
     <motion.div
       {...staggerFadeInOut(index)}
@@ -24,9 +43,10 @@ export default function ContactData({ index, data }) {
       <motion.div
         {...buttonClick}
         whileHover={{ scale: 1.02 }}
+        onClick={() => deleteMessage(data.contactId)}
         className="absolute top-4 right-4 cursor-pointer drop-shadow-lg"
       >
-        <MdOutlineDeleteSweep className="text-2xl" />
+        <MdOutlineDeleteSweep className="text-2xl text-seagull-900" />
       </motion.div>
       <div className="flex justify-between gap-10">
         <div className="w-auto relative -top-10  ">

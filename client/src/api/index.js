@@ -153,3 +153,15 @@ export const getAllContacts = async () => {
     return null;
   }
 };
+
+// delete a contact
+export const deleteContact = async (contactId) => {
+  try {
+    const res = await axios.delete(
+      `${baseURL}/api/products/delete/contact/${contactId}`
+    );
+    return res.data.data;
+  } catch (err) {
+    return null;
+  }
+};

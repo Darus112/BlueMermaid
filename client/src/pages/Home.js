@@ -12,6 +12,8 @@ import { buttonClick } from "../animation";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import DetailsCard from "../components/DetailsCard";
+
 export default function Home() {
   const products = useSelector((state) => state.products);
   const [specials, setSpecials] = useState(null);
@@ -25,7 +27,26 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-20">
+      <div className="w-full flex flex-row">
+        <div className="w-[500px] flex items-start justify-start flex-col font-content gap-5">
+          <h1
+            className="text-[25px] text-seagull-900 md:text-[40px]
+          font-extrabold tracking-wider w-96"
+          >
+            Deliciousness jumping into the mouth
+          </h1>
+          <p className="text-[15px] text-seagull-900 md:text-[20px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+      </div>
+      <div className="w-full flex items-center justify-center my-32">
+        <DetailsCard />
+      </div>
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-32">
         <Fade left>
           <div className="flex flex-col items-center md:items-start justify-center gap-6 md:mr-32">
             <div className="px-4 py-1 flex items-center justify-center gap-2 bg-seagull-200 rounded-full">

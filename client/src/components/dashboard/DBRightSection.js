@@ -16,7 +16,7 @@ export default function DBRightSection() {
       <Fade right>
         <DBHeader />
       </Fade>
-      <div className="flex items-center px-3 flex-col flex-1 overflow-y-scroll scrollbar-none">
+      <div className="flex items-center px-3 flex-col flex-1 overflow-y-scroll scrollbar-none ">
         <Routes>
           <Route path="/home" element={<DBHome />} />
           <Route path="/orders" element={<DBOrders />} />
