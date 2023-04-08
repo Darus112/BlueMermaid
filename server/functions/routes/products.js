@@ -447,4 +447,20 @@ router.get("/contacts/all", async (req, res) => {
   })();
 });
 
+// delete a contact
+router.delete("/delete/contact/:contactId", async (req, res) => {
+  const contactId = req.params.contactId;
+  try {
+    await db
+      .collection("contacts")
+      .doc(`/${contactId}/`)
+      .delete()
+      .then((result) => {
+        return res.status(200).send({ success: true, data: result });
+      });
+  } catch (err) {
+    return res.send({ success: false, msg: `Error :${err}` });
+  }
+});
+
 module.exports = router;
