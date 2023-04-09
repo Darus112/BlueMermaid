@@ -9,15 +9,14 @@ Bugs:
 Implement:
 
 1. Cart clear items button ./
-2. Hide/Show order ./
+2. Hide/Show order ./ Delete
 3. Products igredients show ./
 4. New order notification for admin ???
-5. Contact
-
+5. Contact ./
 
 Frontend design:
 
-1. Footer
+1. Footer ./
 2. More info on home
 3. Abous us
 4. My profile
