@@ -26,7 +26,7 @@ export default function DBOrders() {
       {orders?.length > 0 ? (
         <>
           {orders.reverse().map((item, i) => (
-            <OrderData key={i} index={i} data={item} admin={false} />
+            <OrderData key={i} index={i} data={item} admin={true} />
           ))}
         </>
       ) : (
