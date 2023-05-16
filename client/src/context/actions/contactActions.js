@@ -1,7 +1,7 @@
 export const setAllContacts = (contacts) => {
   return {
     type: "SET_ALL_CONTACTS",
-    products: contacts,
+    contacts: contacts,
   };
 };
 

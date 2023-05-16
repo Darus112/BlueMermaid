@@ -43,12 +43,7 @@ export default function Orders() {
               {userOrders?.length > 0 ? (
                 <>
                   {userOrders.reverse().map((item, i) => (
-                    <OrderData
-                      key={i}
-                      index={userOrders.length - (i + 1)}
-                      data={item}
-                      admin={false}
-                    />
+                    <OrderData key={i} index={i} data={item} admin={false} />
                   ))}
                 </>
               ) : (
@@ -62,9 +57,6 @@ export default function Orders() {
             </div>
           </div>
         </Bounce>
-        <div className="absolute bottom-0">
-          <Footer />
-        </div>
       </main>
     </>
   );

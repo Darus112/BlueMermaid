@@ -10,13 +10,15 @@ import About from "./About";
 import Contact from "./Contact";
 import { useDispatch, useSelector } from "react-redux";
 import { setAllProducts } from "../context/actions/productActions";
-import { getAllProducts, getAllUsers } from "../api";
+import { getAllContacts, getAllProducts, getAllUsers } from "../api";
 import Cart from "../components/Cart";
 import { setAllUserDetails } from "../context/actions/allUsersActions";
+import { setAllContacts } from "../context/actions/contactActions";
 
 export default function Main() {
   const products = useSelector((state) => state.products);
   const allUsers = useSelector((state) => state.allUsers);
+  const contacts = useSelector((state) => state.contacts);
 
   const isCart = useSelector((state) => state.isCart);
 
@@ -37,6 +39,14 @@ export default function Main() {
       });
     }
   }, [allUsers]);
+
+  useEffect(() => {
+    if (!contacts) {
+      getAllContacts().then((data) => {
+        dispatch(setAllContacts(data));
+      });
+    }
+  }, [contacts]);
 
   return (
     <main className="w-screen min-h-screen flex items-center flex-col">

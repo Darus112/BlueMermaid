@@ -3,14 +3,21 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import OurSpecialBg from "../assets/Img/Hero_bg.png";
+
 import { AiFillThunderbolt } from "react-icons/ai";
 import { MdRoomService } from "react-icons/md";
+import { GiChefToque } from "react-icons/gi";
+import { IoIosRestaurant } from "react-icons/io";
+import { MdOutlineRoomService } from "react-icons/md";
+import { RiHandCoinFill } from "react-icons/ri";
 
 import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 import { buttonClick } from "../animation";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
+import DetailsCard from "../components/DetailsCard";
 
 export default function Home() {
   const products = useSelector((state) => state.products);
@@ -25,7 +32,30 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-20">
+      <div className="w-full flex flex-row">
+        <Fade left>
+          <div className="w-[500px] flex items-start justify-start flex-col font-content gap-5">
+            <h1
+              className="text-[25px] text-seagull-900 md:text-[40px]
+          font-extrabold tracking-wider w-96"
+            >
+              Deliciousness jumping into the mouth
+            </h1>
+            <p className="text-[15px] text-seagull-900 md:text-[20px]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </Fade>
+      </div>
+      <Bounce>
+        <div className="w-full flex items-center justify-center my-32">
+          <DetailsCard />
+        </div>
+      </Bounce>
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 my-32">
         <Fade left>
           <div className="flex flex-col items-center md:items-start justify-center gap-6 md:mr-32">
             <div className="px-4 py-1 flex items-center justify-center gap-2 bg-seagull-200 rounded-full">
@@ -48,7 +78,7 @@ export default function Home() {
               <span className="text-seagull-300">Your City</span>
             </p>
 
-            <p className="text-sm font-content">
+            <p className="text-lg font-content">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -111,6 +141,73 @@ export default function Home() {
                     </p>
                   </div>
                 ))}
+            </div>
+          </div>
+        </Fade>
+      </div>
+      <div className="w-full flex items-center justify-evenly flex-col md:flex-row gap-5">
+        <Fade left>
+          <div className="w-[500px] flex items-center justify-center md:items-start md:justify-start flex-col font-content gap-5">
+            <h1
+              className="text-[25px] text-seagull-900 md:text-[40px]
+          font-extrabold tracking-wider w-96"
+            >
+              Why Choose Our Food
+            </h1>
+            <p className="text-[15px] text-seagull-900 md:text-[20px]">
+              Quality of Service, Food, Ambiance, and Value of Money are the
+              primary elements for choosing a restaurant. Shaif's Cuisine is one
+              of the most exquisite fine-dinning restaurant in Chittagong cities
+              with a captivating view of GEC Hills, perfect ambiance, and
+              scrumptious food.
+            </p>
+          </div>
+        </Fade>
+        <Fade right>
+          <div className="grid grid-cols-2 gap-12 items-center justify-center my-28">
+            <div
+              className="w-44 h-44 flex items-center justify-center rounded-3xl 
+        bg-gradient-to-tr from-seagull-300 to-[#6fdfee] shadow-[0_3px_10px_rgb(0,0,0,0.2)] mb-6 lg:mb-0"
+            >
+              <div className="flex flex-col items-center justify-center gap-y-3">
+                <IoIosRestaurant className="text-white text-6xl drop-shadow-lg" />
+                <p className="font-body text-seagull-700 text-lg drop-shadow-lg font-medium">
+                  Quality food
+                </p>
+              </div>
+            </div>
+            <div
+              className="w-44 h-44 flex items-center justify-center rounded-3xl 
+        bg-gradient-to-tr from-seagull-300 to-[#6fdfee] shadow-[0_3px_10px_rgb(0,0,0,0.2)] mb-6 lg:mb-0"
+            >
+              <div className="flex flex-col items-center justify-center gap-y-3">
+                <MdOutlineRoomService className="text-white text-6xl drop-shadow-lg" />
+                <p className="font-body text-seagull-700 text-lg drop-shadow-lg font-medium">
+                  Classical taste
+                </p>
+              </div>
+            </div>
+            <div
+              className="w-44 h-44 flex items-center justify-center rounded-3xl 
+        bg-gradient-to-tr from-seagull-300 to-[#6fdfee] shadow-[0_3px_10px_rgb(0,0,0,0.2)] mb-6 lg:mb-0"
+            >
+              <div className="flex flex-col items-center justify-center gap-y-3">
+                <GiChefToque className="text-white text-6xl drop-shadow-lg" />
+                <p className="font-body text-seagull-700 text-lg drop-shadow-lg font-medium">
+                  Skilled chef
+                </p>
+              </div>
+            </div>
+            <div
+              className="w-44 h-44 flex items-center justify-center rounded-3xl 
+        bg-gradient-to-tr from-seagull-300 to-[#6fdfee] shadow-[0_3px_10px_rgb(0,0,0,0.2)] mb-6 lg:mb-0"
+            >
+              <div className="flex flex-col items-center justify-center gap-y-3">
+                <RiHandCoinFill className="text-white text-6xl drop-shadow-lg" />
+                <p className="font-body text-seagull-700 text-lg drop-shadow-lg font-medium">
+                  Best service
+                </p>
+              </div>
             </div>
           </div>
         </Fade>

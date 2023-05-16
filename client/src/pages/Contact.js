@@ -11,7 +11,10 @@ import { addNewContact, getAllContacts } from "../api";
 import { setAllContacts } from "../context/actions/contactActions";
 import { buttonClick } from "../animation";
 
+import { RiContactsLine } from "react-icons/ri";
+
 import { motion } from "framer-motion";
+import DetailsCard from "../components/DetailsCard";
 
 export default function Contact() {
   const [firstName, setFirstName] = useState("");
@@ -54,8 +57,24 @@ export default function Contact() {
     }
   };
   return (
-    <div className="flex items-center justify-center flex-col pt-6 px-24 w-full mt-12">
-      <div className="p-4 w-full flex flex-col items-center gap-12">
+    <div className="flex items-center justify-center flex-col pt-6 px-24 w-full my-12">
+      <Bounce>
+        <div className="w-full flex items-center justify-center mb-20">
+          <DetailsCard />
+        </div>
+      </Bounce>
+      <div className="mt-12 flex items-center justify-between gap-10 w-full">
+        <div
+          className="w-[700px] h-[3px] rounded-xl
+        bg-gradient-to-r from-seagull-300 to-[#6fdfee]"
+        ></div>
+        <RiContactsLine className=" text-3xl text-[#6fdfee] drop-shadow-lg" />
+        <div
+          className="w-[700px] h-[3px] rounded-xl
+        bg-gradient-to-l from-seagull-300 to-[#6fdfee]"
+        ></div>
+      </div>
+      <div className="p-4 w-full flex flex-col items-center gap-12 mt-12">
         <div className="flex flex-row w-full gap-x-12">
           <Fade left>
             <div className="w-full flex flex-col justify-start items-start gap-2">
@@ -129,7 +148,7 @@ export default function Contact() {
 
           <motion.button
             {...buttonClick}
-            className="w-32 py-4 rounded-full bg-gradient-to-tr from-[#81e2f3] to-[#e2ecd9]
+            className="w-32 py-4 rounded-full bg-gradient-to-tr from-[#5ad5eb] to-[#cdecb2]
         flex items-center justify-center gap-3 shadow-lg hover:shadow-[#81e2f3]"
             onClick={() => send()}
           >
