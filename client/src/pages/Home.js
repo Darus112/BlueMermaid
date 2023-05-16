@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import OurSpecialBg from "../assets/Img/Hero_bg.png";
+import HomeImg from "../assets/Img/home_img.png";
 
 import { AiFillThunderbolt } from "react-icons/ai";
 import { MdRoomService } from "react-icons/md";
@@ -32,22 +33,29 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <div className="w-full flex flex-row">
+      <div className="w-full flex items-center justify-evenly flex-col md:flex-row gap-5 my-10">
         <Fade left>
-          <div className="w-[500px] flex items-start justify-start flex-col font-content gap-5">
+          <div className="w-[500px] flex items-center justify-center md:items-start md:justify-start flex-col font-content gap-5">
             <h1
               className="text-[25px] text-seagull-900 md:text-[40px]
-          font-extrabold tracking-wider w-96"
+          font-extrabold tracking-wider md:w-96"
             >
               Deliciousness jumping into the mouth
             </h1>
-            <p className="text-[15px] text-seagull-900 md:text-[20px]">
+            <p className="text-seagull-900 text-[20px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
           </div>
+        </Fade>
+        <Fade right>
+          <img
+            src={HomeImg}
+            alt=""
+            className=" w-508 bg-gradient-to-tr from-seagull-200 to-[#38bcce] rounded-2xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-8 "
+          />
         </Fade>
       </div>
       <Bounce>
@@ -150,11 +158,11 @@ export default function Home() {
           <div className="w-[500px] flex items-center justify-center md:items-start md:justify-start flex-col font-content gap-5">
             <h1
               className="text-[25px] text-seagull-900 md:text-[40px]
-          font-extrabold tracking-wider w-96"
+          font-extrabold tracking-wider md:w-96"
             >
               Why Choose Our Food
             </h1>
-            <p className="text-[15px] text-seagull-900 md:text-[20px]">
+            <p className=" text-seagull-900 text-[20px]">
               Quality of Service, Food, Ambiance, and Value of Money are the
               primary elements for choosing a restaurant. Shaif's Cuisine is one
               of the most exquisite fine-dinning restaurant in Chittagong cities
