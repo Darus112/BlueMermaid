@@ -25,10 +25,10 @@ export default function About() {
               About Us
             </h1>
             <p className=" text-seagull-900 text-[25px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Welcome to our restaurant! We are a culinary haven dedicated to
+              creating unforgettable dining experiences. With a passion for
+              exceptional food and warm hospitality, we invite you to embark on
+              a flavorful journey with us.
             </p>
           </div>
         </Fade>
@@ -43,10 +43,10 @@ export default function About() {
               Our Staff
             </h1>
             <p className=" text-seagull-900 text-[30px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Our staff is the heart and soul of our restaurant. With a shared
+              commitment to excellence and a genuine passion for hospitality,
+              our team goes above and beyond to ensure your dining experience is
+              nothing short of exceptional.
             </p>
           </div>
         </Bounce>

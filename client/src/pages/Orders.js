@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Bounce from "react-reveal/Bounce";
 import { getAllOrders } from "../api";
 
-import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 import { setOrders } from "../context/actions/ordersActions";

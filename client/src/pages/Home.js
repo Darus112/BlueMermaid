@@ -43,10 +43,13 @@ export default function Home() {
               Deliciousness jumping into the mouth
             </h1>
             <p className="text-seagull-900 text-[20px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Is a tantalizing culinary experience that will leave your taste
+              buds craving for more. This sensory adventure takes you on a
+              journey through a symphony of flavors, where every bite is a
+              delightful explosion of taste. From delectable appetizers to
+              mouthwatering main courses and divine desserts, each dish is
+              crafted with precision and passion, ensuring that every morsel is
+              a moment of pure bliss.
             </p>
           </div>
         </Fade>
@@ -87,13 +90,13 @@ export default function Home() {
             </p>
 
             <p className="text-lg font-content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Our restaurant offers an unparalleled level of convenience and
+              satisfaction right at your doorstep. We pride ourselves on
+              delivering exceptional service that goes above and beyond,
+              ensuring that every customer receives a seamless and memorable
+              experience. Our dedicated team of professionals is committed to
+              providing prompt and friendly assistance, catering to your needs
+              with utmost care and attention to detail.
             </p>
             <Link to={"/menu"}>
               <motion.button
@@ -163,11 +166,12 @@ export default function Home() {
               Why Choose Our Food
             </h1>
             <p className=" text-seagull-900 text-[20px]">
-              Quality of Service, Food, Ambiance, and Value of Money are the
-              primary elements for choosing a restaurant. Shaif's Cuisine is one
-              of the most exquisite fine-dinning restaurant in Chittagong cities
-              with a captivating view of GEC Hills, perfect ambiance, and
-              scrumptious food.
+              Discover the enticing flavors and exceptional quality of our food.
+              With a team of talented chefs, authentic ingredients, and a
+              commitment to customer satisfaction, choosing our food guarantees
+              a memorable culinary experience. From diverse menu options to
+              impeccable presentation, let your taste buds indulge in a journey
+              of delectable delights.
             </p>
           </div>
         </Fade>
