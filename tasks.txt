@@ -18,7 +18,7 @@ Frontend design:
 1. Footer ./
 2. More info on home ./
 3. Abous us ./
-4. My profile
+4. My profile ./
 5. Slider redone ./
 
 
