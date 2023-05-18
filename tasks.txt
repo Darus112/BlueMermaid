@@ -25,7 +25,7 @@ Frontend design:
 Final:
 
 1. Responsive
-2. Info && details match
+2. Info && details match ./
 
 
 
