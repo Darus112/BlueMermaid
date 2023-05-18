@@ -31,7 +31,7 @@ export default function DetailsCard() {
             className="font-body font-bold text-seagull-700 text-lg text-center"
             drop-shadow-lg
           >
-            GEC Circle, Rome, Spaghetti
+            GEC Circle, Barcelona, Seafood
           </p>
           <p className="font-body text-seagull-700 text-lg drop-shadow-lg">
             Address

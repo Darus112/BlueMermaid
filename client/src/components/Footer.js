@@ -45,8 +45,8 @@ export default function Footer() {
             Contact
           </h1>
           <p className="font-light">+344452156345</p>
-          <p className="font-light">restaurant@gmail.com</p>
-          <p className="font-light">GEC Circle, Rome, Spaghetti</p>
+          <p className="font-light">Blue_mermaid@gmail.com</p>
+          <p className="font-light">GEC Circle, Barcelona, Seafood</p>
         </div>
       </footer>
       <div>
