@@ -10,14 +10,14 @@ import { buttonClick } from "../animation";
 import SliderCard from "./SliderCard";
 
 export default function FilterSection() {
-  const [category, setCategory] = useState("breakfast");
+  const [category, setCategory] = useState("ourspecial");
   const products = useSelector((state) => state.products);
 
   return (
     <div className="w-full">
       <div
         className="w-full overflow-x-scroll pt-12 flex items-center 
-  justify-center gap-6 py-8 scrollbar-none"
+  justify-center gap-6 py-8 scrollbar-none flex-wrap"
       >
         {statuses &&
           statuses.map((data, i) => (
@@ -58,7 +58,7 @@ export const FilterCard = ({ data, index, category, setCategory }) => {
       whileHover={{ scale: 1.05 }}
       onClick={() => setCategory(data.category)}
       key={index}
-      className={`group w-20 min-w-[100px] cursor-pointer rounded-lg py-6
+      className={`group w-20 min-w-[110px] cursor-pointer rounded-lg py-6
       ${category === data.category ? "bg-seagull-300" : "bg-seagull-200"}
       hover:bg-seagull-300 shadow-lg hover:shadow-seagull-300
       flex flex-col items-center justify-center gap-4 border-none outline-none`}
@@ -77,9 +77,16 @@ export const FilterCard = ({ data, index, category, setCategory }) => {
       <p
         className={`${
           category === data.category ? "text-seagull-50" : "text-seagull-900"
-        } font-body group-hover:text-seagull-50 font-semibold text-sm`}
+        } font-body group-hover:text-seagull-50 font-semibold text-[10px]`}
       >
         {data.title}
+      </p>
+      <p
+        className={`${
+          category === data.category ? "text-seagull-50" : "text-seagull-900"
+        } font-body group-hover:text-seagull-50 font-semibold text-[9px]`}
+      >
+        ({data.name})
       </p>
     </motion.div>
   );

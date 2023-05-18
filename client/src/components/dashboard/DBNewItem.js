@@ -140,14 +140,15 @@ export default function DBNewItem() {
                   onClick={() => setCategory(data.category)}
                   key={data.id}
                   className={`px-4 py-3 rounded-lg text-sm border-none outline-none
-             font-semibold cursor-pointer shadow-lg
+             font-semibold cursor-pointer shadow-lg flex items-center justify-center flex-col
             hover:shadow-seagull-300 font-body ${
               data.category === category
                 ? "bg-seagull-300 text-seagull-50"
                 : "bg-white text-seagull-400 "
             }`}
                 >
-                  {data.title}
+                  <p>{data.title}</p>
+                  <p className="text-[10px]">({data.name})</p>
                 </motion.p>
               ))}
           </div>

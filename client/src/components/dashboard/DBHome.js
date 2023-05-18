@@ -10,14 +10,30 @@ export default function DBHome() {
   const products = useSelector((state) => state.products);
   const orders = useSelector((state) => state.orders);
 
-  const ourspecials = products?.filter(
-    (item) => item.product_category === "ourspecials"
+  const ourspecial = products?.filter(
+    (item) => item.product_category === "ourspecial"
   );
-  const breakfast = products?.filter(
-    (item) => item.product_category === "breakfast"
+  const salad = products?.filter((item) => item.product_category === "salad");
+  const mainCours = products?.filter(
+    (item) => item.product_category === "mainCours"
   );
-  const launch = products?.filter((item) => item.product_category === "launch");
-  const dinner = products?.filter((item) => item.product_category === "dinner");
+  const appetizer = products?.filter(
+    (item) => item.product_category === "appetizer"
+  );
+  const sandwich = products?.filter(
+    (item) => item.product_category === "sandwich"
+  );
+  const vegetarian = products?.filter(
+    (item) => item.product_category === "vegetarian"
+  );
+  const seafood = products?.filter(
+    (item) => item.product_category === "seafood"
+  );
+  const dessert = products?.filter(
+    (item) => item.product_category === "dessert"
+  );
+  const drink = products?.filter((item) => item.product_category === "drink");
+  const side = products?.filter((item) => item.product_category === "side");
 
   // orders
   const delivered = orders?.filter((item) => item.sts === "delivered");
@@ -35,16 +51,33 @@ export default function DBHome() {
               <CChart
                 type="bar"
                 data={{
-                  labels: ["Our Specials", "Breakfast", "Launch", "Dinner"],
+                  labels: [
+                    "Our Specials",
+                    "Salads",
+                    "Main Courses",
+                    "Appetizers",
+                    "Sandwiches",
+                    "Vegetarian Options",
+                    "Seafood Platters",
+                    "Sides",
+                    "Desserts",
+                    "Drinks",
+                  ],
                   datasets: [
                     {
                       label: "Category products",
                       backgroundColor: "#34c4d1",
                       data: [
-                        ourspecials?.length,
-                        breakfast?.length,
-                        launch?.length,
-                        dinner?.length,
+                        ourspecial?.length,
+                        salad?.length,
+                        mainCours?.length,
+                        appetizer?.length,
+                        sandwich?.length,
+                        vegetarian?.length,
+                        seafood?.length,
+                        side?.length,
+                        dessert?.length,
+                        drink?.length,
                       ],
                     },
                   ],

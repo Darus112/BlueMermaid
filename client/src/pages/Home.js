@@ -26,7 +26,7 @@ export default function Home() {
 
   useEffect(() => {
     setSpecials(
-      products?.filter((data) => data.product_category === "ourspecials")
+      products?.filter((data) => data.product_category === "ourspecial")
     );
     console.log(specials);
   }, [products]);
