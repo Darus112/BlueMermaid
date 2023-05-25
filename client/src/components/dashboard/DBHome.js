@@ -65,7 +65,7 @@ export default function DBHome() {
                   ],
                   datasets: [
                     {
-                      label: "Category products",
+                      label: "Categorii produse",
                       backgroundColor: "#34c4d1",
                       data: [
                         ourspecial?.length,
@@ -93,12 +93,12 @@ export default function DBHome() {
                 type="doughnut"
                 data={{
                   labels: [
-                    "Orders",
-                    "Delivered",
-                    "Cancelled",
-                    "Preparing",
-                    "Paid",
-                    "Not Paid",
+                    "Comenzi",
+                    "Livrate",
+                    "Anulate",
+                    "Pregătire",
+                    "Plătit",
+                    "Neplătit",
                   ],
                   datasets: [
                     {

@@ -15,7 +15,7 @@ export default function DBItems() {
       <DataTable
         columns={[
           {
-            title: "Image",
+            title: "Imagine",
             field: "imageURL",
             render: (rowData) => (
               <img
@@ -25,7 +25,7 @@ export default function DBItems() {
             ),
           },
           {
-            title: "Name",
+            title: "Nume",
             field: "product_name",
             render: (rowData) => (
               <p className="font-body text-lg font-bold text-seagull-900 drop-shadow-lg">
@@ -34,7 +34,7 @@ export default function DBItems() {
             ),
           },
           {
-            title: "Category",
+            title: "Categorie",
             field: "product_category",
             render: (rowData) => (
               <p className="font-body text-lg font-bold text-[#979eb4] drop-shadow-lg">
@@ -43,7 +43,7 @@ export default function DBItems() {
             ),
           },
           {
-            title: "Price",
+            title: "Preț",
             field: "product_price",
             render: (rowData) => (
               <p className="font-food text-xl flex items-center justify-center font-semibold drop-shadow-lg">
@@ -58,21 +58,21 @@ export default function DBItems() {
           },
         ]}
         data={products}
-        title="List of products"
+        title="Lista produselor"
         actions={[
           {
             icon: () => (
               <RiDeleteBin5Line className="text-seagull-900 text-3xl drop-shadow-lg" />
             ),
-            tooltip: "Delete Data",
+            tooltip: "Șterge datele",
             onClick: (event, rowData) => {
               if (
                 window.confirm(
-                  "Are you sure, do you want to perform this action"
+                  "Sunteți sigur, doriți să efectuați această acțiune?"
                 )
               ) {
                 deleteProduct(rowData.productId).then((res) => {
-                  dispatch(alertSucces("Product deleted"));
+                  dispatch(alertSucces("Produs șters"));
                   setInterval(() => {
                     dispatch(alertNULL());
                   }, 3000);

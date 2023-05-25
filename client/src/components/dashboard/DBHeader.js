@@ -35,9 +35,9 @@ export default function DBHeader() {
         className="font-content font-bold text-xl flex flex-col 
       justify-start text-seagull-900"
       >
-        Welcome to our restaurant
+        Bine ați venit la restaurantul nostru
         {user?.name && (
-          <span className="text-sm font-semibold text-seagull-600">{`Hello ${user?.name}!`}</span>
+          <span className="text-sm font-semibold text-seagull-600">{`Salutare ${user?.name}!`}</span>
         )}
       </p>
 

@@ -35,7 +35,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Home
+          Acasă
         </NavLink>
 
         <NavLink
@@ -46,7 +46,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Orders
+          Comenzi
         </NavLink>
 
         <NavLink
@@ -57,7 +57,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Items
+          Produse
         </NavLink>
 
         <NavLink
@@ -68,7 +68,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Add New Item
+          Adaugă Produs Nou
         </NavLink>
 
         <NavLink
@@ -79,7 +79,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Users
+          Utilizatori
         </NavLink>
         <NavLink
           to="/dashboard/contacts"
@@ -89,7 +89,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Contacts
+          Contacte
         </NavLink>
       </ul>
     </div>

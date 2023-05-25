@@ -21,20 +21,20 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-center font-body text-seagull-900 gap-y-2">
-          <h1 className="font-bold text-3xl">Links</h1>
+          <h1 className="font-bold text-3xl">Link-uri</h1>
           <NavLink to="/" className="font-light hover:text-seagull-300">
-            Home
+            Acasă
           </NavLink>
           <NavLink to="/menu" className="font-light hover:text-seagull-300">
-            Menu
+            Meniu
           </NavLink>
           <NavLink to="/aboutus" className="font-light hover:text-seagull-300">
-            About us
+            Despre noi
           </NavLink>
         </div>
         <div className="flex flex-col items-center font-body text-seagull-900 gap-y-2">
           <h1 className="font-body text-seagull-900 font-bold text-3xl">
-            Support
+            Suport
           </h1>
           <NavLink to="/contact" className="font-light hover:text-seagull-300">
             Contact
@@ -46,7 +46,7 @@ export default function Footer() {
           </h1>
           <p className="font-light">+344452156345</p>
           <p className="font-light">Blue_mermaid@gmail.com</p>
-          <p className="font-light">GEC Circle, Barcelona, Seafood</p>
+          <p className="font-light">GEC Circle, Vama Veche, Seafood</p>
         </div>
       </footer>
       <div>

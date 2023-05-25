@@ -22,13 +22,13 @@ export default function About() {
               className="text-seagull-900 text-[40px]
     font-extrabold tracking-wider "
             >
-              About Us
+              Despre Noi
             </h1>
             <p className=" text-seagull-900 text-[25px]">
-              Welcome to our restaurant! We are a culinary haven dedicated to
-              creating unforgettable dining experiences. With a passion for
-              exceptional food and warm hospitality, we invite you to embark on
-              a flavorful journey with us.
+              Bun venit la restaurantul nostru! Suntem un paradis culinar
+              dedicat creării unor experiențe gastronomice de neuitat. Cu o
+              pasiune pentru mâncare excepțională și o ospitalitate caldă, te
+              invităm să începi o călătorie plină de arome alături de noi
             </p>
           </div>
         </Fade>
@@ -40,13 +40,13 @@ export default function About() {
               className="text-seagull-900 text-[45px]
     font-extrabold tracking-wider "
             >
-              Our Staff
+              Echipa Noastră
             </h1>
             <p className=" text-seagull-900 text-[30px]">
-              Our staff is the heart and soul of our restaurant. With a shared
-              commitment to excellence and a genuine passion for hospitality,
-              our team goes above and beyond to ensure your dining experience is
-              nothing short of exceptional.
+              Echipa noastră este inima și sufletul restaurantului nostru. Cu un
+              angajament comun pentru excelență și o pasiune autentică pentru
+              ospitalitate, echipa noastră depune eforturi extraordinare pentru
+              a asigura că experiența ta culinară este cu adevărat excepțională.
             </p>
           </div>
         </Bounce>

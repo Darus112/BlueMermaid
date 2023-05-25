@@ -78,7 +78,7 @@ export default function Login() {
   const signUpWithEmailPass = async () => {
     if (userEmail === "" || password === "" || confirmPassword === "") {
       //alert message
-      dispatch(alertInfo("Required fields shouldn't be empty"));
+      dispatch(alertInfo("Câmpurile obligatorii nu ar trebui să fie goale"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -105,7 +105,7 @@ export default function Login() {
         });
       } else {
         //alert message
-        dispatch(alertWarning("Password doesn't match"));
+        dispatch(alertWarning("Parola nu se potrivește"));
         setTimeout(() => {
           dispatch(alertNULL());
         }, 3000);
@@ -131,7 +131,7 @@ export default function Login() {
       );
     } else {
       //alert message
-      dispatch(alertWarning("Password or Email incorect"));
+      dispatch(alertWarning("Parolă sau adresă de email incorectă"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -168,14 +168,14 @@ export default function Login() {
           {/* sign in option */}
           <div className="flex items-center justify-center">
             <p className="text-xl font-body font-medium text-seagull-900 text-opacity-60">
-              {isSignUp ? "Sign-up" : "Sign-in"} with following
+              {isSignUp ? "Înregistrează-te" : "Autentifică-te"} cu următoarele
             </p>
           </div>
 
           {/* input section */}
           <div className="w-full flex flex-col items-center justify-center gap-6 px-4 md:px-12 py-4 mt-20">
             <LoginInput
-              placeHolder={"Email here"}
+              placeHolder={"Email aici"}
               icon={<MdEmail className="text-xl text-seagull-900" />}
               inputState={userEmail}
               inputStateFunc={setUserEmail}
@@ -183,7 +183,7 @@ export default function Login() {
               isSignup={isSignUp}
             />
             <LoginInput
-              placeHolder={"Password here"}
+              placeHolder={"Parolă aici"}
               icon={<RiLockPasswordFill className="text-xl text-seagull-900" />}
               inputState={password}
               inputStateFunc={setPassword}
@@ -193,7 +193,7 @@ export default function Login() {
 
             {isSignUp && (
               <LoginInput
-                placeHolder={"Confrim password here"}
+                placeHolder={"Confirmă parola aici"}
                 icon={
                   <RiLockPasswordFill className="text-xl text-seagull-900" />
                 }
@@ -206,26 +206,26 @@ export default function Login() {
 
             {!isSignUp ? (
               <p className="font-body text-xs font-medium">
-                Doesn't have an account:{" "}
+                Nu ai un cont:{" "}
                 <motion.button
                   {...buttonClick}
                   className="text-[#fa2f2f] underline cursor-pointer 
                   bg-transparent border-none outline-none"
                   onClick={() => setIsSignUp(true)}
                 >
-                  Create one
+                  Creează unul
                 </motion.button>
               </p>
             ) : (
               <p className="font-body text-xs font-medium">
-                Already have an account:{" "}
+                Deja ai un cont:{" "}
                 <motion.button
                   {...buttonClick}
                   className="text-[#fa2f2f] underline cursor-pointer 
                 bg-transparent border-none outline-none"
                   onClick={() => setIsSignUp(false)}
                 >
-                  Sign-in here
+                  Autentifică-te aici
                 </motion.button>
               </p>
             )}
@@ -239,7 +239,7 @@ export default function Login() {
               shadow-lg hover:shadow-[#dd6f6f] text-xl border-none outline-none"
                 onClick={signUpWithEmailPass}
               >
-                SIGN UP
+                ÎNREGISTRARE
               </motion.button>
             ) : (
               <motion.button
@@ -249,14 +249,14 @@ export default function Login() {
               shadow-lg hover:shadow-[#dd6f6f] text-xl border-none outline-none"
                 onClick={signInWithEmailPass}
               >
-                SIGN IN
+                AUTENTIFICARE
               </motion.button>
             )}
           </div>
 
           <div className="mt-12 flex items-center justify-between gap-16">
             <div className="w-40 h-[1px] rounded-xl bg-seagull-100"></div>
-            <p className="font-body text-seagull-100 font-extralight">or</p>
+            <p className="font-body text-seagull-100 font-extralight">sau</p>
             <div className="w-40 h-[1px] rounded-xl bg-seagull-100"></div>
           </div>
 
@@ -268,8 +268,8 @@ export default function Login() {
             onClick={loginWithGoogle}
           >
             <FcGoogle className="text-3xl" />
-            <p className="capitalize font-body font-extralight">
-              Sign-in with Google
+            <p className=" font-body font-extralight">
+              Autentifică-te cu Google
             </p>
           </motion.div>
 
@@ -280,7 +280,7 @@ export default function Login() {
               className="font-body text-seagull-900 font-light bottom-5 
               right-7 absolute underline"
             >
-              go home
+              mergi acasă
             </motion.p>
           </Link>
         </div>

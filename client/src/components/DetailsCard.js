@@ -14,10 +14,10 @@ export default function DetailsCard() {
         <div className="flex flex-col items-center justify-center gap-y-3">
           <TbClockHour3 className="text-white text-6xl drop-shadow-lg" />
           <p className="font-body font-bold text-seagull-700 text-xl drop-shadow-lg">
-            10 AM - 7 PM
+            10:00 - 19:00
           </p>
           <p className="font-body text-seagull-700 text-lg drop-shadow-lg">
-            Opening Hour
+            Oră deschidere
           </p>
         </div>
       </div>
@@ -31,10 +31,10 @@ export default function DetailsCard() {
             className="font-body font-bold text-seagull-700 text-lg text-center"
             drop-shadow-lg
           >
-            GEC Circle, Barcelona, Seafood
+            GEC Circle, Vama Veche, Seafood
           </p>
           <p className="font-body text-seagull-700 text-lg drop-shadow-lg">
-            Address
+            Adresă
           </p>
         </div>
       </div>
@@ -48,7 +48,7 @@ export default function DetailsCard() {
             +344452156345
           </p>
           <p className="font-body text-seagull-700 text-lg drop-shadow-lg">
-            Call Now
+            Sună acum
           </p>
         </div>
       </div>

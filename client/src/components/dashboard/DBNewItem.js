@@ -62,7 +62,7 @@ export default function DBNewItem() {
           setImageDownloadURL(downloadURL);
           setIsLoading(false);
           setProgress(null);
-          dispatch(alertSucces("Image uploaded succesfully"));
+          dispatch(alertSucces("Imaginea a fost încărcată cu succes"));
           setTimeout(() => {
             dispatch(alertNULL());
           }, 3000);
@@ -78,7 +78,7 @@ export default function DBNewItem() {
     deleteObject(deleteRef).then(() => {
       setImageDownloadURL(null);
       setIsLoading(false);
-      dispatch(alertSucces("Image deleted succesfully"));
+      dispatch(alertSucces("Imaginea a fost ștearsă cu succes"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -94,13 +94,13 @@ export default function DBNewItem() {
       ingredients: itemIngredients,
     };
     if (!itemName || !category || !price || !imageDownloadURL) {
-      dispatch(alertDanger("Required fields can't be empty"));
+      dispatch(alertDanger("Câmpurile obligatorii nu pot fi goale"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
     } else {
       addNewProduct(data).then((res) => {
-        dispatch(alertSucces("New item added"));
+        dispatch(alertSucces("Un nou produs a fost adăugat"));
         getAllProducts().then((data) => {
           dispatch(setAllProducts(data));
         });
@@ -126,7 +126,7 @@ export default function DBNewItem() {
         >
           <InputValueField
             type="text"
-            placeHolder={"Item name here"}
+            placeHolder={"Nume produs aici"}
             stateFunc={setItemName}
             stateValue={itemName}
           />
@@ -155,14 +155,14 @@ export default function DBNewItem() {
 
           <InputValueField
             type="number"
-            placeHolder={"Item price here"}
+            placeHolder={"Preț produs aici"}
             stateFunc={setPrice}
             stateValue={price}
           />
 
           <TextAreaField
             type="text"
-            placeHolder="Add ingredients here"
+            placeHolder="Adaugă ingredientele aici"
             stateValue={itemIngredients}
             stateFunc={setItemIngredients}
             rows={4}
@@ -195,7 +195,7 @@ export default function DBNewItem() {
                             <RiUploadCloudFill className="-rotate-0 text-seagull-900" />
                           </p>
                           <p className="font-body text-seagull-900 text-sm">
-                            Click to upload an image
+                            Click pentru a încărca o imagine
                           </p>
                         </div>
                       </div>
@@ -238,13 +238,13 @@ export default function DBNewItem() {
 
           <motion.button
             {...buttonClick}
-            className="w-32 py-4 rounded-xl bg-gradient-to-tr from-[#aace88] to-[#e2ecd9]
+            className=" w-36 py-4 rounded-xl bg-gradient-to-tr from-[#aace88] to-[#e2ecd9]
             flex items-center justify-center gap-3 shadow-lg hover:shadow-[#aace88]"
             onClick={() => submitNewData()}
           >
             <FiSave className="text-2xl text-seagull-50" />
             <p className="font-body font-medium text-lg text-seagull-50">
-              Save
+              Salvează
             </p>
           </motion.button>
         </div>

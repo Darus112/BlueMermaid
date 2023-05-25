@@ -78,7 +78,7 @@ export default function Navbar() {
               }
               to={"/"}
             >
-              Home
+              Acasă
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -86,7 +86,7 @@ export default function Navbar() {
               }
               to={"/menu"}
             >
-              Menu
+              Meniu
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -94,7 +94,7 @@ export default function Navbar() {
               }
               to={"/aboutus"}
             >
-              About Us
+              Despre noi
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -160,14 +160,14 @@ export default function Navbar() {
                   className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                   to={"/profile"}
                 >
-                  <CgProfile className="text-2xl" /> My Profile
+                  <CgProfile className="text-2xl" /> Profilul Meu
                 </NavLink>
                 <NavLink
                   className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                   to={"/user-orders"}
                 >
                   <BsBorderStyle className="text-2xl" />
-                  Orders
+                  Comenzi
                 </NavLink>
                 <hr />
 
@@ -186,7 +186,7 @@ export default function Navbar() {
                     className="font-body font-bold text-sm text-seagull-900
                           group-hover:text-seagull-50"
                   >
-                    Sign Out
+                    Deconectare
                   </p>
                 </motion.div>
               </motion.div>
@@ -212,7 +212,8 @@ export default function Navbar() {
           </>
         )}
       </header>
-      {/* mobile */}
+
+      {/* mobil */}
       <header
         className="flex md:hidden bg-seagull-300
       fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6
@@ -269,14 +270,14 @@ export default function Navbar() {
                     className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                     to={"/profile"}
                   >
-                    <CgProfile className="text-2xl" /> My Profile
+                    <CgProfile className="text-2xl" /> Profilul Meu
                   </NavLink>
                   <NavLink
                     className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                     to={"/user-orders"}
                   >
                     <BsBorderStyle className="text-2xl" />
-                    Orders
+                    Comenzi
                   </NavLink>
                   <hr />
 
@@ -295,7 +296,7 @@ export default function Navbar() {
                       className="font-body font-bold text-sm text-seagull-900
                   group-hover:text-seagull-50"
                     >
-                      Sign Out
+                      Deconectare
                     </p>
                   </motion.div>
                 </motion.div>
@@ -370,7 +371,7 @@ export default function Navbar() {
                   to="/"
                   onClick={() => setShowNav(false)}
                 >
-                  Home
+                  Acasă
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>
@@ -379,7 +380,7 @@ export default function Navbar() {
                   to="/menu"
                   onClick={() => setShowNav(false)}
                 >
-                  Menu
+                  Meniu
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>
@@ -388,7 +389,7 @@ export default function Navbar() {
                   to="/aboutus"
                   onClick={() => setShowNav(false)}
                 >
-                  About Us
+                  Despre noi
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>

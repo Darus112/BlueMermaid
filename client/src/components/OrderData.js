@@ -45,7 +45,7 @@ export default function OrderData({ index, data, admin }) {
           </motion.div>
           <div className="w-full flex items-center justify-between">
             <h1 className="text-lg text-[#002849] font-semibold font-body">
-              Order:{" "}
+              Comanda:{" "}
               <span className="text-[12px] text-[#004caf]">
                 {" "}
                 {data?.orderId}{" "}
@@ -91,7 +91,7 @@ export default function OrderData({ index, data, admin }) {
               {admin && (
                 <div className="flex items-center justify-center gap-2">
                   <p className="text-[11px] font-body font-semibold capitalize">
-                    mark as:
+                    marchează ca:
                   </p>
 
                   <motion.p
@@ -143,7 +143,7 @@ export default function OrderData({ index, data, admin }) {
                       <div className="flex items-start gap-2">
                         <p className="font-body text-[9px] font-medium text-[#7a7a7a]">
                           {" "}
-                          Qty : {item.quantity}
+                          Cant : {item.quantity}
                         </p>
                         <div className="flex items-center justify-center gap-2 text-[10px]">
                           <span className=" text-[8px] font-body font-medium text-[#ebdd64] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
@@ -165,16 +165,13 @@ export default function OrderData({ index, data, admin }) {
               </h1>
 
               <p className="font-body text-[#666565] text-[12px] font-medium -mt-2">
-                Email: {data.customer.email} | Phone: {data.customer.phone}
+                Email: {data.customer.email} | Nr. Tel: {data.customer.phone}
               </p>
               <p className="font-body text-[#666565] text-[12px] font-medium -mt-2">
-                Address1: {data.shipping_details.address.line1}
+                Adresa: {data.shipping_details.address.line1}
               </p>
               <p className="font-body text-[#666565] text-[12px] font-medium -mt-2">
-                Address2: {data.shipping_details.address.line2}
-              </p>
-              <p className="font-body text-[#666565] text-[12px] font-medium -mt-2">
-                City: {data.shipping_details.address.city}
+                Oraș: {data.shipping_details.address.city}
               </p>
             </div>
           </div>

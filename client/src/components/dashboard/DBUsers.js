@@ -13,7 +13,7 @@ export default function DBUsers() {
       <DataTable
         columns={[
           {
-            title: "Image",
+            title: "Imagine",
             field: "photoURL",
             render: (rowData) => (
               <img
@@ -23,7 +23,7 @@ export default function DBUsers() {
             ),
           },
           {
-            title: "Name",
+            title: "Nume",
             field: "displayName",
             render: (rowData) => (
               <p className="font-body font-bold">{rowData.displayName}</p>
@@ -39,7 +39,7 @@ export default function DBUsers() {
             ),
           },
           {
-            title: "Verified",
+            title: "Verificat",
             field: "emailVerified",
             render: (rowData) => (
               <p
@@ -52,7 +52,7 @@ export default function DBUsers() {
           },
         ]}
         data={allUsers}
-        title="List of Users"
+        title="Lista Utilizatorilor"
       />
     </div>
   );

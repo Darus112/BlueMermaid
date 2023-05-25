@@ -40,16 +40,16 @@ export default function Home() {
               className="text-[25px] text-seagull-900 md:text-[40px]
           font-extrabold tracking-wider md:w-96"
             >
-              Deliciousness jumping into the mouth
+              Deliciul care sare în gură
             </h1>
             <p className="text-seagull-900 text-[20px]">
-              Is a tantalizing culinary experience that will leave your taste
-              buds craving for more. This sensory adventure takes you on a
-              journey through a symphony of flavors, where every bite is a
-              delightful explosion of taste. From delectable appetizers to
-              mouthwatering main courses and divine desserts, each dish is
-              crafted with precision and passion, ensuring that every morsel is
-              a moment of pure bliss.
+              Este o experiență culinară tantalizantă care îți va face papilele
+              gustative să ceară mai mult. Această aventură senzorială te poartă
+              într-o călătorie printr-o simfonie de arome, unde fiecare
+              înghițitură este o explozie delicioasă de gust. De la aperitive
+              delicioase la feluri principale care îți lasă gura apă și
+              deserturi divine, fiecare fel este creat cu precizie și pasiune,
+              asigurându-se că fiecare bucățică este un moment de fericire pură.
             </p>
           </div>
         </Fade>
@@ -74,7 +74,7 @@ export default function Home() {
                 <MdRoomService className="text-seagull-400" />
               </div>
               <p className="font-body text-seagull-400 text-xs font-semibold">
-                Best service & Fast delivery
+                Cea mai bună servire și livrare rapidă
               </p>
               <div className="bg-seagull-50 w-7 h-7 flex items-center justify-center rounded-full shadow-lg">
                 <AiFillThunderbolt className="text-seagull-400" />
@@ -85,18 +85,24 @@ export default function Home() {
               className="text-[25px] text-seagull-900 md:text-[40px] font-content
           font-extrabold tracking-wider"
             >
-              The Best Sevice and Delivery in{" "}
-              <span className="text-seagull-300">Your City</span>
+              Cel mai bun serviciu și livrare din{" "}
+              <span className="text-seagull-300">Orașul Tău</span>
             </p>
 
             <p className="text-lg font-content">
-              Our restaurant offers an unparalleled level of convenience and
-              satisfaction right at your doorstep. We pride ourselves on
-              delivering exceptional service that goes above and beyond,
-              ensuring that every customer receives a seamless and memorable
-              experience. Our dedicated team of professionals is committed to
-              providing prompt and friendly assistance, catering to your needs
-              with utmost care and attention to detail.
+              Restaurantul nostru oferă un nivel de confort și satisfacție fără
+              egal, chiar la ușa ta. Ne mândrim cu furnizarea unui serviciu
+              excepțional, care depășește așteptările, asigurându-ne că fiecare
+              client primește o experiență fluidă și memorabilă. Echipa noastră
+              dedicată de profesioniști este angajată să ofere asistență promptă
+              și prietenoasă, satisfăcând nevoile tale cu cea mai mare grijă și
+              atenție la detalii.Restaurantul nostru oferă un nivel de confort
+              și satisfacție fără egal, chiar la ușa ta. Ne mândrim cu
+              furnizarea unui serviciu excepțional, care depășește așteptările,
+              asigurându-ne că fiecare client primește o experiență fluidă și
+              memorabilă. Echipa noastră dedicată de profesioniști este angajată
+              să ofere asistență promptă și prietenoasă, satisfăcând nevoile
+              tale cu cea mai mare grijă și atenție la detalii.
             </p>
             <Link to={"/menu"}>
               <motion.button
@@ -105,13 +111,13 @@ export default function Home() {
                 className=" bg-gradient-to-tr from-seagull-300 to-[#94e2fa]
             px-4 py-2 rounded-xl font-body text-white font-semibold"
               >
-                Explore Menu
+                Explorează meniul
               </motion.button>
             </Link>
           </div>
         </Fade>
         <Fade right>
-          <div className="py-2 flex-1 flex items-center justify-center md:justify-end relative">
+          <div className="py-2 flex-1 flex items-center justify-center md:justify-end relative md:mt-0 mt-20">
             <img
               src={OurSpecialBg}
               alt=""
@@ -163,15 +169,16 @@ export default function Home() {
               className="text-[25px] text-seagull-900 md:text-[40px]
           font-extrabold tracking-wider md:w-96"
             >
-              Why Choose Our Food
+              De ce să alegi Mâncarea Noastră
             </h1>
             <p className=" text-seagull-900 text-[20px]">
-              Discover the enticing flavors and exceptional quality of our food.
-              With a team of talented chefs, authentic ingredients, and a
-              commitment to customer satisfaction, choosing our food guarantees
-              a memorable culinary experience. From diverse menu options to
-              impeccable presentation, let your taste buds indulge in a journey
-              of delectable delights.
+              Descoperă aromele atrăgătoare și calitatea excepțională a mâncării
+              noastre. Cu o echipă de bucătari talentați, ingrediente autentice
+              și angajamentul față de satisfacția clienților, alegerea mâncării
+              noastre garantează o experiență culinară memorabilă. De la diverse
+              opțiuni de meniu până la o prezentare impecabilă, lasă-ți papilele
+              gustative să se bucure de o călătorie plină de delicii
+              delectabile.
             </p>
           </div>
         </Fade>
@@ -184,7 +191,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center gap-y-3">
                 <IoIosRestaurant className="text-white text-6xl drop-shadow-lg" />
                 <p className="font-body text-seagull-700 text-lg drop-shadow-lg font-medium">
-                  Quality food
+                  Gustos
                 </p>
               </div>
             </div>
@@ -195,7 +202,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center gap-y-3">
                 <MdOutlineRoomService className="text-white text-6xl drop-shadow-lg" />
                 <p className="font-body text-seagull-700 text-lg drop-shadow-lg font-medium">
-                  Classical taste
+                  Gust clasic
                 </p>
               </div>
             </div>
@@ -206,7 +213,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center gap-y-3">
                 <GiChefToque className="text-white text-6xl drop-shadow-lg" />
                 <p className="font-body text-seagull-700 text-lg drop-shadow-lg font-medium">
-                  Skilled chef
+                  Bucătar priceput
                 </p>
               </div>
             </div>
@@ -217,7 +224,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center gap-y-3">
                 <RiHandCoinFill className="text-white text-6xl drop-shadow-lg" />
                 <p className="font-body text-seagull-700 text-lg drop-shadow-lg font-medium">
-                  Best service
+                  Serviciu excelent
                 </p>
               </div>
             </div>

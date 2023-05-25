@@ -9,11 +9,15 @@ export default function Menu() {
   return (
     <div className="w-full flex flex-col items-start justify-center mb-32">
       <Bounce>
-        <p className="font-content text-4xl font-bold">Explore our menu</p>
+        <p className="font-content text-4xl font-bold">
+          Explorează meniul nostru
+        </p>
       </Bounce>
       <Fade left>
         <div className="flex flex-col items-start justify-start gap-1 mt-20">
-          <p className="font-content text-2xl font-bold">Our Specials</p>
+          <p className="font-content text-2xl font-bold">
+            Specialitățile noastre
+          </p>
           <div
             className="w-20 h-1 rounded-md 
         bg-gradient-to-r from-seagull-300 to-[#95e9f8]"
@@ -29,7 +33,7 @@ export default function Menu() {
 
       <Fade left>
         <div className="flex flex-col items-start justify-start gap-1 mt-20">
-          <p className="font-content text-2xl font-bold">Our Dishes</p>
+          <p className="font-content text-2xl font-bold">Preparatele noastre</p>
           <div
             className="w-20 h-1 rounded-md 
         bg-gradient-to-r from-seagull-300 to-[#95e9f8]"

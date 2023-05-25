@@ -35,13 +35,13 @@ export default function Contact() {
       contact_message: message,
     };
     if (!firstName || !lastName || !email || !subject || !message) {
-      dispatch(alertDanger("Complete all fields"));
+      dispatch(alertDanger("Completează toate câmpurile"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
     } else {
       addNewContact(data).then((res) => {
-        dispatch(alertSucces("Send successfully"));
+        dispatch(alertSucces("Trimis cu succes"));
         getAllContacts().then((data) => {
           dispatch(setAllContacts(data));
         });
@@ -79,7 +79,7 @@ export default function Contact() {
           <Fade left>
             <div className="w-full flex flex-col justify-start items-start gap-2">
               <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
-                First Name
+                Prenume
               </p>
               <InputValueField
                 type="text"
@@ -92,7 +92,7 @@ export default function Contact() {
           <Fade right>
             <div className="w-full flex flex-col justify-start items-start">
               <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
-                Last Name
+                Nume
               </p>
               <InputValueField
                 type="text"
@@ -120,7 +120,7 @@ export default function Contact() {
           <Fade right>
             <div className="w-full flex flex-col justify-start items-start gap-2">
               <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
-                Subject
+                Subiect
               </p>
               <InputValueField
                 type="text"
@@ -134,7 +134,7 @@ export default function Contact() {
         <Fade bottom>
           <div className="w-full flex flex-col justify-start items-start gap-2">
             <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
-              Message
+              Mesaj
             </p>
             <TextAreaField
               type="text"
@@ -153,7 +153,7 @@ export default function Contact() {
             onClick={() => send()}
           >
             <p className="font-body font-medium text-lg text-seagull-50">
-              Send
+              Trimite
             </p>
           </motion.button>
         </Fade>

@@ -34,7 +34,7 @@ export default function DBContacts() {
         <div className="flex w-full h-full items-center justify-center flex-col">
           <img src={NoMessage} alt="" className=" drop-shadow-lg" />
           <h1 className="text-[55px] font-body font-semibold text-seagull-900 drop-shadow-lg">
-            No message received
+            Nu a fost primit niciun mesaj
           </h1>
         </div>
       )}

@@ -51,7 +51,9 @@ export default function Cart() {
       total: total,
     };
     if (!user) {
-      dispatch(alertInfo("Please login to Checkout!"));
+      dispatch(
+        alertInfo("Vă rugăm să vă autentificați pentru finalizarea comenzii")
+      );
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -69,7 +71,7 @@ export default function Cart() {
 
   const deleteCart = () => {
     deleteCartItems(user?.user_id).then((res) => {
-      dispatch(alertSucces("Cart cleared"));
+      dispatch(alertSucces("Coș șters"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -93,7 +95,7 @@ export default function Cart() {
         >
           <HiChevronDoubleRight className="text-[30px] text-seagull-900 drop-shadow-lg" />
         </motion.i>
-        <p className="font-body text-seagull-900 font-medium">Your Cart</p>
+        <p className="font-body text-seagull-900 font-medium">Coșul Tău</p>
         <motion.i
           {...buttonClick}
           whileHover={{ scale: 1.02 }}
@@ -147,7 +149,7 @@ export default function Cart() {
                 font-body"
                 onClick={handleCheckOut}
               >
-                Check Out
+                Finalizează Comanda
               </motion.button>
             </div>
           </>
@@ -155,7 +157,7 @@ export default function Cart() {
           <div className="w-full h-full flex flex-col items-center justify-center mb-32">
             <img src={EmptyCart} className="w-96 drop-shadow-lg" />
             <p className="font-body text-lg font-light drop-shadow-lg">
-              Your Cart is Currently Empty!
+              Coșul tău este momentan gol!
             </p>
           </div>
         )}
