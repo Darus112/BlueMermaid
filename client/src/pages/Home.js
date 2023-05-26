@@ -26,7 +26,7 @@ export default function Home() {
 
   useEffect(() => {
     setSpecials(
-      products?.filter((data) => data.product_category === "ourspecial")
+      products?.filter((data) => data.product_category === "specialitate")
     );
     console.log(specials);
   }, [products]);
@@ -40,7 +40,7 @@ export default function Home() {
               className="text-[25px] text-seagull-900 md:text-[40px]
           font-extrabold tracking-wider md:w-96"
             >
-              Deliciul care sare în gură
+              Deliciul care te îmbie la fiecare mușcătură
             </h1>
             <p className="text-seagull-900 text-[20px]">
               Este o experiență culinară tantalizantă care îți va face papilele

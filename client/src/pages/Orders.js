@@ -49,7 +49,7 @@ export default function Orders() {
                 <div className="flex items-center justify-center flex-col w-full h-full">
                   <img src={NoUserOrders} className=" drop-shadow-lg" />
                   <p className="text-3xl font-body text-[#ff7f66] font-medium drop-shadow-lg">
-                    You have placed no orders.
+                    Nu ai plasat nicio comanda.
                   </p>
                 </div>
               )}

@@ -11,14 +11,14 @@ export default function DBHome() {
   const orders = useSelector((state) => state.orders);
 
   const ourspecial = products?.filter(
-    (item) => item.product_category === "ourspecial"
+    (item) => item.product_category === "specialitate"
   );
-  const salad = products?.filter((item) => item.product_category === "salad");
+  const salad = products?.filter((item) => item.product_category === "salată");
   const mainCours = products?.filter(
-    (item) => item.product_category === "mainCours"
+    (item) => item.product_category === "felPrincipal"
   );
   const appetizer = products?.filter(
-    (item) => item.product_category === "appetizer"
+    (item) => item.product_category === "aperitiv"
   );
   const sandwich = products?.filter(
     (item) => item.product_category === "sandwich"
@@ -27,13 +27,15 @@ export default function DBHome() {
     (item) => item.product_category === "vegetarian"
   );
   const seafood = products?.filter(
-    (item) => item.product_category === "seafood"
+    (item) => item.product_category === "fructeMare"
   );
   const dessert = products?.filter(
-    (item) => item.product_category === "dessert"
+    (item) => item.product_category === "desert"
   );
-  const drink = products?.filter((item) => item.product_category === "drink");
-  const side = products?.filter((item) => item.product_category === "side");
+  const drink = products?.filter((item) => item.product_category === "băutură");
+  const side = products?.filter(
+    (item) => item.product_category === "garnitură"
+  );
 
   // orders
   const delivered = orders?.filter((item) => item.sts === "delivered");
@@ -52,16 +54,16 @@ export default function DBHome() {
                 type="bar"
                 data={{
                   labels: [
-                    "Our Specials",
-                    "Salads",
-                    "Main Courses",
-                    "Appetizers",
-                    "Sandwiches",
-                    "Vegetarian Options",
-                    "Seafood Platters",
-                    "Sides",
-                    "Desserts",
-                    "Drinks",
+                    "Specialități",
+                    "Salate",
+                    "Feluri principale",
+                    "Aperitive",
+                    "Sandwich-uri",
+                    "Opțiuni vegetariene",
+                    "Fructe de mare",
+                    "Garnituri",
+                    "Deserturi",
+                    "Băuturi",
                   ],
                   datasets: [
                     {

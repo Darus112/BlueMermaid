@@ -46,13 +46,13 @@ export default function DBUsers() {
                 className={`px-2 py-1 w-32 text-center text-seagull-50 rounded-lg font-body shadow-lg
           ${rowData.emailVerified ? "bg-[#6acc6a]" : "bg-[#d44646]"}`}
               >
-                {rowData.emailVerified ? "Verified" : "Not Verified"}
+                {rowData.emailVerified ? "Verificat" : "Neverificat"}
               </p>
             ),
           },
         ]}
         data={allUsers}
-        title="Lista Utilizatorilor"
+        title="Lista utilizatorilor"
       />
     </div>
   );

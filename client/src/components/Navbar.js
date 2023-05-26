@@ -186,7 +186,7 @@ export default function Navbar() {
                     className="font-body font-bold text-sm text-seagull-900
                           group-hover:text-seagull-50"
                   >
-                    Deconectare
+                    Decon
                   </p>
                 </motion.div>
               </motion.div>
@@ -296,7 +296,7 @@ export default function Navbar() {
                       className="font-body font-bold text-sm text-seagull-900
                   group-hover:text-seagull-50"
                     >
-                      Deconectare
+                      Decon
                     </p>
                   </motion.div>
                 </motion.div>
