@@ -43,7 +43,7 @@ export default function OrderData({ index, data, admin }) {
           >
             <BiHide className="text-xl text-seagull-800 drop-shadow-lg" />
           </motion.div>
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full flex items-center justify-between flex-col orders:flex-row">
             <h1 className="text-lg text-[#002849] font-semibold font-body">
               Comanda:{" "}
               <span className="text-[12px] text-[#004caf]">
@@ -52,7 +52,7 @@ export default function OrderData({ index, data, admin }) {
               </span>
             </h1>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 md:flex-row flex-col">
               <p
                 className="font-body text-base font-medium
            text-seagull-900 flex gap-1"
@@ -90,8 +90,8 @@ export default function OrderData({ index, data, admin }) {
 
               {admin && (
                 <div className="flex items-center justify-center gap-2">
-                  <p className="text-[11px] font-body font-semibold capitalize">
-                    marchează ca:
+                  <p className="text-[11px] font-body font-semibold">
+                    Marchează ca:
                   </p>
 
                   <motion.p
@@ -121,8 +121,8 @@ export default function OrderData({ index, data, admin }) {
               )}
             </div>
           </div>
-          <div className="flex items-center justify-start flex-wrap w-full">
-            <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center md:justify-start justify-center flex-wrap w-full">
+            <div className="flex items-center justify-center gap-4 md:flex-row flex-col">
               {data?.items &&
                 data.items.map((item, j) => (
                   <motion.div
@@ -159,7 +159,7 @@ export default function OrderData({ index, data, admin }) {
                 ))}
             </div>
 
-            <div className="flex items-start justify-start flex-col gap-2 px-6 ml-auto w-full md:w-460">
+            <div className="flex md:items-start md:justify-start items-center justify-center flex-col gap-2 px-6 ml-auto w-full md:w-460">
               <h1 className="font-body font-semibold text-[13px]">
                 {data.shipping_details.name}
               </h1>

@@ -44,7 +44,7 @@ export default function Slider() {
             <SliderCard key={i} data={data} index={i} />
           ))}
       </div>
-      <div className="hidden md:flex gap-3 items-center absolute -top-12 right-5">
+      <div className="flex gap-3 items-center absolute -top-12 right-5">
         <motion.div
           {...buttonClick}
           whileHover={{ scale: 1.03 }}

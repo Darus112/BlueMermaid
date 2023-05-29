@@ -33,7 +33,7 @@ export default function Profile() {
             </p>
             <p className=" font-body text-xl drop-shadow-xl">{user.email}</p>
             <p className=" font-content text-seagull-300 mt-16">
-              Mulțumesc pentru autentificare!
+              Mulțumim pentru autentificare!
             </p>
           </div>
           <Link to="/user-orders">

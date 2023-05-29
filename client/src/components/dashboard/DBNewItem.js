@@ -118,7 +118,7 @@ export default function DBNewItem() {
 
   return (
     <Bounce>
-      <div className="flex items-center justify-center flex-col pt-6 px-24 w-full mt-12">
+      <div className="flex items-center justify-center flex-col pt-6 md:px-24 w-full mt-12">
         <div
           className=" rounded-lg p-4 w-full flex 
         shadow-[0_3px_10px_rgb(0,0,0,0.2)] flex-col items-center 

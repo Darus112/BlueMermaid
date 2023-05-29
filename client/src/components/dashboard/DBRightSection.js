@@ -14,9 +14,11 @@ export default function DBRightSection() {
   return (
     <div className="flex flex-col py-12 px-12 flex-1 h-full ">
       <Fade right>
-        <DBHeader />
+        <div className="w-full abs z-50">
+          <DBHeader />
+        </div>
       </Fade>
-      <div className="flex items-center px-3 flex-col flex-1 overflow-y-scroll scrollbar-none ">
+      <div className="flex px-3 flex-col flex-1 ">
         <Routes>
           <Route path="/home" element={<DBHome />} />
           <Route path="/orders" element={<DBOrders />} />

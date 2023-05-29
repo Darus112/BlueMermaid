@@ -44,7 +44,7 @@ export default function ContactData({ index, data }) {
         {...buttonClick}
         whileHover={{ scale: 1.02 }}
         onClick={() => deleteMessage(data.contactId)}
-        className="absolute top-4 right-4 cursor-pointer drop-shadow-lg"
+        className="absolute -top-4 -right-4 md:top-4 md:right-4 cursor-pointer drop-shadow-lg"
       >
         <MdOutlineDeleteSweep className="text-2xl text-seagull-900" />
       </motion.div>

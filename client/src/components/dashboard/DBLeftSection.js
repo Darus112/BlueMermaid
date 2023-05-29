@@ -68,7 +68,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Adaugă Produs Nou
+          Adaugă Produs
         </NavLink>
 
         <NavLink

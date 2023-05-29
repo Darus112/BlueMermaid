@@ -46,10 +46,10 @@ export default function DBHome() {
 
   return (
     <div className="flex items-center justify-center flex-col pt-6 w-full h-full">
-      <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-4 h-full">
+      <div className="grid w-full grid-cols-1 db:grid-cols-2 gap-4 h-full">
         <Fade bottom>
           <div className="flex items-center justify-center">
-            <div className=" w-340 md:w-508 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+            <div className=" w-460 md:w-508 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
               <CChart
                 type="bar"
                 data={{
@@ -90,7 +90,7 @@ export default function DBHome() {
         </Fade>
         <Bounce>
           <div className="w-full h-full flex items-center justify-center">
-            <div className=" w-275 md:w-460 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+            <div className=" w-460 md:w-460 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
               <CChart
                 type="doughnut"
                 data={{

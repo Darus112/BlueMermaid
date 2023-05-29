@@ -55,7 +55,9 @@ export default function Dashboard() {
 
   return (
     <div className="w-screen h-screen flex items-center">
-      <DBLeftSection />
+      <div className="db:flex hidden h-screen ">
+        <DBLeftSection />
+      </div>
       <DBRightSection />
     </div>
   );

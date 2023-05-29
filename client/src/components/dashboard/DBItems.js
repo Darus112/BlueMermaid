@@ -11,7 +11,7 @@ export default function DBItems() {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex items-center justify--self-center gap-4 pt-6  mt-12">
+    <div className="flex items-center justify-self-center gap-4 pt-6 mt-12 py-8">
       <DataTable
         columns={[
           {

@@ -62,7 +62,7 @@ export default function Home() {
         </Fade>
       </div>
       <Bounce>
-        <div className="w-full flex items-center justify-center my-32">
+        <div className="w-full flex items-center justify-center my-48">
           <DetailsCard />
         </div>
       </Bounce>
@@ -96,13 +96,7 @@ export default function Home() {
               client primește o experiență fluidă și memorabilă. Echipa noastră
               dedicată de profesioniști este angajată să ofere asistență promptă
               și prietenoasă, satisfăcând nevoile tale cu cea mai mare grijă și
-              atenție la detalii.Restaurantul nostru oferă un nivel de confort
-              și satisfacție fără egal, chiar la ușa ta. Ne mândrim cu
-              furnizarea unui serviciu excepțional, care depășește așteptările,
-              asigurându-ne că fiecare client primește o experiență fluidă și
-              memorabilă. Echipa noastră dedicată de profesioniști este angajată
-              să ofere asistență promptă și prietenoasă, satisfăcând nevoile
-              tale cu cea mai mare grijă și atenție la detalii.
+              atenție la detalii.
             </p>
             <Link to={"/menu"}>
               <motion.button
@@ -121,7 +115,7 @@ export default function Home() {
             <img
               src={OurSpecialBg}
               alt=""
-              className="w-auto h-650 rounded-2xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] "
+              className="w-auto h-650 rounded-2xl shadow-[0_3px_10px_rgb(0,0,0,0.2)]  md:top-0 md:absolute"
             />
 
             <div
@@ -162,7 +156,7 @@ export default function Home() {
           </div>
         </Fade>
       </div>
-      <div className="w-full flex items-center justify-evenly flex-col md:flex-row gap-5">
+      <div className="w-full flex items-center justify-evenly flex-col md:flex-row gap-5 mt-60">
         <Fade left>
           <div className="w-[500px] flex items-center justify-center md:items-start md:justify-start flex-col font-content gap-5">
             <h1
@@ -191,7 +185,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center gap-y-3">
                 <IoIosRestaurant className="text-white text-6xl drop-shadow-lg" />
                 <p className="font-body text-seagull-700 text-lg drop-shadow-lg font-medium">
-                  Gustos
+                  Foarte gustos
                 </p>
               </div>
             </div>

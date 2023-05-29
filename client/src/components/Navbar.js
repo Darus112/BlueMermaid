@@ -1,10 +1,4 @@
-import {
-  Link,
-  NavLink,
-  useMatch,
-  useNavigate,
-  useResolvedPath,
-} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import LogoImg from "../assets/Img/logo.png";
