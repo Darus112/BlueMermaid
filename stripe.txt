@@ -1,35 +1,3 @@
-Bugs:
-
-1. More items on cart ./
-2. DB Users on refresh ./ 
-3. DB Users count ./
-4. Add new item inputs required ./
-
-
-Implement:
-
-1. Cart clear items button ./
-2. Hide/Show order ./
-3. Products igredients show ./
-4. Contact ./
-
-Frontend design:
-
-1. Footer ./
-2. More info on home ./
-3. Abous us ./
-4. My profile ./
-5. Slider redone ./
-
-
-Final:
-
-1. Responsive
-2. Info && details match ./
-
-
-
-
 stripe login
 stripe listen --forward-to http://localhost:5001/restaurant-website-60f84/us-central1/app/api/products/webhook
 stripe trigger payment_intent.succeeded
