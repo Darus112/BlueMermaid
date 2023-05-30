@@ -48,7 +48,10 @@ export default function DBHome() {
     <div className="flex items-center justify-center flex-col pt-6 w-full h-full">
       <div className="grid w-full grid-cols-1 db:grid-cols-2 gap-4 h-full">
         <Fade bottom>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center flex-col">
+            <p className="font-body pb-4 text-xl text-seagull-900 font-medium drop-shadow-xl">
+              Produse
+            </p>
             <div className=" w-460 md:w-508 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
               <CChart
                 type="bar"
@@ -89,7 +92,10 @@ export default function DBHome() {
           </div>
         </Fade>
         <Bounce>
-          <div className="w-full h-full flex items-center justify-center">
+          <div className="w-full h-full flex items-center justify-center flex-col">
+            <p className="font-body pb-4 text-xl text-seagull-900 font-medium drop-shadow-xl">
+              Comenzi
+            </p>
             <div className=" w-460 md:w-460 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
               <CChart
                 type="doughnut"
