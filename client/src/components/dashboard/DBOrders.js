@@ -22,7 +22,10 @@ export default function DBOrders() {
   }, [order]);
 
   return (
-    <div className="flex items-center justify-start flex-col pt-6 w-full h-full gap-4">
+    <div
+      className="flex items-center justify-start flex-col pt-20 w-full h-full gap-4 mt-11
+    backdrop-blur-sm bg-seagull-800 bg-opacity-25 shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-11 rounded-xl"
+    >
       {orders?.length > 0 ? (
         <>
           {orders.reverse().map((item, i) => (

@@ -55,7 +55,7 @@ export default function DBHeader() {
           onClick={menu}
           className="db:hidden group flex items-center justify-center px-3 py-2 rounded-lg 
                 shadow-[0_3px_10px_rgb(0,0,0,0.2)] outline-none border-none h-10
-                bg-gradient-to-r from-[#ffffff] to-[#d2f2f7] gap-3 cursor-pointer"
+                bg-gradient-to-r from-[#ffffff] to-[#d2f2f7]  gap-3 cursor-pointer"
         >
           <HiBarsArrowDown className="text-2xl text-seagull-900 " />
         </motion.div>

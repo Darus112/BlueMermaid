@@ -57,106 +57,111 @@ export default function Contact() {
     }
   };
   return (
-    <div className="flex items-center justify-center flex-col pt-6 px-24 w-full my-12">
-      <Bounce>
-        <div className="w-full flex items-center justify-center mb-20">
-          <DetailsCard />
-        </div>
-      </Bounce>
-      <div className="mt-12 flex items-center justify-between gap-10 w-full">
-        <div
-          className="w-[700px] h-[3px] rounded-xl
-        bg-gradient-to-r from-seagull-300 to-[#6fdfee]"
-        ></div>
-        <RiContactsLine className=" text-3xl text-[#6fdfee] drop-shadow-lg" />
-        <div
-          className="w-[700px] h-[3px] rounded-xl
-        bg-gradient-to-l from-seagull-300 to-[#6fdfee]"
-        ></div>
-      </div>
-      <div className="p-4 w-full flex flex-col items-center gap-12 mt-12">
-        <div className="flex flex-row w-full gap-x-12">
-          <Fade left>
-            <div className="w-full flex flex-col justify-start items-start gap-2">
-              <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
-                Prenume
-              </p>
-              <InputValueField
-                type="text"
-                placeHolder={". . ."}
-                stateFunc={setFirstName}
-                stateValue={firstName}
-              />
-            </div>
-          </Fade>
-          <Fade right>
-            <div className="w-full flex flex-col justify-start items-start">
-              <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
-                Nume
-              </p>
-              <InputValueField
-                type="text"
-                placeHolder={". . ."}
-                stateFunc={setLastName}
-                stateValue={lastName}
-              />
-            </div>
-          </Fade>
-        </div>
-        <div className="flex flex-row w-full gap-x-12">
-          <Fade left>
-            <div className="w-full flex flex-col justify-start items-start gap-2">
-              <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
-                Email
-              </p>
-              <InputValueField
-                type="email"
-                placeHolder={". . ."}
-                stateFunc={setEmail}
-                stateValue={email}
-              />
-            </div>
-          </Fade>
-          <Fade right>
-            <div className="w-full flex flex-col justify-start items-start gap-2">
-              <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
-                Subiect
-              </p>
-              <InputValueField
-                type="text"
-                placeHolder={". . ."}
-                stateFunc={setSubject}
-                stateValue={subject}
-              />
-            </div>
-          </Fade>
-        </div>
-        <Fade bottom>
-          <div className="w-full flex flex-col justify-start items-start gap-2">
-            <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
-              Mesaj
-            </p>
-            <TextAreaField
-              type="text"
-              placeHolder=". . ."
-              stateValue={message}
-              stateFunc={setMessage}
-              rows={4}
-              cols={50}
-            />
+    <div className="min-h-screen w-screen bg-generalBg bg-fixed bg-no-repeat bg-cover bg-center">
+      <div className="flex items-center justify-center flex-col pt-6 px-24 w-full my-12 mt-40">
+        <Bounce>
+          <div className="w-full flex items-center justify-center mb-20">
+            <DetailsCard />
           </div>
+        </Bounce>
+        <div className="mt-12 flex items-center justify-between gap-10 w-full">
+          <div
+            className="w-[700px] h-[3px] rounded-xl
+        bg-gradient-to-r from-seagull-300 to-[#6fdfee]"
+          ></div>
+          <RiContactsLine className=" text-3xl text-[#6fdfee] drop-shadow-lg" />
+          <div
+            className="w-[700px] h-[3px] rounded-xl
+        bg-gradient-to-l from-seagull-300 to-[#6fdfee]"
+          ></div>
+        </div>
+        <div
+          className="w-full flex flex-col items-center gap-12 mt-12
+        backdrop-blur-sm bg-seagull-800 bg-opacity-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-11 px-36 rounded-xl"
+        >
+          <div className="flex flex-row w-full gap-x-12">
+            <Fade left>
+              <div className="w-full flex flex-col justify-start items-start gap-2">
+                <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
+                  Prenume
+                </p>
+                <InputValueField
+                  type="text"
+                  placeHolder={". . ."}
+                  stateFunc={setFirstName}
+                  stateValue={firstName}
+                />
+              </div>
+            </Fade>
+            <Fade right>
+              <div className="w-full flex flex-col justify-start items-start">
+                <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
+                  Nume
+                </p>
+                <InputValueField
+                  type="text"
+                  placeHolder={". . ."}
+                  stateFunc={setLastName}
+                  stateValue={lastName}
+                />
+              </div>
+            </Fade>
+          </div>
+          <div className="flex flex-row w-full gap-x-12">
+            <Fade left>
+              <div className="w-full flex flex-col justify-start items-start gap-2">
+                <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
+                  Email
+                </p>
+                <InputValueField
+                  type="email"
+                  placeHolder={". . ."}
+                  stateFunc={setEmail}
+                  stateValue={email}
+                />
+              </div>
+            </Fade>
+            <Fade right>
+              <div className="w-full flex flex-col justify-start items-start gap-2">
+                <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
+                  Subiect
+                </p>
+                <InputValueField
+                  type="text"
+                  placeHolder={". . ."}
+                  stateFunc={setSubject}
+                  stateValue={subject}
+                />
+              </div>
+            </Fade>
+          </div>
+          <Fade bottom>
+            <div className="w-full flex flex-col justify-start items-start gap-2">
+              <p className="ml-7 font-body text-seagull-900 font-semibold text-xl">
+                Mesaj
+              </p>
+              <TextAreaField
+                type="text"
+                placeHolder=". . ."
+                stateValue={message}
+                stateFunc={setMessage}
+                rows={4}
+                cols={50}
+              />
+            </div>
 
-          <motion.button
-            {...buttonClick}
-            className="w-32 py-4 rounded-full bg-gradient-to-tr from-[#5ad5eb] to-[#cdecb2]
+            <motion.button
+              {...buttonClick}
+              className="w-32 py-4 rounded-full bg-gradient-to-tr from-[#5ad5eb] to-[#cdecb2]
         flex items-center justify-center gap-3 shadow-lg hover:shadow-[#81e2f3]"
-            onClick={() => send()}
-          >
-            <p className="font-body font-medium text-lg text-seagull-50">
-              Trimite
-            </p>
-          </motion.button>
-        </Fade>
+              onClick={() => send()}
+            >
+              <p className="font-body font-medium text-lg text-seagull-50">
+                Trimite
+              </p>
+            </motion.button>
+          </Fade>
+        </div>
       </div>
     </div>
   );

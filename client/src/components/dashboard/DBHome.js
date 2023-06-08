@@ -52,7 +52,10 @@ export default function DBHome() {
             <p className="font-body pb-4 text-xl text-seagull-900 font-medium drop-shadow-xl">
               Produse
             </p>
-            <div className=" w-460 md:w-508 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+            <div
+              className=" w-460 md:w-508 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]
+               bg-opacity-90"
+            >
               <CChart
                 type="bar"
                 data={{
@@ -96,7 +99,10 @@ export default function DBHome() {
             <p className="font-body pb-4 text-xl text-seagull-900 font-medium drop-shadow-xl">
               Comenzi
             </p>
-            <div className=" w-460 md:w-460 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+            <div
+              className=" w-460 md:w-460 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]
+            bg-opacity-90"
+            >
               <CChart
                 type="doughnut"
                 data={{

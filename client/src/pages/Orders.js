@@ -31,14 +31,21 @@ export default function Orders() {
 
   return (
     <>
-      <main className="w-screen min-h-screen flex items-center flex-col">
+      <main
+        className="w-screen min-h-screen flex items-center flex-col
+      bg-ordersBg bg-fixed bg-no-repeat bg-cover bg-center"
+      >
         <Navbar />
         <Bounce>
           <div
             className="w-full flex flex-col items-center justify-center my-40
-      px-6 md:px-24 2xl:px-96"
+      px-6 md:px-24 2xl:px-96
+      "
           >
-            <div className="flex items-center justify-center flex-col pt-6 w-full gap-4">
+            <div
+              className="flex items-center justify-center flex-col pt-11 w-full gap-4
+            backdrop-blur-sm bg-seagull-800 bg-opacity-25 shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-11 rounded-xl"
+            >
               {userOrders?.length > 0 ? (
                 <>
                   {userOrders.reverse().map((item, i) => (
