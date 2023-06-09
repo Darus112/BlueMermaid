@@ -40,8 +40,15 @@ export default function Home() {
       bg-headerImg1 bg-fixed bg-no-repeat bg-cover bg-center"
         >
           <Bounce>
-            <h1 className="font-black font-body text-seagull-900 text-6xl w-[400px] text-center">
+            <h1
+              className="font-black font-body text-seagull-900 text-6xl w-[400px] text-center 
+             drop-shadow-lg"
+            >
               Bun venit la restaurantul nostru!
+              <div className="font-logo font-semibold flex flex-col text-5xl mt-6">
+                <p className="text-seagull-300">Blue</p>
+                <p>Mermaid</p>{" "}
+              </div>
             </h1>
           </Bounce>
         </div>

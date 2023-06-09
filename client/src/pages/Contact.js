@@ -179,7 +179,7 @@ export const InputValueField = ({
     <input
       type={type}
       placeholder={placeHolder}
-      className="w-full px-4 py-1 h-16 bg-gradient-to-l from-seagull-200 to-seagull-300
+      className="w-full px-4 py-1 h-16 bg-seagull-300 bg-opacity-80
         shadow-lg outline-none rounded-full border-seagull-100 border 
         focus:border-seagull-200 focus:shadow-seagull-300 font-body font-semibold text-seagull-900"
       rows={rows}
@@ -202,7 +202,7 @@ export const TextAreaField = ({
     <textarea
       type={type}
       placeholder={placeHolder}
-      className="w-full px-8 py-4 h-52 bg-gradient-to-l from-seagull-200 to-seagull-300
+      className="w-full px-8 py-4 h-52 bg-seagull-300 bg-opacity-80
       shadow-lg outline-none rounded-[2rem] border-seagull-100 border 
       focus:border-seagull-200 focus:shadow-seagull-300 font-body font-semibold text-seagull-900"
       rows={rows}

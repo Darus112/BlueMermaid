@@ -84,7 +84,7 @@ export default function Cart() {
   return (
     <motion.div
       {...slideIn}
-      className="fixed z-50 top-0 right-0 w-full md:w-460 bg-seagull-300 backdrop-blur-lg h-full shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-opacity-40"
+      className="fixed z-50 top-0 right-0 w-full md:w-[650px] bg-seagull-300 backdrop-blur-lg h-full shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-opacity-40"
     >
       <div className="w-full flex items-center justify-between py-4 pb-12 px-3">
         <motion.i
