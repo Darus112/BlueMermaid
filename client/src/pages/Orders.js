@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Bounce from "react-reveal/Bounce";
+import Fade from "react-reveal/Fade";
 import { getAllOrders } from "../api";
 
 import Navbar from "../components/Navbar";
@@ -36,7 +36,7 @@ export default function Orders() {
       bg-ordersBg bg-fixed bg-no-repeat bg-cover bg-center"
       >
         <Navbar />
-        <Bounce>
+        <Fade>
           <div
             className="w-full flex flex-col items-center justify-center my-40
       px-6 md:px-24 2xl:px-96
@@ -62,7 +62,7 @@ export default function Orders() {
               )}
             </div>
           </div>
-        </Bounce>
+        </Fade>
       </main>
     </>
   );

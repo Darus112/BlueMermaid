@@ -31,7 +31,7 @@ export default function OrderData({ index, data, admin }) {
         <motion.div
           {...staggerFadeInOut(index)}
           className="w-[95%] flex flex-col items-start justify-start px-3 py-2 border relative border-seagull-100
-  bg-seagull-50 drop-shadow-lg rounded-lg gap-4"
+  bg-seagull-50 bg-opacity-80 backdrop-blur-md drop-shadow-lg rounded-lg gap-4"
         >
           <p className="absolute -left-7 -top-3 font-body font-bold text-xs text-seagull-800 drop-shadow-lg">
             {index + 1}
@@ -180,7 +180,7 @@ export default function OrderData({ index, data, admin }) {
         <motion.div
           {...staggerFadeInOut(index)}
           className="w-[95%] flex items-center justify-between pl-3 py-2 pr-1 border relative border-seagull-100
-      bg-seagull-50 drop-shadow-lg rounded-lg gap-4"
+          bg-seagull-50 bg-opacity-80 backdrop-blur-md drop-shadow-lg rounded-lg gap-4"
         >
           <p className="absolute -left-7 -top-3 font-body font-bold text-xs text-seagull-800 drop-shadow-lg">
             {index + 1}

@@ -143,7 +143,7 @@ export default function Cart() {
               <motion.button
                 {...buttonClick}
                 whileHover={{ scale: 1.02 }}
-                className=" bg-gradient-to-tr from-[#8400ff] to-[#e9d4f8]
+                className=" bg-[#8400ff] bg-opacity-20
               w-[30%] px-2 py-3 text-sm text-[#e2cdfd] shadow-md font-extrabold
                hover:shadow-[#8400ff] rounded-xl border-none outline-none mt-5
                 font-body"

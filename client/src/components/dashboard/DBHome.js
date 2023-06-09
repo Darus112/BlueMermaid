@@ -94,7 +94,7 @@ export default function DBHome() {
             </div>
           </div>
         </Fade>
-        <Bounce>
+        <Fade top>
           <div className="w-full h-full flex items-center justify-center flex-col">
             <p className="font-body pb-4 text-xl text-seagull-900 font-medium drop-shadow-xl">
               Comenzi
@@ -138,7 +138,7 @@ export default function DBHome() {
               />
             </div>
           </div>
-        </Bounce>
+        </Fade>
       </div>
     </div>
   );

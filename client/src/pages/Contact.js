@@ -59,11 +59,11 @@ export default function Contact() {
   return (
     <div className="min-h-screen w-screen bg-generalBg bg-fixed bg-no-repeat bg-cover bg-center">
       <div className="flex items-center justify-center flex-col pt-6 px-24 w-full my-12 mt-40">
-        <Bounce>
+        <Fade>
           <div className="w-full flex items-center justify-center mb-20">
             <DetailsCard />
           </div>
-        </Bounce>
+        </Fade>
         <div className="mt-12 flex items-center justify-between gap-10 w-full">
           <div
             className="w-[700px] h-[3px] rounded-xl
@@ -77,7 +77,7 @@ export default function Contact() {
         </div>
         <div
           className="w-full flex flex-col items-center gap-12 mt-12
-        backdrop-blur-sm bg-seagull-800 bg-opacity-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-11 px-36 rounded-xl"
+        backdrop-blur-sm bg-seagull-800 bg-opacity-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-11 md:px-36 rounded-xl"
         >
           <div className="flex flex-row w-full gap-x-12">
             <Fade left>

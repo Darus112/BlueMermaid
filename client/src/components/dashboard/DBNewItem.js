@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { statuses } from "../../utils/styles";
 import { motion } from "framer-motion";
-import Bounce from "react-reveal/Bounce";
+import Fade from "react-reveal/Fade";
 import SimpleLoader from "../SimpleLoader";
 
 import { RiUploadCloudFill, RiDeleteBin7Line } from "react-icons/ri";
@@ -117,7 +117,7 @@ export default function DBNewItem() {
   };
 
   return (
-    <Bounce>
+    <Fade>
       <div className="flex items-center justify-center flex-col pt-6 md:px-24 w-full mt-12">
         <div
           className=" rounded-lg p-4 w-full flex 
@@ -249,7 +249,7 @@ export default function DBNewItem() {
           </motion.button>
         </div>
       </div>
-    </Bounce>
+    </Fade>
   );
 }
 

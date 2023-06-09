@@ -9,7 +9,7 @@ export default function DBLeftSection() {
   return (
     <div
       className="h-full py-12 flex flex-col min-w-[200px] w-[300px] gap-3
-    bg-gradient-to-r from-[#ffffff] to-[#e1f7fa] shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+    bg-[#e1f7fa] shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
     >
       <NavLink to="/" className="flex items-center justify-center">
         <motion.div

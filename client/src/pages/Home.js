@@ -82,11 +82,11 @@ export default function Home() {
         </Fade>
       </div>
 
-      <Bounce>
+      <Fade>
         <div className="w-full flex items-center justify-center my-48 ">
           <DetailsCard />
         </div>
-      </Bounce>
+      </Fade>
 
       <div className="min-h-screen bg-headerImg3 bg-fixed bg-no-repeat bg-cover bg-center">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mt-96 px-40">

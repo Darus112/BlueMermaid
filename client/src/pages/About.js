@@ -38,7 +38,7 @@ export default function About() {
           </Fade>
         </div>
         <div className="w-full flex items-center justify-center my-20">
-          <Bounce>
+          <Fade>
             <div
               className="md:w-[700px] flex items-center justify-center flex-col font-content gap-5
             backdrop-blur-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-11 rounded-2xl"
@@ -57,7 +57,7 @@ export default function About() {
                 adevărat excepțională.
               </p>
             </div>
-          </Bounce>
+          </Fade>
         </div>
         <Fade bottom>
           <div className="w-full flex items-center justify-center mb-20">

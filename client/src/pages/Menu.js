@@ -12,11 +12,11 @@ export default function Menu() {
         className="w-full flex flex-col items-start justify-center mb-32 mt-40
        backdrop-blur-sm bg-seagull-800 bg-opacity-25 shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-11 px-36"
       >
-        <Bounce>
+        <Fade left>
           <p className="font-content text-4xl font-bold">
             Explorează meniul nostru
           </p>
-        </Bounce>
+        </Fade>
         <Fade left>
           <div className="flex flex-col items-start justify-start gap-1 mt-20">
             <p className="font-content text-2xl font-bold">
@@ -29,11 +29,11 @@ export default function Menu() {
           </div>
         </Fade>
 
-        <Bounce>
+        <Fade>
           <div className="w-full mt-12">
             <Slider />
           </div>
-        </Bounce>
+        </Fade>
 
         <Fade left>
           <div className="flex flex-col items-start justify-start gap-1 mt-20">

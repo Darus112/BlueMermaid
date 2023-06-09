@@ -108,7 +108,7 @@ export default function Navbar() {
             <TbPaperBag className=" text-3xl" />
             {cart?.length > 0 && (
               <div
-                className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+                className="w-5 h-5 rounded-full bg-[#67e8f9] bg-opacity-80
               mb-5 flex items-center justify-center border-2 absolute -top-4 -right-4"
               >
                 <p className="text-xs font-body font-semibold">
@@ -138,7 +138,7 @@ export default function Navbar() {
                 {...slideTop}
                 onMouseLeave={() => setIsMenu(false)}
                 className="px-6 py-4 w-44 shadow-[0_3px_10px_rgb(0,0,0,0.2)]
-                      bg-gradient-to-tr from-seagull-300 to-[#67e8f9] rounded-lg
+                      bg-seagull-300 bg-opacity-95 rounded-lg
                       absolute top-12 flex flex-col gap-4 text-center z-50 mr-32"
               >
                 {user?.user_id === process.env.REACT_APP_ADMIN_ID && (
@@ -248,7 +248,7 @@ export default function Navbar() {
                 <motion.div
                   {...fadeInOut}
                   className="px-6 py-4 w-44 shadow-[0_3px_10px_rgb(0,0,0,0.2)]
-                bg-gradient-to-tr from-seagull-300 to-[#67e8f9] rounded-lg
+                bg-seagull-300 bg-opacity-95 rounded-lg
                 absolute top-12 flex flex-col gap-4 text-center z-50"
                 >
                   {user?.user_id === process.env.REACT_APP_ADMIN_ID && (
@@ -336,7 +336,7 @@ export default function Navbar() {
             <TbPaperBag className=" text-3xl" />
             {cart?.length > 0 && (
               <div
-                className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+                className="w-5 h-5 rounded-full bg-[#67e8f9] bg-opacity-80
               mb-5 flex items-center justify-center border-2 absolute -top-4 -right-4"
               >
                 <p className="text-xs font-body font-semibold">
@@ -354,7 +354,7 @@ export default function Navbar() {
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.6 }}
-              className="w-44  bg-gradient-to-tr from-[#bbe0eb] to-[#ffffff] shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
+              className="w-44  bg-[#bbe0eb] bg-opacity-95 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
             absolute top-12 right-0 px-4 py-8 z-50 items-center font-body"
             >
               <ul className="flex flex-col items-center gap-8 font-body font-semibold">

@@ -55,7 +55,7 @@ export default function DBHeader() {
           onClick={menu}
           className="db:hidden group flex items-center justify-center px-3 py-2 rounded-lg 
                 shadow-[0_3px_10px_rgb(0,0,0,0.2)] outline-none border-none h-10
-                bg-gradient-to-r from-[#ffffff] to-[#d2f2f7]  gap-3 cursor-pointer"
+                bg-[#d2f2f7]  gap-3 cursor-pointer"
         >
           <HiBarsArrowDown className="text-2xl text-seagull-900 " />
         </motion.div>
@@ -75,7 +75,7 @@ export default function DBHeader() {
           whileHover={{ scale: 1.1 }}
           className="group flex items-center justify-center px-3 py-2 rounded-lg 
                 shadow-[0_3px_10px_rgb(0,0,0,0.2)] outline-none border-none h-10
-                bg-gradient-to-r from-[#ffffff] to-[#d2f2f7] gap-3 cursor-pointer"
+                bg-[#d2f2f7] gap-3 cursor-pointer"
         >
           <FiLogOut className="text-xl text-seagull-900 " />
         </motion.div>
@@ -99,8 +99,8 @@ export default function DBHeader() {
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.6 }}
-          className="db:hidden w-48  bg-gradient-to-tr from-[#bbe0eb] to-[#ffffff] shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
-            absolute top-16 right-40 px-4 py-8 z-9999 items-center font-body "
+          className="db:hidden w-48  bg-[#bbe0eb] bg-opacity-95 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
+            absolute top-28 right-44 px-4 py-8 z-9999 items-center font-body "
         >
           <ul className="flex flex-col items-center gap-8 font-body font-semibold">
             <NavLink
