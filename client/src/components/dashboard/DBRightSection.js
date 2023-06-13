@@ -13,7 +13,7 @@ import DBContacts from "./DBContacts";
 export default function DBRightSection() {
   return (
     <div
-      className="flex flex-col py-12 px-12 flex-1 h-full 
+      className="flex flex-col py-12 px-12 flex-1 h-full overflow-y-auto
     bg-generalBg bg-fixed bg-no-repeat bg-cover bg-center"
     >
       <Fade right>
