@@ -84,7 +84,7 @@ export default function Home() {
           <img
             src={HomeImg}
             alt=""
-            className=" w-656 bg-gradient-to-tr from-seagull-200 to-[#38bcce] rounded-2xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-8 "
+            className=" w-656 drop-shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] p-8 "
           />
         </Fade>
       </div>
@@ -96,7 +96,7 @@ export default function Home() {
       </Fade>
 
       <div className="min-h-screen bg-headerImg3 bg-fixed bg-no-repeat bg-cover bg-center">
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mt-96 px-40">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:mt-32 mt-4 px-40">
           <Fade left>
             <div
               className="flex flex-col items-center md:items-start justify-center gap-6 md:mr-32
