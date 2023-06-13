@@ -111,7 +111,7 @@ export default function Home() {
           </div>
         </Fade>
         <Fade right>
-          <div className="py-2 flex-1 flex items-center justify-center md:justify-end relative">
+          <div className="py-2 flex-1 flex items-center justify-center md:justify-end relative md:mt-0 mt-20">
             <img
               src={OurSpecialBg}
               alt=""
