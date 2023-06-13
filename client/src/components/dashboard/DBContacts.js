@@ -23,7 +23,10 @@ export default function DBContacts() {
   }, [contact]);
 
   return (
-    <div className="flex items-center justify-start flex-col pt-6 w-full h-full gap-4">
+    <div
+      className="flex items-center justify-start flex-col pt-6 w-full h-full gap-4 mt-20
+    backdrop-blur-sm bg-seagull-800 bg-opacity-25 shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-11 rounded-xl"
+    >
       {contacts?.length > 0 ? (
         <>
           {contacts.reverse().map((item, i) => (
@@ -34,7 +37,7 @@ export default function DBContacts() {
         <div className="flex w-full h-full items-center justify-center flex-col">
           <img src={NoMessage} alt="" className=" drop-shadow-lg" />
           <h1 className="text-[55px] font-body font-semibold text-seagull-900 drop-shadow-lg">
-            No message received
+            Nu a fost primit niciun mesaj
           </h1>
         </div>
       )}

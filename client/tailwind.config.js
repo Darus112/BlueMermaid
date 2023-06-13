@@ -3,6 +3,15 @@ module.exports = {
   content: ["./src/**/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        headerImg1: 'url("../src/assets/Img/Background/2.png")',
+        headerImg2: 'url("../src/assets/Img/Background/4.png")',
+        headerImg3: 'url("../src/assets/Img/Background/5.png")',
+        headerImg4: 'url("../src/assets/Img/Background/6.png")',
+        generalBg: 'url("../src/assets/Img/Background/general.png")',
+        ordersBg: 'url("../src/assets/Img/Background/orders.png")',
+      },
+
       width: {
         150: "150px",
         190: "190px",
@@ -41,6 +50,8 @@ module.exports = {
         sm: "640px",
         md: "768px",
         lg: "1024px",
+        db: "1400px",
+        orders: "1050px",
         xl: "1800px",
         "2xl": "2024px",
       },

@@ -12,11 +12,16 @@ import DBContacts from "./DBContacts";
 
 export default function DBRightSection() {
   return (
-    <div className="flex flex-col py-12 px-12 flex-1 h-full ">
+    <div
+      className="flex flex-col py-12 px-12 flex-1 h-full 
+    bg-generalBg bg-fixed bg-no-repeat bg-cover bg-center"
+    >
       <Fade right>
-        <DBHeader />
+        <div className="w-full z-50 backdrop-blur-lg bg-seagull-200 bg-opacity-50 p-10 rounded-xl">
+          <DBHeader />
+        </div>
       </Fade>
-      <div className="flex items-center px-3 flex-col flex-1 overflow-y-scroll scrollbar-none ">
+      <div className="flex px-3 flex-col flex-1 ">
         <Routes>
           <Route path="/home" element={<DBHome />} />
           <Route path="/orders" element={<DBOrders />} />

@@ -51,7 +51,9 @@ export default function Cart() {
       total: total,
     };
     if (!user) {
-      dispatch(alertInfo("Please login to Checkout!"));
+      dispatch(
+        alertInfo("Vă rugăm să vă autentificați pentru finalizarea comenzii")
+      );
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -69,7 +71,7 @@ export default function Cart() {
 
   const deleteCart = () => {
     deleteCartItems(user?.user_id).then((res) => {
-      dispatch(alertSucces("Cart cleared"));
+      dispatch(alertSucces("Coș șters"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -82,7 +84,7 @@ export default function Cart() {
   return (
     <motion.div
       {...slideIn}
-      className="fixed z-50 top-0 right-0 w-full md:w-460 bg-seagull-300 backdrop-blur-lg h-full shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-opacity-40"
+      className="fixed z-50 top-0 right-0 w-full md:w-[650px] bg-seagull-300 backdrop-blur-lg h-full shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-opacity-40"
     >
       <div className="w-full flex items-center justify-between py-4 pb-12 px-3">
         <motion.i
@@ -93,7 +95,7 @@ export default function Cart() {
         >
           <HiChevronDoubleRight className="text-[30px] text-seagull-900 drop-shadow-lg" />
         </motion.i>
-        <p className="font-body text-seagull-900 font-medium">Your Cart</p>
+        <p className="font-body text-seagull-900 font-medium">Coșul Tău</p>
         <motion.i
           {...buttonClick}
           whileHover={{ scale: 1.02 }}
@@ -141,13 +143,13 @@ export default function Cart() {
               <motion.button
                 {...buttonClick}
                 whileHover={{ scale: 1.02 }}
-                className=" bg-gradient-to-tr from-[#8400ff] to-[#e9d4f8]
+                className=" bg-[#8400ff] bg-opacity-20
               w-[30%] px-2 py-3 text-sm text-[#e2cdfd] shadow-md font-extrabold
                hover:shadow-[#8400ff] rounded-xl border-none outline-none mt-5
                 font-body"
                 onClick={handleCheckOut}
               >
-                Check Out
+                Finalizează Comanda
               </motion.button>
             </div>
           </>
@@ -155,7 +157,7 @@ export default function Cart() {
           <div className="w-full h-full flex flex-col items-center justify-center mb-32">
             <img src={EmptyCart} className="w-96 drop-shadow-lg" />
             <p className="font-body text-lg font-light drop-shadow-lg">
-              Your Cart is Currently Empty!
+              Coșul tău este momentan gol!
             </p>
           </div>
         )}

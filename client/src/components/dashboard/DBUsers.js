@@ -13,7 +13,7 @@ export default function DBUsers() {
       <DataTable
         columns={[
           {
-            title: "Image",
+            title: "Imagine",
             field: "photoURL",
             render: (rowData) => (
               <img
@@ -23,7 +23,7 @@ export default function DBUsers() {
             ),
           },
           {
-            title: "Name",
+            title: "Nume",
             field: "displayName",
             render: (rowData) => (
               <p className="font-body font-bold">{rowData.displayName}</p>
@@ -39,20 +39,20 @@ export default function DBUsers() {
             ),
           },
           {
-            title: "Verified",
+            title: "Verificat",
             field: "emailVerified",
             render: (rowData) => (
               <p
                 className={`px-2 py-1 w-32 text-center text-seagull-50 rounded-lg font-body shadow-lg
           ${rowData.emailVerified ? "bg-[#6acc6a]" : "bg-[#d44646]"}`}
               >
-                {rowData.emailVerified ? "Verified" : "Not Verified"}
+                {rowData.emailVerified ? "Verificat" : "Neverificat"}
               </p>
             ),
           },
         ]}
         data={allUsers}
-        title="List of Users"
+        title="Lista utilizatorilor"
       />
     </div>
   );

@@ -31,7 +31,7 @@ export default function OrderData({ index, data, admin }) {
         <motion.div
           {...staggerFadeInOut(index)}
           className="w-[95%] flex flex-col items-start justify-start px-3 py-2 border relative border-seagull-100
-  bg-seagull-50 drop-shadow-lg rounded-lg gap-4"
+  bg-seagull-50 bg-opacity-80 backdrop-blur-md drop-shadow-lg rounded-lg gap-4"
         >
           <p className="absolute -left-7 -top-3 font-body font-bold text-xs text-seagull-800 drop-shadow-lg">
             {index + 1}
@@ -43,16 +43,16 @@ export default function OrderData({ index, data, admin }) {
           >
             <BiHide className="text-xl text-seagull-800 drop-shadow-lg" />
           </motion.div>
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full flex items-center justify-between flex-col orders:flex-row">
             <h1 className="text-lg text-[#002849] font-semibold font-body">
-              Order:{" "}
+              Comanda:{" "}
               <span className="text-[12px] text-[#004caf]">
                 {" "}
                 {data?.orderId}{" "}
               </span>
             </h1>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 md:flex-row flex-col">
               <p
                 className="font-body text-base font-medium
            text-seagull-900 flex gap-1"
@@ -90,8 +90,8 @@ export default function OrderData({ index, data, admin }) {
 
               {admin && (
                 <div className="flex items-center justify-center gap-2">
-                  <p className="text-[11px] font-body font-semibold capitalize">
-                    mark as:
+                  <p className="text-[11px] font-body font-semibold">
+                    Marchează ca:
                   </p>
 
                   <motion.p
@@ -121,8 +121,8 @@ export default function OrderData({ index, data, admin }) {
               )}
             </div>
           </div>
-          <div className="flex items-center justify-start flex-wrap w-full">
-            <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center md:justify-start justify-center flex-wrap w-full">
+            <div className="flex items-center justify-center gap-4 md:flex-row flex-col">
               {data?.items &&
                 data.items.map((item, j) => (
                   <motion.div
@@ -143,7 +143,7 @@ export default function OrderData({ index, data, admin }) {
                       <div className="flex items-start gap-2">
                         <p className="font-body text-[9px] font-medium text-[#7a7a7a]">
                           {" "}
-                          Qty : {item.quantity}
+                          Cant : {item.quantity}
                         </p>
                         <div className="flex items-center justify-center gap-2 text-[10px]">
                           <span className=" text-[8px] font-body font-medium text-[#ebdd64] drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
@@ -159,22 +159,19 @@ export default function OrderData({ index, data, admin }) {
                 ))}
             </div>
 
-            <div className="flex items-start justify-start flex-col gap-2 px-6 ml-auto w-full md:w-460">
+            <div className="flex md:items-start md:justify-start items-center justify-center flex-col gap-2 px-6 ml-auto w-full md:w-460">
               <h1 className="font-body font-semibold text-[13px]">
                 {data.shipping_details.name}
               </h1>
 
               <p className="font-body text-[#666565] text-[12px] font-medium -mt-2">
-                Email: {data.customer.email} | Phone: {data.customer.phone}
+                Email: {data.customer.email} | Nr. Tel: {data.customer.phone}
               </p>
               <p className="font-body text-[#666565] text-[12px] font-medium -mt-2">
-                Address1: {data.shipping_details.address.line1}
+                Adresa: {data.shipping_details.address.line1}
               </p>
               <p className="font-body text-[#666565] text-[12px] font-medium -mt-2">
-                Address2: {data.shipping_details.address.line2}
-              </p>
-              <p className="font-body text-[#666565] text-[12px] font-medium -mt-2">
-                City: {data.shipping_details.address.city}
+                Oraș: {data.shipping_details.address.city}
               </p>
             </div>
           </div>
@@ -183,7 +180,7 @@ export default function OrderData({ index, data, admin }) {
         <motion.div
           {...staggerFadeInOut(index)}
           className="w-[95%] flex items-center justify-between pl-3 py-2 pr-1 border relative border-seagull-100
-      bg-seagull-50 drop-shadow-lg rounded-lg gap-4"
+          bg-seagull-50 bg-opacity-80 backdrop-blur-md drop-shadow-lg rounded-lg gap-4"
         >
           <p className="absolute -left-7 -top-3 font-body font-bold text-xs text-seagull-800 drop-shadow-lg">
             {index + 1}

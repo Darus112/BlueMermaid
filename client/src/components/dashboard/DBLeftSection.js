@@ -9,7 +9,7 @@ export default function DBLeftSection() {
   return (
     <div
       className="h-full py-12 flex flex-col min-w-[200px] w-[300px] gap-3
-    bg-gradient-to-r from-[#ffffff] to-[#e1f7fa] shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+    bg-[#e1f7fa] shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
     >
       <NavLink to="/" className="flex items-center justify-center">
         <motion.div
@@ -35,7 +35,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Home
+          Acasă
         </NavLink>
 
         <NavLink
@@ -46,7 +46,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Orders
+          Comenzi
         </NavLink>
 
         <NavLink
@@ -57,7 +57,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Items
+          Produse
         </NavLink>
 
         <NavLink
@@ -68,7 +68,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Add New Item
+          Adaugă Produs
         </NavLink>
 
         <NavLink
@@ -79,7 +79,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Users
+          Utilizatori
         </NavLink>
         <NavLink
           to="/dashboard/contacts"
@@ -89,7 +89,7 @@ export default function DBLeftSection() {
               : isNotActiveStyles
           }
         >
-          Contacts
+          Contacte
         </NavLink>
       </ul>
     </div>

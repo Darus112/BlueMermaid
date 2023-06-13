@@ -1,0 +1,4 @@
+stripe login
+stripe listen --forward-to http://localhost:5001/restaurant-website-60f84/us-central1/app/api/products/webhook
+stripe trigger payment_intent.succeeded
+

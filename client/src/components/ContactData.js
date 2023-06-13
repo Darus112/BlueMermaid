@@ -19,7 +19,7 @@ export default function ContactData({ index, data }) {
 
   const deleteMessage = (contactId) => {
     deleteContact(contactId).then((res) => {
-      dispatch(alertSucces("Message deleted"));
+      dispatch(alertSucces("Mesaj șters"));
       setInterval(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -33,7 +33,7 @@ export default function ContactData({ index, data }) {
     <motion.div
       {...staggerFadeInOut(index)}
       className="flex flex-col items-center justify-center w-full h-auto rounded-[2rem]
-     bg-gradient-to-tr from-[#96bde9] to-[#e3e6ec] gap-4 p-8 relative
+     bg-[#96bde9] bg-opacity-50 backdrop-blur-sm gap-4 p-8 relative
     shadow-[0_3px_10px_rgb(0,0,0,0.2)] mt-12 "
     >
       {" "}
@@ -44,7 +44,7 @@ export default function ContactData({ index, data }) {
         {...buttonClick}
         whileHover={{ scale: 1.02 }}
         onClick={() => deleteMessage(data.contactId)}
-        className="absolute top-4 right-4 cursor-pointer drop-shadow-lg"
+        className="absolute -top-4 -right-4 md:top-4 md:right-4 cursor-pointer drop-shadow-lg"
       >
         <MdOutlineDeleteSweep className="text-2xl text-seagull-900" />
       </motion.div>
@@ -52,10 +52,10 @@ export default function ContactData({ index, data }) {
         <div className="w-auto relative -top-10  ">
           <AiOutlineContacts className="absolute -top-3 -left-4 text-xl text-[#d46087] drop-shadow-lg" />
           <p
-            className="font-body font-base text-seagull-900 text-sm bg-gradient-to-tr from-[#d46087] to-[#d8a79f]
+            className="font-body font-base text-seagull-900 text-sm bg-[#d46087] bg-opacity-60 backdrop-blur-lg
          shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-3xl  flex items-center justify-center gap-1 p-3"
           >
-            Contact from:{" "}
+            Contact de la:{" "}
             <span className="font-semibold text-lg text-[#8b2346] drop-shadow-lg">
               {data.contact_firstName} {data.contact_lastName}
             </span>
@@ -64,7 +64,7 @@ export default function ContactData({ index, data }) {
         <div className="w-auto relative -top-10">
           <AiOutlineMail className="absolute -top-3 -left-4 text-xl text-[#b2b95d] drop-shadow-lg" />
           <p
-            className="font-body font-base text-seagull-900 text-sm bg-gradient-to-tr from-[#e0eb6e] to-[#e6de9a]
+            className="font-body font-base text-seagull-900 text-sm bg-[#e0eb6e] bg-opacity-60 backdrop-blur-lg
         shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-3xl  flex items-center justify-center gap-1 p-3"
           >
             Email:{" "}
@@ -77,7 +77,7 @@ export default function ContactData({ index, data }) {
       <div className="flex flex-col items-center justify-center gap-2">
         <MdSubject className="text-xl text-[#5b80aa] drop-shadow-lg" />
         <p className="font-body font-base text-seagull-900 text-sm drop-shadow-lg rounded-3xl shadow-lg p-3">
-          Subject:{" "}
+          Subiect:{" "}
           <span className="font-semibold text-lg text-[#5b80aa]">
             {data.contact_subject}
           </span>
@@ -86,7 +86,7 @@ export default function ContactData({ index, data }) {
       <div className="w-full flex items-center justify-center mt-5">
         <div className="w-2/3 flex flex-col items-center justify-center drop-shadow-lg">
           <AiOutlineMessage className="text-xl text-[#395f8a] drop-shadow-lg" />
-          <p className="font-body font-base text-seagull-900">Message:</p>
+          <p className="font-body font-base text-seagull-900">Mesaj:</p>
           <span
             className="font-semibold font-food px-5 text-[#395f8a]
           rounded-3xl shadow-lg p-6"

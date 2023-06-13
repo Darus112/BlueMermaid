@@ -33,7 +33,7 @@ export default function Profile() {
             </p>
             <p className=" font-body text-xl drop-shadow-xl">{user.email}</p>
             <p className=" font-content text-seagull-300 mt-16">
-              Thanks for your login!
+              Mulțumim pentru autentificare!
             </p>
           </div>
           <Link to="/user-orders">
@@ -43,7 +43,7 @@ export default function Profile() {
               className="font-body font-light bottom-5 
               right-7 absolute underline"
             >
-              watch your orders
+              urmărește comenzile
             </motion.p>
           </Link>
         </div>

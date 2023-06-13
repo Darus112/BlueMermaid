@@ -25,7 +25,7 @@ export default function SliderCard({ data, index }) {
         console.log(items);
         dispatch(setCartItems(items));
       });
-      dispatch(alertSucces("Added to the cart"));
+      dispatch(alertSucces("Adăugat în coș"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
@@ -89,7 +89,7 @@ export default function SliderCard({ data, index }) {
          items-center justify-center drop-shadow-lg"
       >
         <BiFoodMenu />
-        Ingredients
+        Ingrediente
       </motion.div>
     </motion.div>
   );

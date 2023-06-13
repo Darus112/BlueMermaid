@@ -10,7 +10,7 @@ import { buttonClick } from "../animation";
 import SliderCard from "./SliderCard";
 
 export default function FilterSection() {
-  const [category, setCategory] = useState("ourspecial");
+  const [category, setCategory] = useState("specialitate");
   const products = useSelector((state) => state.products);
 
   return (

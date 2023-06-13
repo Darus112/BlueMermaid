@@ -11,14 +11,14 @@ export default function DBHome() {
   const orders = useSelector((state) => state.orders);
 
   const ourspecial = products?.filter(
-    (item) => item.product_category === "ourspecial"
+    (item) => item.product_category === "specialitate"
   );
-  const salad = products?.filter((item) => item.product_category === "salad");
+  const salad = products?.filter((item) => item.product_category === "salată");
   const mainCours = products?.filter(
-    (item) => item.product_category === "mainCours"
+    (item) => item.product_category === "felPrincipal"
   );
   const appetizer = products?.filter(
-    (item) => item.product_category === "appetizer"
+    (item) => item.product_category === "aperitiv"
   );
   const sandwich = products?.filter(
     (item) => item.product_category === "sandwich"
@@ -27,13 +27,15 @@ export default function DBHome() {
     (item) => item.product_category === "vegetarian"
   );
   const seafood = products?.filter(
-    (item) => item.product_category === "seafood"
+    (item) => item.product_category === "fructeMare"
   );
   const dessert = products?.filter(
-    (item) => item.product_category === "dessert"
+    (item) => item.product_category === "desert"
   );
-  const drink = products?.filter((item) => item.product_category === "drink");
-  const side = products?.filter((item) => item.product_category === "side");
+  const drink = products?.filter((item) => item.product_category === "băutură");
+  const side = products?.filter(
+    (item) => item.product_category === "garnitură"
+  );
 
   // orders
   const delivered = orders?.filter((item) => item.sts === "delivered");
@@ -44,28 +46,34 @@ export default function DBHome() {
 
   return (
     <div className="flex items-center justify-center flex-col pt-6 w-full h-full">
-      <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-4 h-full">
+      <div className="grid w-full grid-cols-1 db:grid-cols-2 gap-4 h-full">
         <Fade bottom>
-          <div className="flex items-center justify-center">
-            <div className=" w-340 md:w-508 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+          <div className="flex items-center justify-center flex-col">
+            <p className="font-body pb-4 text-xl text-seagull-900 font-medium drop-shadow-xl">
+              Produse
+            </p>
+            <div
+              className=" w-460 md:w-508 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]
+               bg-opacity-90"
+            >
               <CChart
                 type="bar"
                 data={{
                   labels: [
-                    "Our Specials",
-                    "Salads",
-                    "Main Courses",
-                    "Appetizers",
-                    "Sandwiches",
-                    "Vegetarian Options",
-                    "Seafood Platters",
-                    "Sides",
-                    "Desserts",
-                    "Drinks",
+                    "Specialități",
+                    "Salate",
+                    "Feluri principale",
+                    "Aperitive",
+                    "Sandwich-uri",
+                    "Opțiuni vegetariene",
+                    "Fructe de mare",
+                    "Garnituri",
+                    "Deserturi",
+                    "Băuturi",
                   ],
                   datasets: [
                     {
-                      label: "Category products",
+                      label: "Categorii produse",
                       backgroundColor: "#34c4d1",
                       data: [
                         ourspecial?.length,
@@ -86,19 +94,25 @@ export default function DBHome() {
             </div>
           </div>
         </Fade>
-        <Bounce>
-          <div className="w-full h-full flex items-center justify-center">
-            <div className=" w-275 md:w-460 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+        <Fade top>
+          <div className="w-full h-full flex items-center justify-center flex-col">
+            <p className="font-body pb-4 text-xl text-seagull-900 font-medium drop-shadow-xl">
+              Comenzi
+            </p>
+            <div
+              className=" w-460 md:w-460 bg-seagull-100 p-12 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]
+            bg-opacity-90"
+            >
               <CChart
                 type="doughnut"
                 data={{
                   labels: [
-                    "Orders",
-                    "Delivered",
-                    "Cancelled",
-                    "Preparing",
-                    "Paid",
-                    "Not Paid",
+                    "Comenzi",
+                    "Livrate",
+                    "Anulate",
+                    "Pregătire",
+                    "Plătit",
+                    "Neplătit",
                   ],
                   datasets: [
                     {
@@ -124,7 +138,7 @@ export default function DBHome() {
               />
             </div>
           </div>
-        </Bounce>
+        </Fade>
       </div>
     </div>
   );

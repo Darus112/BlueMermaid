@@ -16,7 +16,7 @@ export default function Slider() {
 
   useEffect(() => {
     setSpecials(
-      products?.filter((data) => data.product_category === "ourspecial")
+      products?.filter((data) => data.product_category === "specialitate")
     );
     console.log(specials);
   }, [products]);

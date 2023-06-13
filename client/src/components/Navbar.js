@@ -1,10 +1,4 @@
-import {
-  Link,
-  NavLink,
-  useMatch,
-  useNavigate,
-  useResolvedPath,
-} from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import LogoImg from "../assets/Img/logo.png";
@@ -78,7 +72,7 @@ export default function Navbar() {
               }
               to={"/"}
             >
-              Home
+              Acasă
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -86,7 +80,7 @@ export default function Navbar() {
               }
               to={"/menu"}
             >
-              Menu
+              Meniu
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -94,7 +88,7 @@ export default function Navbar() {
               }
               to={"/aboutus"}
             >
-              About Us
+              Despre noi
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -114,7 +108,7 @@ export default function Navbar() {
             <TbPaperBag className=" text-3xl" />
             {cart?.length > 0 && (
               <div
-                className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+                className="w-5 h-5 rounded-full bg-[#67e8f9] bg-opacity-80
               mb-5 flex items-center justify-center border-2 absolute -top-4 -right-4"
               >
                 <p className="text-xs font-body font-semibold">
@@ -144,7 +138,7 @@ export default function Navbar() {
                 {...slideTop}
                 onMouseLeave={() => setIsMenu(false)}
                 className="px-6 py-4 w-44 shadow-[0_3px_10px_rgb(0,0,0,0.2)]
-                      bg-gradient-to-tr from-seagull-300 to-[#67e8f9] rounded-lg
+                      bg-seagull-300 bg-opacity-95 rounded-lg
                       absolute top-12 flex flex-col gap-4 text-center z-50 mr-32"
               >
                 {user?.user_id === process.env.REACT_APP_ADMIN_ID && (
@@ -160,14 +154,14 @@ export default function Navbar() {
                   className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                   to={"/profile"}
                 >
-                  <CgProfile className="text-2xl" /> My Profile
+                  <CgProfile className="text-2xl" /> Profilul Meu
                 </NavLink>
                 <NavLink
                   className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                   to={"/user-orders"}
                 >
                   <BsBorderStyle className="text-2xl" />
-                  Orders
+                  Comenzi
                 </NavLink>
                 <hr />
 
@@ -186,7 +180,7 @@ export default function Navbar() {
                     className="font-body font-bold text-sm text-seagull-900
                           group-hover:text-seagull-50"
                   >
-                    Sign Out
+                    Decon
                   </p>
                 </motion.div>
               </motion.div>
@@ -212,7 +206,8 @@ export default function Navbar() {
           </>
         )}
       </header>
-      {/* mobile */}
+
+      {/* mobil */}
       <header
         className="flex md:hidden bg-seagull-300
       fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6
@@ -253,7 +248,7 @@ export default function Navbar() {
                 <motion.div
                   {...fadeInOut}
                   className="px-6 py-4 w-44 shadow-[0_3px_10px_rgb(0,0,0,0.2)]
-                bg-gradient-to-tr from-seagull-300 to-[#67e8f9] rounded-lg
+                bg-seagull-300 bg-opacity-95 rounded-lg
                 absolute top-12 flex flex-col gap-4 text-center z-50"
                 >
                   {user?.user_id === process.env.REACT_APP_ADMIN_ID && (
@@ -269,14 +264,14 @@ export default function Navbar() {
                     className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                     to={"/profile"}
                   >
-                    <CgProfile className="text-2xl" /> My Profile
+                    <CgProfile className="text-2xl" /> Profilul Meu
                   </NavLink>
                   <NavLink
                     className="hover:text-seagull-50 font-body font-semibold text-seagull-900 flex flex-row gap-2"
                     to={"/user-orders"}
                   >
                     <BsBorderStyle className="text-2xl" />
-                    Orders
+                    Comenzi
                   </NavLink>
                   <hr />
 
@@ -295,7 +290,7 @@ export default function Navbar() {
                       className="font-body font-bold text-sm text-seagull-900
                   group-hover:text-seagull-50"
                     >
-                      Sign Out
+                      Decon
                     </p>
                   </motion.div>
                 </motion.div>
@@ -341,7 +336,7 @@ export default function Navbar() {
             <TbPaperBag className=" text-3xl" />
             {cart?.length > 0 && (
               <div
-                className="w-5 h-5 rounded-full bg-gradient-to-t from-seagull-300 to-[#67e8f9]
+                className="w-5 h-5 rounded-full bg-[#67e8f9] bg-opacity-80
               mb-5 flex items-center justify-center border-2 absolute -top-4 -right-4"
               >
                 <p className="text-xs font-body font-semibold">
@@ -359,7 +354,7 @@ export default function Navbar() {
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.6 }}
-              className="w-44  bg-gradient-to-tr from-[#bbe0eb] to-[#ffffff] shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
+              className="w-44  bg-[#bbe0eb] bg-opacity-95 shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-lg flex flex-col 
             absolute top-12 right-0 px-4 py-8 z-50 items-center font-body"
             >
               <ul className="flex flex-col items-center gap-8 font-body font-semibold">
@@ -370,7 +365,7 @@ export default function Navbar() {
                   to="/"
                   onClick={() => setShowNav(false)}
                 >
-                  Home
+                  Acasă
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>
@@ -379,7 +374,7 @@ export default function Navbar() {
                   to="/menu"
                   onClick={() => setShowNav(false)}
                 >
-                  Menu
+                  Meniu
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>
@@ -388,7 +383,7 @@ export default function Navbar() {
                   to="/aboutus"
                   onClick={() => setShowNav(false)}
                 >
-                  About Us
+                  Despre noi
                 </NavLink>
                 <NavLink
                   className={({ isActive }) =>
