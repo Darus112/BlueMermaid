@@ -21,26 +21,39 @@ import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 
 function App() {
+  // obtinem referinta la serviciul de autentificare Firebase
   const firebaseAuth = getAuth(app);
+
+  // definim starea locala pentru a urmari daca aplicatia este in incarcare
   const [isLoadind, setIsLoadind] = useState(false);
+
+  // selectam starea alertei din starea globala (Redux)
   const alert = useSelector((state) => state.alert);
 
+  // selectam informatiile despre user din starea globala (Redux)
   const user = useSelector((state) => state.user);
 
+  // obtinem functia dispatch pentru a trimite actiuni catre store-ul Redux
   const dispatch = useDispatch();
 
+  // folosim efectul pentru a verifica starea de autentificare a utilizatorului
   useEffect(() => {
     setIsLoadind(true);
+    // urmarim schimbarile starii de autentificare
     firebaseAuth.onAuthStateChanged((cred) => {
       if (cred) {
+        // daca utilizatorul este autentificat, obtinem tokenul JWT
         cred.getIdToken().then((token) => {
           validateUserJWTToken(token).then((data) => {
             if (data) {
+              // daca tokenul este valid, obtinem toate articolele din cosul de cumparaturi al utilizatorului
               getAllCartItems(data.user_id).then((items) => {
                 console.log(items);
+                // actualizam starea globala cu articolele din cos
                 dispatch(setCartItems(items));
               });
             }
+            // actualizam starea globala cu detalii despre utilizator
             dispatch(setUserDetails(data));
           });
         });
@@ -62,6 +75,7 @@ function App() {
             <MainLoader />
           </motion.div>
         )}
+        {/* Aici definim rutele noastre. */}
         <Routes>
           <Route path="/*" element={<Main />} />
           <Route path="/login" element={<Login />} />
@@ -72,6 +86,7 @@ function App() {
           <Route path="/user-orders" element={<Orders />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
+        {/* Afisam alerta daca exista. */}
         {alert?.type && <Alert type={alert?.type} message={alert?.message} />}
       </div>
     </>

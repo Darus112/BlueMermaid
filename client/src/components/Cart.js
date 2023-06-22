@@ -27,6 +27,11 @@ import {
 } from "../context/actions/alertActions";
 
 export default function Cart() {
+  /**
+   * Acest fragment de cod extrage datele coșului și ale utilizatorului din store-ul Redux.
+   * De asemenea, setează valoarea totală a coșului și gestionează acțiuni precum
+   * finalizarea comenzii și ștergerea coșului.
+   */
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
 
@@ -34,6 +39,7 @@ export default function Cart() {
 
   const [total, setTotal] = useState(0);
 
+  // Acest efect secundar calculează totalul coșului atunci când acesta se modifică
   useEffect(() => {
     let tot = 0;
     if (cart) {
@@ -44,6 +50,11 @@ export default function Cart() {
     }
   }, [cart]);
 
+  /**
+   * Această funcție se ocupă de finalizarea comenzii. Dacă utilizatorul nu este autentificat,
+   * este afișată o alertă. În caz contrar, se inițiază o sesiune de plata prin intermediul
+   * unui apel POST la server.
+   */
   const handleCheckOut = () => {
     const data = {
       user: user,
@@ -69,6 +80,10 @@ export default function Cart() {
     }
   };
 
+  /**
+   * Această funcție șterge toate elementele din coș. După ștergere, este afișată o alertă și
+   * coșul este actualizat.
+   */
   const deleteCart = () => {
     deleteCartItems(user?.user_id).then((res) => {
       dispatch(alertSucces("Coș șters"));

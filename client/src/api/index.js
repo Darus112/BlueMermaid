@@ -14,7 +14,7 @@ export const validateUserJWTToken = async (token) => {
   }
 };
 
-// add new product
+// adauga un nou produs
 export const addNewProduct = async (data) => {
   try {
     const res = await axios.post(`${baseURL}/api/products/create`, { ...data });
@@ -24,7 +24,7 @@ export const addNewProduct = async (data) => {
   }
 };
 
-// get all products
+// preia toate produsele
 export const getAllProducts = async () => {
   try {
     const res = await axios.get(`${baseURL}/api/products/all`);
@@ -34,7 +34,7 @@ export const getAllProducts = async () => {
   }
 };
 
-// delete a product
+// sterge un produs
 export const deleteProduct = async (productId) => {
   try {
     const res = await axios.delete(
@@ -46,7 +46,7 @@ export const deleteProduct = async (productId) => {
   }
 };
 
-// get all users
+// preia toti utilizatorii
 export const getAllUsers = async () => {
   try {
     const res = await axios.get(`${baseURL}/api/users/all`);
@@ -56,7 +56,7 @@ export const getAllUsers = async () => {
   }
 };
 
-// add item to cart
+// adauga produs in cos
 export const addNewItemToCart = async (user_id, data) => {
   try {
     const res = await axios.post(
@@ -69,7 +69,7 @@ export const addNewItemToCart = async (user_id, data) => {
   }
 };
 
-// get all items cart
+// preia toate itemele din cos
 export const getAllCartItems = async (user_id) => {
   try {
     const res = await axios.get(
@@ -81,7 +81,7 @@ export const getAllCartItems = async (user_id) => {
   }
 };
 
-// cart increment/decrement
+// incrementeaza/decrementeaza cos
 export const increaseItemQuantity = async (user_id, productId, type) => {
   console.log(user_id, productId, type);
   try {
@@ -96,7 +96,19 @@ export const increaseItemQuantity = async (user_id, productId, type) => {
   }
 };
 
-// get all orders
+// sterge cos
+export const deleteCartItems = async (userId) => {
+  try {
+    const res = await axios.delete(
+      `${baseURL}/api/products/deleteCart/${userId}`
+    );
+    return res.data.data;
+  } catch (err) {
+    return null;
+  }
+};
+
+// preia toate comenzile
 export const getAllOrders = async () => {
   try {
     const res = await axios.get(`${baseURL}/api/products/orders`);
@@ -106,7 +118,7 @@ export const getAllOrders = async () => {
   }
 };
 
-// update order status
+// updateaza statusul comenzii
 export const updateOrderSts = async (order_id, sts) => {
   try {
     const res = await axios.post(
@@ -120,19 +132,7 @@ export const updateOrderSts = async (order_id, sts) => {
   }
 };
 
-// delet cart
-export const deleteCartItems = async (userId) => {
-  try {
-    const res = await axios.delete(
-      `${baseURL}/api/products/deleteCart/${userId}`
-    );
-    return res.data.data;
-  } catch (err) {
-    return null;
-  }
-};
-
-// add new contact message
+// adauga un nou mesaj de contact
 export const addNewContact = async (data) => {
   try {
     const res = await axios.post(`${baseURL}/api/products/create/contact`, {
@@ -144,7 +144,7 @@ export const addNewContact = async (data) => {
   }
 };
 
-// get all contacts
+// preia toate contactele
 export const getAllContacts = async () => {
   try {
     const res = await axios.get(`${baseURL}/api/products/contacts/all`);
@@ -154,7 +154,7 @@ export const getAllContacts = async () => {
   }
 };
 
-// delete a contact
+// sterge un contact
 export const deleteContact = async (contactId) => {
   try {
     const res = await axios.delete(

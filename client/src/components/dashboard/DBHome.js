@@ -7,9 +7,12 @@ import Fade from "react-reveal/Fade";
 import Bounce from "react-reveal/Bounce";
 
 export default function DBHome() {
+  // Definirea selectorilor pentru a accesa datele de produs și comandă din state-ul Redux
   const products = useSelector((state) => state.products);
   const orders = useSelector((state) => state.orders);
 
+  // Filtrarea produselor în funcție de categorii
+  // În următoarele linii de cod, produsele sunt filtrate pe baza categoriilor lor, rezultând în diferite grupuri de produse
   const ourspecial = products?.filter(
     (item) => item.product_category === "specialitate"
   );
@@ -37,7 +40,8 @@ export default function DBHome() {
     (item) => item.product_category === "garnitură"
   );
 
-  // orders
+  // Filtrarea comenzilor în funcție de statusul lor
+  // În următoarele linii de cod, comenzile sunt filtrate pe baza statusului lor, generând diferite grupuri de comenzi
   const delivered = orders?.filter((item) => item.sts === "delivered");
   const cancelled = orders?.filter((item) => item.sts === "cancelled");
   const preparing = orders?.filter((item) => item.sts === "preparing");

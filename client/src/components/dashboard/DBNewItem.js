@@ -28,6 +28,7 @@ import { addNewProduct, getAllProducts } from "../../api";
 import { setAllProducts } from "../../context/actions/productActions";
 
 export default function DBNewItem() {
+  // Initializarea stării locale cu hook-urile useState pentru a stoca detaliile produsului, URL-ul imaginii descărcate, progresul încărcării și starea de încărcare
   const [itemName, setItemName] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState(null);
@@ -36,16 +37,18 @@ export default function DBNewItem() {
   const [imageDownloadURL, setImageDownloadURL] = useState(null);
   const [itemIngredients, setItemIngredients] = useState("");
 
+  // Selectarea alertelor din state-ul Redux și definirea dispatch-ului pentru a trimite acțiuni
   const alert = useSelector((state) => state.alert);
   const dispatch = useDispatch();
 
+  // Funcția care gestionează încărcarea unei imagini pe Firebase
   const uploadImage = (e) => {
     setIsLoading(true);
     const imageFile = e.target.files[0];
     const storageRef = ref(storage, `Images/${Date.now()}_${imageFile.name}`);
-
     const uploadTask = uploadBytesResumable(storageRef, imageFile);
 
+    // Monitorizarea progresului încărcării, gestionarea erorilor și obținerea URL-ului de descărcare la finalizarea încărcării
     uploadTask.on(
       "state_changed",
       (snapshot) => {
@@ -71,6 +74,7 @@ export default function DBNewItem() {
     );
   };
 
+  // Funcția care gestionează ștergerea unei imagini de pe Firebase
   const deleteImageFromFirebase = () => {
     setIsLoading(true);
     const deleteRef = ref(storage, imageDownloadURL);
@@ -85,6 +89,7 @@ export default function DBNewItem() {
     });
   };
 
+  // Funcția care gestionează trimiterea noilor date ale produsului
   const submitNewData = () => {
     const data = {
       product_name: itemName,

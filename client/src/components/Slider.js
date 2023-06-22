@@ -8,19 +8,27 @@ import { TbCaretLeft, TbCaretRight } from "react-icons/tb";
 import SliderCard from "./SliderCard";
 import { buttonClick } from "../animation";
 
+/**
+ * Componenta Slider care afișează produsele de tip "specialitate"
+ * într-un slider care poate fi derulat orizontal.
+ */
 export default function Slider() {
+  // Folosim useSelector pentru a prelua produsele din store-ul Redux.
   const products = useSelector((state) => state.products);
   const [specials, setSpecials] = useState(null);
 
+  // useRef este utilizat pentru a accesa elementul DOM direct.
   const sliderContainerRef = useRef(null);
 
   useEffect(() => {
+    // Setăm produsele "speciale" după ce produsele au fost încărcate.
     setSpecials(
       products?.filter((data) => data.product_category === "specialitate")
     );
     console.log(specials);
   }, [products]);
 
+  // Functiile handleScrollLeft și handleScrollRight sunt utilizate pentru a derula sliderul la stânga și la dreapta.
   const handleScrollLeft = () => {
     sliderContainerRef.current.scrollBy({
       left: -300,
@@ -32,7 +40,7 @@ export default function Slider() {
       left: 300,
     });
   };
-
+  // Randare sliderul cu produsele "speciale".
   return (
     <div className="w-full h-auto relative">
       <div

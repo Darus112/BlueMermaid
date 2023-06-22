@@ -7,6 +7,7 @@ import { RiErrorWarningFill } from "react-icons/ri";
 import { TiWarning } from "react-icons/ti";
 
 export default function Alert({ type, message }) {
+  // Dacă tipul este "success", afișăm o alertă de succes
   if (type === "success") {
     return (
       <motion.div
@@ -20,6 +21,7 @@ export default function Alert({ type, message }) {
     );
   }
 
+  //  Dacă tipul este "warning", afișăm o alertă de avertizare
   if (type === "warning") {
     return (
       <motion.div
@@ -33,6 +35,7 @@ export default function Alert({ type, message }) {
     );
   }
 
+  // Dacă tipul este "danger", afișăm o alertă de pericol
   if (type === "danger") {
     return (
       <motion.div
@@ -46,6 +49,7 @@ export default function Alert({ type, message }) {
     );
   }
 
+  // Dacă tipul este "info", afișăm o alertă de informare
   if (type === "info") {
     return (
       <motion.div

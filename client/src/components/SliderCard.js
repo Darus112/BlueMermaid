@@ -14,18 +14,25 @@ import { BiFoodMenu } from "react-icons/bi";
 import { BsCardList } from "react-icons/bs";
 
 export default function SliderCard({ data, index }) {
+  // Selectăm datele utilizatorului din starea globală (Redux store)
   const user = useSelector((state) => state.user);
+  // Inițializăm metoda dispatch pentru a actualiza starea globală
   const dispatch = useDispatch();
-
+  // Starea locală pentru a afișa sau ascunde ingredientele produsului
   const [showIngredients, setShowIngredients] = useState(false);
-
+  //Funcție pentru a adăuga produsul în coșul de cumpărături
   const sendToCart = () => {
+    //Adăugăm noul produs în coșul de cumpărături pentru utilizatorul curent
     addNewItemToCart(user?.user_id, data).then((res) => {
+      // După ce produsul a fost adăugat, obținem toate produsele din coșul de cumpărături
       getAllCartItems(user?.user_id).then((items) => {
         console.log(items);
+        // Actualizăm starea globală cu noile produse din coșul de cumpărături
         dispatch(setCartItems(items));
       });
+      // Afișăm un mesaj de succes utilizatorului
       dispatch(alertSucces("Adăugat în coș"));
+      // Ascundem mesajul de succes după 3 secunde
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);

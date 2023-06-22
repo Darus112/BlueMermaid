@@ -17,16 +17,22 @@ import { motion } from "framer-motion";
 import DetailsCard from "../components/DetailsCard";
 
 export default function Contact() {
+  // Declaram constantele pentru stocarea și actualizarea stărilor
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
+  // Accesăm starea alertei din Redux store
   const alert = useSelector((state) => state.alert);
+
+  // Inițializăm funcția de dispatch pentru a trimite acțiuni către Redux store
   const dispatch = useDispatch();
 
+  // Funcția pentru a trimite datele de contact
   const send = () => {
+    // Creăm obiectul de date pe care dorim să îl trimitem
     const data = {
       contact_firstName: firstName,
       contact_lastName: lastName,
@@ -34,17 +40,24 @@ export default function Contact() {
       contact_subject: subject,
       contact_message: message,
     };
+
+    // Verificăm dacă toate câmpurile sunt completate
     if (!firstName || !lastName || !email || !subject || !message) {
+      // Dacă nu, afișăm o alertă
       dispatch(alertDanger("Completează toate câmpurile"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
     } else {
+      // Dacă toate câmpurile sunt completate, trimitem datele de contact
       addNewContact(data).then((res) => {
+        // Afișăm o alertă de succes
         dispatch(alertSucces("Trimis cu succes"));
+        // Actualizăm lista de contacte
         getAllContacts().then((data) => {
           dispatch(setAllContacts(data));
         });
+        // Golim alerta și toate câmpurile
         setTimeout(() => {
           dispatch(alertNULL());
         }, 3000);
@@ -56,6 +69,7 @@ export default function Contact() {
       });
     }
   };
+
   return (
     <div className="min-h-screen w-screen bg-generalBg bg-fixed bg-no-repeat bg-cover bg-center">
       <div className="flex items-center justify-center flex-col pt-6 px-24 w-full my-12 mt-40">

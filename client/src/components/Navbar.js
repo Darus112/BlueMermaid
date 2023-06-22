@@ -21,18 +21,32 @@ import { isActiveStyles2, isNotActiveStyles2 } from "../utils/styles";
 import { setCartOn } from "../context/actions/displayCartAction";
 
 export default function Navbar() {
+  // useState este folosit pentru a gestiona starea locală a componentei.
+  // `isMenu` și `setIsMenu` sunt folosite pentru a afișa și a ascunde meniul atunci când utilizatorul interacționează cu pictograma de utilizator.
+  // `showNav` și `setShowNav` sunt folosite pentru a afișa și a ascunde meniul de navigare pe dispozitivele mobile.
   const [isMenu, setIsMenu] = useState(false);
   const [showNav, setShowNav] = useState(false);
 
+  // useSelector este un hook de la Redux, care ne permite să extragem date din store-ul Redux.
+  // `user` și `cart` sunt selectate din starea globală și reprezintă utilizatorul curent și coșul de cumpărături, respectiv.
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
 
+  // Acesta este un handle pentru autentificarea Firebase.
   const firebaseAuth = getAuth(app);
+
+  // useNavigate este un hook din biblioteca de routing React Router v6, care permite navigarea programatică.
   const navigate = useNavigate();
+
+  // useDispatch este un hook de la Redux, care ne permite să dispatch-uim acțiuni către store-ul Redux.
   const dispatch = useDispatch();
 
+  // Funcția `menu` inversează starea `showNav`, deschizând sau închizând meniul de navigare pe dispozitivele mobile.
   const menu = () => setShowNav(!showNav);
 
+  // Funcția `signOut` se ocupă de procesul de deconectare a utilizatorului.
+  // Se face o cerere de deconectare către Firebase, iar în cazul în care aceasta este cu succes, se dispatch-ează o acțiune către Redux pentru a seta utilizatorul ca null și se redirecționează utilizatorul către pagina de login.
+  // Dacă există o eroare, aceasta este logată în consolă.
   const signOut = () => {
     firebaseAuth
       .signOut()
@@ -45,7 +59,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* desktop */}
+      {/* randeaza bara de navigare pentru desktop */}
       <header
         className="hidden md:flex bg-seagull-300 
       fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6
@@ -207,7 +221,7 @@ export default function Navbar() {
         )}
       </header>
 
-      {/* mobil */}
+      {/* randeaza bara de navigare pentru mobil */}
       <header
         className="flex md:hidden bg-seagull-300
       fixed z-40 inset-x-0 top-0 items-center justify-between px-12 md:px-20 py-6

@@ -32,38 +32,43 @@ import {
 } from "../context/actions/alertActions";
 
 export default function Login() {
+  // Inițializăm stările locale pentru email, modul de înregistrare, parola și confirmarea parolei
   const [userEmail, setUserEmail] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // Obținem instanța Firebase Authentication
   const firebaseAuth = getAuth(app);
+
+  // Instanțiem un provider Google pentru autentificarea cu Google
   const provider = new GoogleAuthProvider();
 
+  // Obținem funcția de navigare din biblioteca react-router-dom
   const navigate = useNavigate();
+
+  // Obținem funcția de dispatch din Redux pentru a permite declanșarea acțiunilor
   const dispatch = useDispatch();
 
+  // Selectăm utilizatorul și starea de alertă din starea globală Redux
   const user = useSelector((state) => state.user);
   const alert = useSelector((state) => state.alert);
 
+  // Folosim hook-ul useEffect pentru a redirecționa utilizatorul către pagina principală dacă acesta este autentificat
   useEffect(() => {
     if (user) {
       navigate("/", { replace: true });
     }
   }, [user]);
 
-  // actions
-
-  // reducer
-
-  // store -> globalized
-
-  // dispatch
-
+  // Metoda de autentificare cu Google
   const loginWithGoogle = async () => {
+    // Încercăm să autentificăm utilizatorul cu Google
     await signInWithPopup(firebaseAuth, provider).then((userCred) => {
+      // Dacă autentificarea a reușit, verificăm starea autentificării
       firebaseAuth.onAuthStateChanged((cred) => {
         if (cred) {
+          // Dacă utilizatorul este autentificat, validăm tokenul JWT și salvăm detaliile acestuia în starea globală
           cred.getIdToken().then((token) => {
             validateUserJWTToken(token).then((data) => {
               dispatch(setUserDetails(data));
@@ -75,15 +80,19 @@ export default function Login() {
     });
   };
 
+  // Metoda de înregistrare cu email și parolă
   const signUpWithEmailPass = async () => {
+    // Verificăm dacă toate câmpurile au fost completate
     if (userEmail === "" || password === "" || confirmPassword === "") {
-      //alert message
+      // Dacă nu, declanșăm o alertă
       dispatch(alertInfo("Câmpurile obligatorii nu ar trebui să fie goale"));
       setTimeout(() => {
         dispatch(alertNULL());
       }, 3000);
     } else {
+      // Verificăm dacă parolele se potrivesc
       if (password === confirmPassword) {
+        // Dacă da, încercăm să înregistrăm utilizatorul
         setUserEmail("");
         setConfirmPassword("");
         setPassword("");
@@ -92,8 +101,10 @@ export default function Login() {
           userEmail,
           password
         ).then((userCred) => {
+          // Dacă înregistrarea a reușit, verificăm starea autentificării
           firebaseAuth.onAuthStateChanged((cred) => {
             if (cred) {
+              // Dacă utilizatorul este autentificat, validăm tokenul JWT și salvăm detaliile acestuia în starea globală
               cred.getIdToken().then((token) => {
                 validateUserJWTToken(token).then((data) => {
                   dispatch(setUserDetails(data));
@@ -104,7 +115,7 @@ export default function Login() {
           });
         });
       } else {
-        //alert message
+        // Dacă parolele nu se potrivesc, declanșăm o alertă
         dispatch(alertWarning("Parola nu se potrivește"));
         setTimeout(() => {
           dispatch(alertNULL());
@@ -113,12 +124,17 @@ export default function Login() {
     }
   };
 
+  // Metoda de autentificare cu email și parolă
   const signInWithEmailPass = async () => {
+    // Verificăm dacă câmpurile de email și parolă sunt completate
     if (userEmail !== "" && password !== "") {
+      // Dacă da, încercăm să autentificăm utilizatorul
       await signInWithEmailAndPassword(firebaseAuth, userEmail, password).then(
         (userCred) => {
+          // Dacă autentificarea a reușit, verificăm starea autentificării
           firebaseAuth.onAuthStateChanged((cred) => {
             if (cred) {
+              // Dacă utilizatorul este autentificat, validăm tokenul JWT și salvăm detaliile acestuia în starea globală
               cred.getIdToken().then((token) => {
                 validateUserJWTToken(token).then((data) => {
                   dispatch(setUserDetails(data));
@@ -130,7 +146,7 @@ export default function Login() {
         }
       );
     } else {
-      //alert message
+      // Dacă nu, declanșăm o alertă
       dispatch(alertWarning("Parolă sau adresă de email incorectă"));
       setTimeout(() => {
         dispatch(alertNULL());
@@ -140,7 +156,7 @@ export default function Login() {
 
   return (
     <div className="w-screen h-screen relative overflow-hidden flex items-center justify-center">
-      {/* background image */}
+      {/* imagine fundal */}
       <Fade>
         <img
           src={bgImg}
@@ -149,14 +165,14 @@ export default function Login() {
         />
       </Fade>
 
-      {/* content box */}
+      {/* cutie content */}
       <Bounce>
         <div
           className="flex flex-col items-center backdrop-blur-lg w-[680px] h-[800px] 
                 z-10 rounded-[3rem] shadow-[0_3px_10px_rgb(0,0,0,0.2)] bg-seagull-300 bg-opacity-20
                 p-4 px-4 py-12 mx-2"
         >
-          {/* content box */}
+          {/* cutie content */}
           <div className="flex items-center justify-start gap-1 w-full ml-5">
             <img src={LogoImg} className="w-9" alt="" />
             <div className="font-logo font-semibold text-sm flex flex-col">
@@ -165,14 +181,14 @@ export default function Login() {
             </div>
           </div>
 
-          {/* sign in option */}
+          {/* optiuni logare */}
           <div className="flex items-center justify-center">
             <p className="text-xl font-body font-medium text-seagull-900 text-opacity-60">
               {isSignUp ? "Înregistrează-te" : "Autentifică-te"} cu următoarele
             </p>
           </div>
 
-          {/* input section */}
+          {/* sectiune intrare */}
           <div className="w-full flex flex-col items-center justify-center gap-6 px-4 md:px-12 py-4 mt-20">
             <LoginInput
               placeHolder={"Email aici"}

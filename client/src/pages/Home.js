@@ -21,10 +21,15 @@ import { useSelector } from "react-redux";
 
 import DetailsCard from "../components/DetailsCard";
 
+// Componenta principală "Home".
 export default function Home() {
+  // Folosim starea Redux pentru a obține produsele
   const products = useSelector((state) => state.products);
+
+  // Starea pentru a deține produsele speciale
   const [specials, setSpecials] = useState(null);
 
+  // Folosim un efect pentru a seta produsele speciale atunci când produsele se schimbă
   useEffect(() => {
     setSpecials(
       products?.filter((data) => data.product_category === "specialitate")
@@ -32,6 +37,7 @@ export default function Home() {
     console.log(specials);
   }, [products]);
 
+  // Se returnează componenta principală "Home" care include toate secțiunile paginii
   return (
     <div className="flex flex-col">
       <Fade>

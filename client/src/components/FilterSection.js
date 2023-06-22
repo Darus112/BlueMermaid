@@ -9,10 +9,16 @@ import { statuses } from "../utils/styles";
 import { buttonClick } from "../animation";
 import SliderCard from "./SliderCard";
 
+// Componenta pentru filtrarea produselor pe baza categoriilor
+// Afișează o listă de carduri pentru fiecare categorie și produsele corespunzătoare
+// categoriei selectate.
 export default function FilterSection() {
+  // Starea locală pentru a ține evidența categoriei selectate
   const [category, setCategory] = useState("specialitate");
+  // Selectăm produsele din starea globală (Redux store)
   const products = useSelector((state) => state.products);
 
+  // Randare componenta
   return (
     <div className="w-full">
       <div
@@ -51,7 +57,10 @@ export default function FilterSection() {
   );
 }
 
+// Componenta pentru cardul de filtrare
+// Afișează un card pentru o categorie și schimbă categoria selectată atunci când este apăsat
 export const FilterCard = ({ data, index, category, setCategory }) => {
+  // Randare componenta
   return (
     <motion.div
       {...buttonClick}
