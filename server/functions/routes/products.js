@@ -26,7 +26,7 @@ router.post("/create", async (req, res) => {
   }
 });
 
-// get all products
+// preia toate produsele
 router.get("/all", async (req, res) => {
   (async () => {
     try {
@@ -46,7 +46,7 @@ router.get("/all", async (req, res) => {
   })();
 });
 
-// delete a product
+// sterge un produs
 router.delete("/delete/:productId", async (req, res) => {
   const productId = req.params.productId;
   try {
@@ -62,7 +62,7 @@ router.delete("/delete/:productId", async (req, res) => {
   }
 });
 
-// create a cart
+// creaza cos
 router.post("/addToCart/:userId", async (req, res) => {
   const userId = req.params.userId;
   const productId = req.body.productId;
@@ -108,7 +108,7 @@ router.post("/addToCart/:userId", async (req, res) => {
   }
 });
 
-// update cart decrease/increase quantity
+// updateaza cantitatea produse din cos
 router.post("/updateCart/:user_id", async (req, res) => {
   const userId = req.params.user_id;
   const productId = req.query.productId;
@@ -162,7 +162,7 @@ router.post("/updateCart/:user_id", async (req, res) => {
   }
 });
 
-// get all cart items for user
+// preia toate produsele din cos pentru utilizator
 router.get("/getCartItems/:user_id", async (req, res) => {
   const userId = req.params.user_id;
 
@@ -252,7 +252,6 @@ router.post("/create-checkout-session", async (req, res) => {
 });
 
 let endpointSecret;
-// const endpointSecret = process.env.WEBHOOK_SECRET;
 
 router.post(
   "/webhook",
@@ -278,7 +277,7 @@ router.post(
       eventType = req.body.type;
     }
 
-    // Handle the event
+    // gestioneaza evenimentul
     if (eventType === "checkout.session.completed") {
       stripe.customers.retrieve(data.customer).then((customer) => {
         console.log("Customer details", customer);
@@ -286,7 +285,7 @@ router.post(
         createOrder(customer, data, res);
       });
     }
-    // Return a 200 res to acknowledge receipt of the event
+    // Returneaza 200 res
     res.send().end();
   }
 );
@@ -326,7 +325,7 @@ const deleteCart = async (userId, items) => {
   console.log("************************************");
   items.map(async (data) => {
     console.log(
-      "-------------------------inside-----------------",
+      "-------------------------interior-----------------",
       userId,
       data.productId
     );
@@ -337,12 +336,12 @@ const deleteCart = async (userId, items) => {
       .doc(`/${data.productId}/`)
       .delete()
       .then(() =>
-        console.log("-------------------------success-----------------")
+        console.log("-------------------------succes-----------------")
       );
   });
 };
 
-// orders
+// comenzi
 router.get("/orders", async (req, res) => {
   (async () => {
     try {
@@ -362,7 +361,7 @@ router.get("/orders", async (req, res) => {
   })();
 });
 
-// update the order status
+// updateaza statusul comenzii
 router.post("/updateOrder/:order_id", async (req, res) => {
   const order_id = req.params.order_id;
   const sts = req.query.sts;
@@ -379,7 +378,7 @@ router.post("/updateOrder/:order_id", async (req, res) => {
   }
 });
 
-// delete cart
+// sterge cos
 router.delete("/deleteCart/:userId", async (req, res) => {
   const userId = req.params.userId;
 
@@ -406,7 +405,7 @@ router.delete("/deleteCart/:userId", async (req, res) => {
   }
 });
 
-// create contact
+// creaza contact
 router.post("/create/contact", async (req, res) => {
   try {
     const id = Date.now();
@@ -427,7 +426,7 @@ router.post("/create/contact", async (req, res) => {
   }
 });
 
-// get all contacts
+// preia toate contactele
 router.get("/contacts/all", async (req, res) => {
   (async () => {
     try {
@@ -447,7 +446,7 @@ router.get("/contacts/all", async (req, res) => {
   })();
 });
 
-// delete a contact
+// sterge un contact
 router.delete("/delete/contact/:contactId", async (req, res) => {
   const contactId = req.params.contactId;
   try {
