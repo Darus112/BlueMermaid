@@ -1,1 +1,11 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/client/public/index.html"
+    }
+  ],
+  "staticFiles": {
+    "publicDirectory": "client/public"
+  }
+}
