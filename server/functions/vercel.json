@@ -2,10 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/client/public/index.html"
+      "destination": "/server/funtions/index.js"
     }
-  ],
-  "staticFiles": {
-    "publicDirectory": "client/public"
-  }
+  ]
 }
