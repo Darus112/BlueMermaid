@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/server/funtions/index.js"
+      "destination": "/funtions/index.js"
     }
   ]
 }
