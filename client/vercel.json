@@ -1,5 +1,5 @@
 {
-  "routes": [{ "src": "/(.*)", "destination": "/" }],
+  "routes": [{ "src": "/(.*)", "dest": "/" }],
   "builds": [{ "src": "build", "use": "@vercel/node" }],
   "env": {
     "NODE_OPTIONS": "--openssl-legacy-provider"
