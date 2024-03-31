@@ -1,5 +1,5 @@
 {
-  "routes": [{ "src": "/(.*)", "dest": "/" }],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "builds": [{ "src": "build", "use": "@vercel/node" }],
   "env": {
     "NODE_OPTIONS": "--openssl-legacy-provider"
