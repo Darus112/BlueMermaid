@@ -34,4 +34,5 @@ app.use("/api/users", userRoute);
 const productsRoute = require("./routes/products");
 app.use("/api/products/", productsRoute);
 
-exports.app = functions.https.onRequest(app);
+// Export the Express app as a Firebase function
+module.exports = functions.https.onRequest(app);
