@@ -34,4 +34,8 @@ app.use("/api/users", userRoute);
 const productsRoute = require("./routes/products");
 app.use("/api/products/", productsRoute);
 
-exports.app = functions.https.onRequest(app);
+// Create and export HTTP server
+const http = require("http");
+const server = http.createServer(app);
+
+module.exports = server;
