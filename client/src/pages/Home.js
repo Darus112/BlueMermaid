@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 import OurSpecialBg from "../assets/Img/Hero_bg.png";
 import HomeImg from "../assets/Img/home_img.png";
-import HeaderImg from "../assets/Img/Background/2.png";
 
 import { AiFillThunderbolt } from "react-icons/ai";
 import { MdRoomService } from "react-icons/md";
